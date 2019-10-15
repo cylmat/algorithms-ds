@@ -1,5 +1,9 @@
 <?php
-// Your code here!
+/*
+ REcursive
+ O(n.log n) in time
+ Bad memory complexity
+*/
 
 $array = array(90,32,-8,7,54,1,88,475,23,-56,82,37,783,512,2);
 echo implode(', ',$array ).PHP_EOL."sorted:".implode(', ',merge_sort($array));
