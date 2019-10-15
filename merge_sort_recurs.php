@@ -1,11 +1,8 @@
 <?php
 // Your code here!
 
-$test_array = array(100, 54, 7, 22, 5, 49, 1);
-echo "Original Array : ";
-echo implode(', ',$test_array );
-echo "\nSorted Array :";
-echo implode(', ',merge_sort($test_array))."\n";
+$array = array(90,32,-8,7,54,1,88,475,23,-56,82,37,783,512,2);
+echo implode(', ',$array ).PHP_EOL."sorted:".implode(', ',merge_sort($array));
 
 function merge_sort(array $array)
 {
