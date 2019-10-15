@@ -1,8 +1,10 @@
 <?php
 /*
- REcursive
- O(n.log n) in time
- Bad memory complexity
+ Good for sort lists
+
+ Recursive
+ Time: O(n.log n)
+ Memory: O(n) for array and O(1) for list
 */
 
 $array = array(90,32,-8,7,54,1,88,475,23,-56,82,37,783,512,2);
