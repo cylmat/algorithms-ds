@@ -2,6 +2,9 @@
 
 //https://www.geeksforgeeks.org/recursively-print-all-sentences-that-can-be-formed-from-list-of-word-lists/
 
+/*
+* https://www.techiedelight.com/combinations-phrases-formed-picking-words-lists/
+*/
 function permute($array, $perms=[])
 { 
     if (empty($array)) { 
@@ -24,6 +27,13 @@ $arr = ["you", "we", "have"];
 
 //echo permute($arr); 
 
+
+
+
+
+/*
+* https://stackoverflow.com/questions/2617055/how-to-generate-all-permutations-of-a-string-in-php
+*/
 function lpermute($str,$i,$n) {
    if ($i == $n)
        print "$str\n";
