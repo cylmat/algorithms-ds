@@ -72,3 +72,38 @@ function permute($arg) {
             $result[] = $item . $p;
     return $result;
 }
+
+
+
+/*
+*
+*/
+unction permute($str,$index=0,$count=0)
+{
+    if($count == strlen($str)-$index)
+        return;
+
+    $str = rotate($str,$index);
+
+    if($index==strlen($str)-2)//reached to the end, print it
+    {
+        echo $str."<br> ";//or keep it in an array
+    }
+
+    permute($str,$index+1);//rotate its children
+
+    permute($str,$index,$count+1);//rotate itself
+}
+
+function rotate($str,$index)
+{
+    $tmp = $str[$index];
+    $i=$index;
+    for($i=$index+1;$i<strlen($str);$i++)
+    {
+        $str[$i-1] = $str[$i];
+    }
+    $str[$i-1] = $tmp;
+    return $str;
+}
+permute("hey");
