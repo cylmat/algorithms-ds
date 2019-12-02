@@ -1,0 +1,45 @@
+<?php
+
+function permute($array, $perms=[])
+{ 
+    if (empty($array)) { 
+        return join(' ', $perms) . "\n"; 
+    }
+
+    $out='';
+    for ($i = count($array) - 1; $i >= 0; --$i) { 
+        $newitems = $array; 
+        $newperms = $perms; 
+        $foo = array_splice($newitems, $i, 1)[0]; 
+        array_unshift($newperms, $foo); //ajoute au debut
+        $out.=permute($newitems, $newperms); 
+    } 
+    return $out;
+} 
+
+
+$arr = ["you", "we", "have"]; 
+
+//echo permute($arr); 
+
+function lpermute($str,$i,$n) {
+   if ($i == $n)
+       print "$str\n";
+   else {
+        for ($j = $i; $j < $n; $j++) {
+          swap($str,$i,$j);
+          lpermute($str, $i+1, $n);
+          swap($str,$i,$j); // backtrack.
+       }
+   }
+}
+
+// function to swap the char at pos $i and $j of $str.
+function swap(&$str,$i,$j) {
+    $temp = $str[$i];
+    $str[$i] = $str[$j];
+    $str[$j] = $temp;
+}   
+
+$str = "hey";
+lpermute($str,0,strlen($str)); // call the function.
