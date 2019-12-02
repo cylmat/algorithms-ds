@@ -1,5 +1,7 @@
 <?php
 
+//https://www.geeksforgeeks.org/recursively-print-all-sentences-that-can-be-formed-from-list-of-word-lists/
+
 function permute($array, $perms=[])
 { 
     if (empty($array)) { 
