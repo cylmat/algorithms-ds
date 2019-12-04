@@ -7,3 +7,5 @@
 - trouver le zero d'une fct exponentielle entre 2 nombres (un - et un +)
 
 #TutorialPoint
+
+#Dev.com
