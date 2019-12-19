@@ -19,7 +19,7 @@ $count=[0,0,0,0,0,0];
 $j=0;
 while($j<6) {
     for($i=$j;$i<6;$i++) {
-        if(!isset($m[$j])) { d($j);
+        if(!isset($m[$j])) { 
             $m[$j][] = $a[$i];  //print '='.$m[$i][array_key_last($m[$i])][1];
             $count[$j] += $a[$i][2];
         }
