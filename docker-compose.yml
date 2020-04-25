@@ -1,0 +1,30 @@
+version: '2.2'
+
+services: 
+    nginx:
+        image: nginx:1.17
+        restart: always
+        ports:
+            - 88:80
+        volumes:
+            - ${WEBSERVER}/${DIRECTORY}:/appli
+            - ${WEBSERVER}/${DIRECTORY}/.docker/conf/nginx:/etc/nginx/conf.d:ro
+        depends_on: 
+            - phpfpm
+        networks: 
+            - algo
+          
+    phpfpm: 
+        build: .docker/conf/fpm
+        working_dir: /appli
+        ports: 
+            - 9008:9000
+        volumes:
+            - ${WEBSERVER}/${DIRECTORY}:/appli
+        networks: 
+            - algo
+    
+   
+networks:
+    algo:
+        driver: bridge

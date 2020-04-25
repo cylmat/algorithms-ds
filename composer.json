@@ -1,0 +1,38 @@
+{
+    "name": "freeonisland/algorithms-ds",
+    "description": "Exemples d'utilisation du framework et des modules de Zend-Laminas",
+    "type": "tests",
+    "license": "none",
+    "authors": [
+        {
+            "name": "freeonisland",
+            "email": "freeonisland@yahoo.fr"
+        }
+    ],
+    "config": {
+        "bin-dir": "bin",
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.2",
+        "mikecao/flight": "^1.3"
+    },
+    "require-dev": {
+        "kint-php/kint": "^3.3",
+        "phpunit/phpunit": "^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --color=always"
+    }
+}
