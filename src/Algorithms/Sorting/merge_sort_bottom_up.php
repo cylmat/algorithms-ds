@@ -10,7 +10,7 @@
 *
  TODO
 */
-function bottomUpMergeSort(inputArray) {
+/*function bottomUpMergeSort(inputArray) {
     var length = inputArray.length,
         size = 1,
         temp = []; //allocate space just once
@@ -28,14 +28,14 @@ function bottomUpMergeSort(inputArray) {
 
     return inputArray;
 }
-
+*/
 
 
 
 
 
 /* copy from wikipedia: to implement in php */
-void BottomUpMergeSort(A[], B[], n)
+/*void BottomUpMergeSort(A[], B[], n)
 {
     // Each 1-element run in A is already "sorted".
     // Make successively longer sorted runs of length 2, 4, 8, 16... until whole array is sorted.
@@ -54,11 +54,11 @@ void BottomUpMergeSort(A[], B[], n)
         CopyArray(B, A, n);
         // Now array A is full of runs of length 2*width.
     }
-}
+}*/
 
 //  Left run is A[iLeft :iRight-1].
 // Right run is A[iRight:iEnd-1  ].
-void BottomUpMerge(A[], iLeft, iRight, iEnd, B[])
+/*void BottomUpMerge(A[], iLeft, iRight, iEnd, B[])
 {
     i = iLeft, j = iRight;
     // While there are elements in the left or right runs...
@@ -72,4 +72,4 @@ void BottomUpMerge(A[], iLeft, iRight, iEnd, B[])
             j = j + 1;    
         }
     } 
-}
+}*/ 

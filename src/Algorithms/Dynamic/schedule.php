@@ -1,7 +1,7 @@
 <?php
 
 // max schedule
-function d($i,$msg){ $GLOBALS['d'][$i] = $GLOBALS['d'][$i]??''; $GLOBALS['d'][$i] .= $msg;}
+//function d($i,$msg){ $GLOBALS['d'][$i] = $GLOBALS['d'][$i]??''; $GLOBALS['d'][$i] .= $msg;}
 
 $a=[
     [0, 6, 60],

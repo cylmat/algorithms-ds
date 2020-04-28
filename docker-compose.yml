@@ -23,7 +23,8 @@ services:
             - ${WEBSERVER}/${DIRECTORY}:/appli
         networks: 
             - algo
-    
+        command: /bin/bash -c 'sed -i "s/zend.assertions = -1/zend.assertions = 1/g" /etc/php/7.3/fpm/php.ini && /usr/sbin/php-fpm7.3 -O'
+           
    
 networks:
     algo:

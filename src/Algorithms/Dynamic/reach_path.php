@@ -1,7 +1,7 @@
 <?php
 // reach
 
-function d($i,$msg){ $GLOBALS['d'][$i] = $GLOBALS['d'][$i]??''; $GLOBALS['d'][$i] .= $msg;}
+function dy($i,$msg){ $GLOBALS['d'][$i] = $GLOBALS['d'][$i]??''; $GLOBALS['d'][$i] .= $msg;}
 
 $arr = [
 		[ 0, 25, 35 ],
@@ -28,4 +28,3 @@ function se($x, $y, $v)
 }
 
 echo se(0,0,$v);
-

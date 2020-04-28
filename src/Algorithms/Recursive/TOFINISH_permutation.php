@@ -62,13 +62,13 @@ lpermute($str,0,strlen($str)); // call the function.
 /*
 *
 */
-function permute($arg) {
+function yypermute($arg) {
     $array = is_string($arg) ? str_split($arg) : $arg;
     if(1 === count($array))
         return $array;
     $result = array();
     foreach($array as $key => $item)
-        foreach(permute(array_diff_key($array, array($key => $item))) as $p)
+        foreach(yypermute(array_diff_key($array, array($key => $item))) as $p)
             $result[] = $item . $p;
     return $result;
 }
@@ -78,7 +78,7 @@ function permute($arg) {
 /*
 *
 */
-unction permute($str,$index=0,$count=0)
+function zzpermute($str,$index=0,$count=0)
 {
     if($count == strlen($str)-$index)
         return;
@@ -90,9 +90,9 @@ unction permute($str,$index=0,$count=0)
         echo $str."<br> ";//or keep it in an array
     }
 
-    permute($str,$index+1);//rotate its children
+    zzpermute($str,$index+1);//rotate its children
 
-    permute($str,$index,$count+1);//rotate itself
+    zzpermute($str,$index,$count+1);//rotate itself
 }
 
 function rotate($str,$index)
@@ -106,4 +106,4 @@ function rotate($str,$index)
     $str[$i-1] = $tmp;
     return $str;
 }
-permute("hey");
+//permute("hey");

@@ -4,8 +4,9 @@
 // dont la somme est égale à $sum
 //RECURSIF arbre binaire
 //enlève la somme au fur et a mesure
-function p($v){print_r($v);}
+//function p($v){print_r($v);}
 $sub=[];
+
 function isSubsetSum($array, $i, $sub_array, $sum)
 {
     global $sub;
@@ -33,14 +34,14 @@ function isSubsetSum($array, $i, $sub_array, $sum)
 // Driver Code
 $set = array(9, 1, 2, 12, 3, 8); //34, 4, 12, 5, 2); 
 
-$r = isSubsetSum($set, count($set)-1, [], 10);
+/*$r = isSubsetSum($set, count($set)-1, [], 10);
 print_r($sub);
 //print_r($r);
-die();
+
 
 if (isSubsetSum($set, count($set)-1, [], 12))
     echo "Found a subset with given sum"; 
 else
-    echo "No subset with given sum"; 
+    echo "No subset with given sum"; */
     
     
