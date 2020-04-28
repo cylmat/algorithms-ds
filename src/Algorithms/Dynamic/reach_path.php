@@ -1,8 +1,6 @@
 <?php
 // reach
 
-function dy($i,$msg){ $GLOBALS['d'][$i] = $GLOBALS['d'][$i]??''; $GLOBALS['d'][$i] .= $msg;}
-
 $arr = [
 		[ 0, 25, 35 ],
 		[ 20, 2, 15 ],

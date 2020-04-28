@@ -11,6 +11,11 @@ assert_options(ASSERT_QUIET_EVAL, 1);
 
 require __DIR__.'/../vendor/autoload.php';
 
+function getFileDocComment(string $fileName)
+{
+    
+}
+
 $menu = <<<R
     <a href="/s-algorithms">Algos</a> <a href="/s-datastructure">Datas</a> <a href="/s-designpattern">Patterns</a> <br/><br/>
 R;

@@ -31,6 +31,6 @@
         }
     },
     "scripts": {
-        "test": "phpunit --color=always"
+        "launch": "php -f"
     }
 }
