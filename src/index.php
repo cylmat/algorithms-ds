@@ -43,6 +43,7 @@ Flight::route('/(@ns:.*)', function($ns){
     $dirs = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(__DIR__ . '/' . str_replace('s-','',$ns)));
 
     $dirs->rewind();
+    $current_dir = null;
     while ($dirs->valid()) {
 
         // RecursiveIteratorIterator
@@ -51,6 +52,12 @@ Flight::route('/(@ns:.*)', function($ns){
             $res = include $dirs->getRealpath();
             $c = ob_get_contents();
             ob_end_clean();
+
+            // Display dir
+            if($current_dir != $dirs->getSubPath()) {
+                echo '<h5>'.$dirs->getSubPath() . '</h5>';
+                $current_dir = $dirs->getSubPath();
+            }
             //s($res);
             echo true===$res ? '<span style="color:green">' : '<span style="color:red">';
             echo str_replace('.php','',$dirs->getFilename()) . '</span> ';
