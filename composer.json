@@ -32,5 +32,9 @@
     },
     "scripts": {
         "launch": "php -f"
+    },
+    "extra": {
+        "github:kumar91gopi":"Algorithms-and-Data-Structures-in-Ruby",
+        "github:TheAlgorithms":"Python"
     }
 }
