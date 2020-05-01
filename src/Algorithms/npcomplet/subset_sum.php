@@ -26,15 +26,15 @@ function subsetsum($search, $values, $n): bool
     if(0==$n && $search!=0) {d("false");return false;} //not found until last element
     if(0==$search) {d("true");return true;} //finded 
 
-    //if (set[n-1] > sum) 
-     //return isSubsetSum(set, n-1, sum); 
-    
-    //select if current element can be included or not
+	//if($memoization) {
+	//select if current element can be included or not
     d("n:".($n-1)." s:".$search." v:".$values[$n-1]."");
     $with = subsetsum($search, $values, $n-1);
-    $out  = subsetsum($search-$values[$n-1], $values, $n-1);
+	$out  = subsetsum($search-$values[$n-1], $values, $n-1);
+	//}
 
-    $res = $out || $with;
+	$res = $out || $with;
+	//$memoization = $res;
     return $res;
 }
 
