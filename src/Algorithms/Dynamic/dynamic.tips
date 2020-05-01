@@ -2,6 +2,9 @@
 // The basic idea behind dynamic programming is breaking a complex problem down to several small and simpleproblems that are repeated
 // Thoses who cannot remember the past are condemned to repeat it
 
+
+ex: The standard All Pair Shortest Path algorithms like Floyd–Warshall and Bellman–Ford 
+
 /*
 Memoization is a term describing an optimization technique where you cache previously computed results, and return the cached result when the same computation is needed again.
 
@@ -31,6 +34,9 @@ A good slide from here (link is now dead, slide is still good though):
         If some subproblems in the subproblem space need not be solved at all, the memoized solution has the advantage of solving only those subproblems that are definitely required
 
 */
+
+1) Overlapping Subproblems
+2) Optimal Substructure
 
 //recursif
 //!!!!!!!!!!!allocation momery exhausted
@@ -78,3 +84,24 @@ function fibonacciOptimized($n)
         $memo[$i%2] = $memo[0]+ $memo[1];
     return $memo[$n%2];
 }
+
+function fact($n)
+{
+    $dp[0]=1;
+    for($i=1;$i<=$n;$i++) {
+        $dp[$i] = $dp[$i-1] * $i;
+    }
+    return $dp[$n];
+}
+
+$dp = [];
+function rec($n) 
+{
+    global $dp;
+    if($n==1) return 1;
+    if(isset($dp[$n])) return $dp[$n];
+    return $dp[$n] = $n * rec($n-1);
+}
+
+echo fact(9).' ';
+echo rec(9);

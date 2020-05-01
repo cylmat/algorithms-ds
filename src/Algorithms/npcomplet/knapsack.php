@@ -3,13 +3,9 @@
  * Knapsack problem
  */
 
-$values = [60, 100, 120];
-$weight = [10, 20, 40];
-$capacity = 50;
-
 if(!function_exists('d')) { function d($v){ return;var_dump($v); }}
 
-function knapSack($capacity, $weight, $values, $n)
+function knapSack(int $capacity, array $weight, array $values, int $n)
 {
     //base case
     if(0==$n || 0==$capacity) return 0;
@@ -29,6 +25,10 @@ function knapSack($capacity, $weight, $values, $n)
     
     return $max;
 }
+
+$values = [60, 100, 120];
+$weight = [10, 20, 40];
+$capacity = 50;
 
 $res = knapSack($capacity, $weight, $values, count($values));
 echo (int)assert($res===180);

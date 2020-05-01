@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Subset Sum
  * 
@@ -7,9 +6,6 @@
  * https://www.techiedelight.com
  * 
  */
-$values = [8, 4, 6, 3];
-$values_f = [8, 4, 5, 3]; //false
-$search = 10;
 
 if(!function_exists('d')) { function d($v){ return;var_dump($v); }}
 
@@ -20,7 +16,7 @@ if(!function_exists('d')) { function d($v){ return;var_dump($v); }}
  * 
  * @return trouvé ou non
  */
-function subsetsum($search, $values, $n): bool
+function subsetsum(int $search, array $values, int $n): bool
 {
     d("- n:".($n)." s:".$search);
     if(0==$n && $search!=0) {d("false");return false;} //not found until last element
@@ -43,7 +39,7 @@ function subsetsum($search, $values, $n): bool
 /**
  * iteratif
  */
-function subsetsum_i($sum, $arr, $n): bool
+function subsetsum_i(int $sum, array $arr, int $n): bool
 {
 	$T=[]; 
 	//$Test=[]; 
@@ -73,6 +69,10 @@ function subsetsum_i($sum, $arr, $n): bool
 	}
 	return $T[$n][$sum];
 }
+
+$values = [8, 4, 6, 3];
+$values_f = [8, 4, 5, 3]; //false
+$search = 10;
 
 //topdown
 $res = subsetsum($search, $values, count($values));
