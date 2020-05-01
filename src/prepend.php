@@ -1,10 +1,5 @@
 <?php
 
-function p($var) 
-{
-    
-}
-
 /*function d($i,$msg)
 { 
     $GLOBALS['d'][$i] = $GLOBALS['d'][$i]??''; 

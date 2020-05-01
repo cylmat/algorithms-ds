@@ -32,4 +32,4 @@ function knapSack($capacity, $weight, $values, $n)
 }
 
 $res = knapSack($capacity, $weight, $values, count($values));
-echo assert($res===180)?1:0;
+echo (int)assert($res===180);
