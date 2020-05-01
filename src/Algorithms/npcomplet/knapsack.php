@@ -1,7 +1,6 @@
 <?php
 /**
  * Knapsack problem
- * - recursivity, dynamic programming
  */
 
 $values = [60, 100, 120];
