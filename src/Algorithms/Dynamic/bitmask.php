@@ -8,7 +8,7 @@
  * result:[1,4], [3,4] 
  */
 
-if(!function_exists('d')) { function d($v){ return;var_dump($v); }}
+if(!function_exists('d')) { function d($v){ return  ;var_dump($v); }}
 
 function bitmask(array $arr, int $value, int $n)
 {
