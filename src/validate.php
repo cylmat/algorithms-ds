@@ -2,6 +2,7 @@
 
 define("RED", "\e[31m");
 define("GREEN", "\e[32m");
+define("ORANGE", "\e[33m");
 define("END", "\e[0m");
 
 $dirs = new RecursiveIteratorIterator(new RecursiveDirectoryIterator('src/algorithms'));
@@ -10,8 +11,11 @@ $dirs = new RecursiveIteratorIterator(new RecursiveDirectoryIterator('src/algori
  * Validate all algorithms files
  */
 $current_dir=null;
-foreach($dirs as $dir) {
+$count = ['valid'=>0, 'warning'=>0, 'alert'=>0];
 
+foreach ($dirs as $dir) {
+
+    // affiche les répertoires
     if (0==strpos($dir->getFilename(),'.') && !preg_match('/src|algorithms/', basename($dir->getRealpath()))) {
         if($current_dir != basename($dir->getRealpath())) {
             $current_dir = basename($dir->getRealpath());
@@ -19,15 +23,40 @@ foreach($dirs as $dir) {
         }
     }
 
-    if(!$dir->isFile() || basename(__FILE__)===$dir->getFilename()) continue;
+    // ne garde que les fichiers
+    if(!$dir->isFile() || 'php'!=$dir->getExtension() || basename(__FILE__)===$dir->getFilename()) continue;
     
+    // echappe les commentaires
     ob_start();
     include $dir->getRealpath();
-    $content = ob_get_clean();
+    $file_content = preg_replace("/^<\?php\s*\n?\r?/",'',file_get_contents($dir->getRealpath()));
+    $printed = ob_get_clean();
     
-    if(preg_match('/1$/',$content)) {
-        echo GREEN . $dir->getFilename() . END . PHP_EOL;
+    $txt = $dir->getFilename() . END . PHP_EOL;
+    // le fichier doit afficher "1" tout a la fin pour être valide
+    if (preg_match('/1$/',$printed)) {
+        // verifie que l'on a un doccomment au debut de ficher et la function 'assert'
+        if (preg_match('/^\/\*\*(.\R?)+assert(.\R?)+/',$file_content)) {
+            echo GREEN . $txt;
+            @$count['valid']++;
+        } else {
+            echo ORANGE . $txt;
+            @$count['warning']++;
+        }
     } else {
-        echo RED . $dir->getFilename() . END . PHP_EOL;
+        echo RED . $txt;
+        @$count['alert']++;
     }
 }
+
+//total
+$total = $count['alert'] + $count['warning'] + $count['valid'];
+if ($count['alert']>0) {
+    echo RED . "ERROR";     
+} else if ($count['warning']>0) {
+    echo ORANGE . "WARNING";     
+} else {
+    echo GREEN . "OK";     
+}
+echo ": (" . $count['valid'] . ") valides, (" . $count['warning'] . ") améliorations et " .
+     "(" . $count['alert'] . ") erreurs sur un total de (" . $total . ")" . END;
