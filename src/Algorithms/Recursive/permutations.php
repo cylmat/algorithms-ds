@@ -4,10 +4,60 @@
  * Print all sentences possible taking one word from a list
  * 
  * ref: http://villemin.gerard.free.fr/aNombre/MOTIF/PermutAl.htm
+ *      https://www.topcoder.com/generating-permutations/
+ *      https://docstore.mik.ua/orelly/webprog/pcook/ch04_26.htm#phpckbk-CHP-4-EX-6
  *      Steinhaus-Jonhson-Trotter
  *      https://fr.wikipedia.org/wiki/Algorithme_de_Heap
  *      https://www.geeksforgeeks.org/generate-all-the-permutation-of-a-list-in-python/
  */
+
+/**
+ * Heap algo
+ * ref: https://fr.wikipedia.org/wiki/Algorithme_de_Heap
+ */
+function permut_heap(array $arr, int $n)
+{ 
+    if (1==$n) {
+        echo join(' ',$arr)."\n"; 
+        return; 
+    }
+    
+    permut_heap($arr, $n-1);
+    
+    // 
+    for ($i=0; $i<$n-1; $i++) {
+        if($n%2) {
+            [$arr[$i],$arr[$n-1]] = [$arr[$n-1],$arr[$i]];
+        } else {
+            [$arr[0],$arr[$n-1]] = [$arr[$n-1],$arr[0]];
+        }
+        permut_heap($arr, $n-1);
+    }
+} 
+
+/**
+ * Permutation par iteration
+ * ref: http://villemin.gerard.free.fr/aInforma/11Recurs.htm#pemute
+ *      https://www.tutorialspoint.com/all-permutations-of-a-string-using-iteration
+ */
+/*function permut_iter($arr, $n)  
+{
+   sort(str.begin(), str.end());
+   while (true){
+      cout << str << endl;
+      int i = str.length() - 1;
+      while (str[i-1] >= str[i]){
+         if (--i == 0)
+         return;
+      }
+      int j = str.length() - 1;
+      while (j > i && str[j] <= str[i - 1])
+      j--;
+      swap(str[i - 1], str[j]);
+      reverse (str.begin() + i, str.end());
+   }
+}
+}*/
 
 /*
 * 
@@ -31,9 +81,6 @@ function permutations_r(array $array, array $perms=[])
     } 
     return $out;
 } 
-
-$arr = ["you", "we", "have"]; 
-echo permutations_r($arr); 
 
 
 
@@ -161,3 +208,5 @@ function zz_rotate($str,$index)
     return $str;
 }
 
+$arr = ["A", "B", "C"]; 
+permut_heap($arr, count($arr));

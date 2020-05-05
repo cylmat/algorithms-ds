@@ -1,7 +1,8 @@
 <?php
 
-// max schedule
-//function d($i,$msg){ $GLOBALS['d'][$i] = $GLOBALS['d'][$i]??''; $GLOBALS['d'][$i] .= $msg;}
+/*
+ * max schedule
+ */
 
 $a=[
     [0, 6, 60],
@@ -11,6 +12,7 @@ $a=[
     [5, 7, 30],
     [7, 8, 10]
 ];
+
 usort($a, function($a,$b){ return $a[0]>$b[0]; });
 
 $m=[];

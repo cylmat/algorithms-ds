@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Tri insertion
+ */
 $a = [56,12,42,8,57,93,2,16,17,49,85];
 
 function triInsertionIter($a)
@@ -24,4 +26,4 @@ function triInsertionIter($a)
 }
 
 $r = triInsertionIter($a);
-print_r($r);
+echo($r);

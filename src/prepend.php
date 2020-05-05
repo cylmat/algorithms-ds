@@ -1,10 +1,6 @@
 <?php
 
-function d($v)
-{ 
-    return;
-    var_dump($v); 
-}
+function d($v){ return; var_dump($v); }
 
 /*
  2d matrix

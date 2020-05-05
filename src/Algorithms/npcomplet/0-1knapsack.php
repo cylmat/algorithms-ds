@@ -3,6 +3,8 @@
  * Knapsack problem
  * Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack
  * 
+ * ref: https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
+ * 
  * - optimisation combinatoire
  */
 
@@ -10,7 +12,6 @@ if(!function_exists('d')) { function d($v){ return;var_dump($v); }}
 
 /**
  * Recursive (top down)
- * https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
  */
 function knapSack(int $capacity, array $weight, array $values, int $n)
 {
@@ -35,7 +36,6 @@ function knapSack(int $capacity, array $weight, array $values, int $n)
 
 /**
  * bottom up (iterative)
- * https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
  */
 function knapSack_i(int $W, array $wt, array $val, int $n) 
 { 
