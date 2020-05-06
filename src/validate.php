@@ -11,7 +11,8 @@ $dirs = new RecursiveIteratorIterator(new RecursiveDirectoryIterator('src/algori
  * Validate all algorithms files
  */
 $current_dir=null;
-$count = ['valid'=>0, 'warning'=>0, 'alert'=>0];
+//$count = ['valid'=>0, 'warning'=>0, 'alert'=>0];
+$valid = $warning = $alert = 0;
 
 foreach ($dirs as $dir) {
 
@@ -32,31 +33,36 @@ foreach ($dirs as $dir) {
     $file_content = preg_replace("/^<\?php\s*\n?\r?/",'',file_get_contents($dir->getRealpath()));
     $printed = ob_get_clean();
     
-    $txt = $dir->getFilename() . END . PHP_EOL;
+    $txt = $dir->getFilename();
+    $end = END . PHP_EOL;
     // le fichier doit afficher "1" tout a la fin pour être valide
     if (preg_match('/1$/',$printed)) {
-        // verifie que l'on a un doccomment au debut de ficher et la function 'assert'
-        if (preg_match('/^\/\*\*(.\R?)+assert(.\R?)+/',$file_content)) {
-            echo GREEN . $txt;
-            @$count['valid']++;
+        // verifie que l'on a un doccomment au debut de ficher, une reference et la function 'assert'
+        $doc = "\/\*\*";
+        $ref = ""; //...
+        $assert = "assert";
+        $sep = "(.\R?)+";
+        if (preg_match("/^{$doc}{$sep}{$ref}{$sep}{$assert}{$sep}/",$file_content)) {
+            echo GREEN . $txt . $end;
+            $valid++;
         } else {
-            echo ORANGE . $txt;
-            @$count['warning']++;
+            echo ORANGE . $txt . $end;
+            $warning++;
         }
     } else {
-        echo RED . $txt;
-        @$count['alert']++;
+        echo RED . $txt . $end;
+        $alert++;
     }
 }
 
 //total
-$total = $count['alert'] + $count['warning'] + $count['valid'];
-if ($count['alert']>0) {
+$total = $alert + $warning + $valid;
+if ($alert>0) {
     echo RED . "ERROR";     
-} else if ($count['warning']>0) {
+} else if ($warning>0) {
     echo ORANGE . "WARNING";     
 } else {
     echo GREEN . "OK";     
 }
-echo ": (" . $count['valid'] . ") valides, (" . $count['warning'] . ") améliorations et " .
-     "(" . $count['alert'] . ") erreurs sur un total de (" . $total . ")" . END;
+echo ": (" . $valid . ") valides, (" . $warning . ") améliorations et " .
+     "(" . $alert . ") erreurs sur un total de (" . $total . ")" . END;

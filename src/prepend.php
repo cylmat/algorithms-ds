@@ -40,3 +40,4 @@ function display_tree(node $node, $d=0)
     echo str_pad('',$d*2,' .') . ' ' . $node->val."\n";
     foreach ($node->childs as $child) display_tree($child, $d+1);
 }
+
