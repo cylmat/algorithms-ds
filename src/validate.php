@@ -38,11 +38,11 @@ foreach ($dirs as $dir) {
     // le fichier doit afficher "1" tout a la fin pour être valide
     if (preg_match('/1$/',$printed)) {
         // verifie que l'on a un doccomment au debut de ficher, une reference et la function 'assert'
-        $doc = "\/\*\*";
-        $ref = ""; //...
-        $assert = "assert";
         $sep = "(.\R?)+";
-        if (preg_match("/^{$doc}{$sep}{$ref}{$sep}{$assert}{$sep}/",$file_content)) {
+        $doc = "^\/\*\*";
+        $ref = " \* ref(s)?:"; //...
+        $assert = "assert";
+        if (preg_match("/{$doc}/",$file_content) && preg_match("/{$ref}/",$file_content) && preg_match("/{$assert}/",$file_content)) {
             echo GREEN . $txt . $end;
             $valid++;
         } else {

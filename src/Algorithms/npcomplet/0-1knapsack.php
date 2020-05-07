@@ -70,5 +70,6 @@ $values = [60, 100, 120];
 $weight = [10, 20, 40];
 $capacity = 50;
 
-$res = knapSack($capacity, $weight, $values, count($values));
-echo (int)assert($res===180);
+$res = knapSack($capacity, $weight, $values, count($values)) === 180;
+$res_i = knapSack_i($capacity, $weight, $values, count($values)) === 180;
+echo (int)assert($res);

@@ -4,6 +4,8 @@
  * 
  * - divide by current-1 until 2
  * - if divided, factor become current and diviser is stored
+ * 
+ * ref: https://www.geeksforgeeks.org/print-all-prime-factors-of-a-given-number/
  */
 
 function find_all_primes_divisors(int $factor, int $current=null): string
@@ -82,9 +84,6 @@ function find_all_primes_until_i(int $max)
 }
 
 $res_div = find_all_primes_divisors(102) === "17 3 2 ";
-//echo $res;
- 
 $res_max = find_all_primes_until_i(10) === "2 3 5 7 ";
-//echo $res;
 
 echo (int)assert($res_div && $res_max); 

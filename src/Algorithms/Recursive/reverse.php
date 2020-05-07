@@ -3,7 +3,8 @@
  * Reverse string
  * 
  * - recursion
- * https://www.geeksforgeeks.org/reverse-a-string-using-recursion/
+ * 
+ * ref: https://www.geeksforgeeks.org/reverse-a-string-using-recursion/
  */
 function reverse(string $arr, string $out=''): string
 { 
@@ -14,4 +15,5 @@ function reverse(string $arr, string $out=''): string
 } 
 
 $str = "alphabeta"; 
-echo (int)assert(reverse($str)==='atebahpla'); 
+$res = reverse($str)==='atebahpla';
+echo (int)assert($res); 

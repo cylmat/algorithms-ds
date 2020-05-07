@@ -7,8 +7,9 @@
  * value: 5
  * result: 3 soit [1,4], [3,4] et [4, 1, 3] (110, 101, 111)
  * 
- * ref: https://www.hackerearth.com/fr/practice/algorithms/dynamic-programming/bit-masking/tutorial/
- * ref: https://www.geeksforgeeks.org/bitmasking-and-dynamic-programming-set-1-count-ways-to-assign-unique-cap-to-every-person/
+ * refs: 
+ *  https://www.hackerearth.com/fr/practice/algorithms/dynamic-programming/bit-masking/tutorial/
+ *  https://www.geeksforgeeks.org/bitmasking-and-dynamic-programming-set-1-count-ways-to-assign-unique-cap-to-every-person/
  */
 
 /**
