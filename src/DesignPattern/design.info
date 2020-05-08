@@ -1,3 +1,8 @@
+[refs]
+https://www.tutorialspoint.com/design_pattern/index.htm (for diagrams)
+https://en.wikipedia.org/wiki/Software_design_pattern
+
+
 [*** Creational ***]
     Runtime
 Abstract factory: Provide an interface for creating familites of relate objects without specify their concrets classes
