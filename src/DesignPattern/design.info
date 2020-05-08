@@ -14,10 +14,12 @@ Adapter/Wrapper: Convert the interface of a class into another interface clients
 Bridge: Decouple an abstraction from its implementation allowing the two to vary independently. 
 Facade: Provide a unified interface to a set of interfaces in a subsystem, makes the subsystem easier to use. 
 
-Composite: Compose objects into tree structures to represent part-whole hierarchies, treat individual and compositions of objects uniformly. 
+    Runtime
 Decorator: Attach additional responsibilities to an object dynamically keeping the same interface, alternative to subclassing.
-Flyweight: Use sharing to support large numbers of similar objects efficiently. 
 Proxy: Provide a surrogate or placeholder for another object to control access to it. 
+
+Composite: Compose objects into tree structures to represent part-whole hierarchies, treat individual and compositions of objects uniformly. 
+Flyweight: Use sharing to support large numbers of similar objects efficiently. 
 
 [*** Behavior ***]
     Runtime
