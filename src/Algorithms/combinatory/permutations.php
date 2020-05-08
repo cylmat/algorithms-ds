@@ -7,7 +7,6 @@
  *      https://www.topcoder.com/generating-permutations/
  *      https://docstore.mik.ua/orelly/webprog/pcook/ch04_26.htm#phpckbk-CHP-4-EX-6
  *      Steinhaus-Jonhson-Trotter
- *      https://fr.wikipedia.org/wiki/Algorithme_de_Heap
  *      https://www.geeksforgeeks.org/generate-all-the-permutation-of-a-list-in-python/
  */
 

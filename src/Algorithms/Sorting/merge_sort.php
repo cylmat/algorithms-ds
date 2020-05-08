@@ -1,6 +1,5 @@
 <?php
-
-/*
+/**
 * itération
 *
 *
@@ -8,7 +7,6 @@
 *
 *
 *
- TODO
 */
 /*function bottomUpMergeSort(inputArray) {
     var length = inputArray.length,

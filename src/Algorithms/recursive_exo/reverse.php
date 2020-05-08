@@ -15,5 +15,5 @@ function reverse(string $arr, string $out=''): string
 } 
 
 $str = "alphabeta"; 
-$res = reverse($str)==='atebahpla';
-echo (int)assert($res); 
+$res = reverse($str);
+echo (int)assert($res==='atebahpla'); 
