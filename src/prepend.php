@@ -3,9 +3,15 @@
 function d($v){ return; var_dump($v); }
 
 /*
- 2d matrix
+ 2d or 3d matrix
  */
-function display_2d_matrix(array $arr)
+function display_matrix(array $arr) {
+    foreach($arr as $a) {
+        _display_2d_matrix($a);
+    }
+}
+
+function _display_2d_matrix(array $arr)
 {
     $SEP = '|'; $s=4;
     echo str_pad('',$s,' ').$SEP;

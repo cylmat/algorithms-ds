@@ -1,0 +1,48 @@
+[Refs]
+https://www.geeksforgeeks.org/top-20-dynamic-programming-interview-questions/
+
+[Info]
+The basic idea behind dynamic programming is breaking a complex problem down to several small and simpleproblems that are repeated
+
+[ex]
+    - The standard All Pair Shortest Path algorithms like Floyd–Warshall and Bellman–Ford 
+    - https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/
+    - https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/
+
+When you solve a dynamic programming problem using tabulation you solve the problem "bottom up", 
+by solving all related sub-problems first, typically by filling up an n-dimensional table. 
+Based on the results in the table, the solution to the "top" / original problem is then computed.
+
+If you use memoization to solve the problem you do it by maintaining a map of already solved sub problems. You do it "top down" 
+in the sense that you solve the "top" problem first (which typically recurses down to solve the sub-problems).
+
+A good slide from here (link is now dead, slide is still good though):
+
+If all subproblems must be solved at least once, a bottom-up dynamic-programming algorithm usually outperforms a top-down memoized algorithm by a constant factor
+No overhead for recursion and less overhead for maintaining table
+There are some problems for which the regular pattern of table accesses in the dynamic-programming algorithm can be exploited to reduce the time or space requirements even further
+If some subproblems in the subproblem space need not be solved at all, the memoized solution has the advantage of solving only those subproblems that are definitely required
+
+1) Overlapping Subproblems
+2) Optimal Substructure
+
+Memoization TOP->DOWN (only required values):
+$memo =[1,1]; 
+function fiboMem($n){
+    global $memo;
+    if (count($memo)>$n) {
+        return $memo[$n];
+    }
+    $result = fiboMem($n-1)+ fiboMem($n-2)    ;
+    $memo[] = $result; # f(n)= f(n-1)+ f(n-2)
+    return $result;
+}
+
+Fibonacci Tabulation BOTTOM->UP (small values first):
+function fibonacci($n) 
+{
+    $memo =[1,1]; # f(0)=1, f(1)=1
+    for($i=2; $i<=$n; $i++)          
+        $memo[] = $memo[$i-1]+ $memo[$i-2];
+    return $memo[$n];
+}
