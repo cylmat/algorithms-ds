@@ -18,13 +18,12 @@
     },
     "scripts": {
         "try":  "php -f",
-        "valid":  "php -f src/validate.php"
+        "valid":  "php -f src/validate.php",
+        "python": "docker run -d -it -v /WEBSERVER/algorithms-ds:/appli -w /appli/src/python --rm --name pyenv pythonbuild bash"
     },
     "extra": {
         "github:kumar91gopi":"Algorithms-and-Data-Structures-in-Ruby",
         "github:TheAlgorithms":"Python",
-
-        "py": "docker run -it --rm --name py python:3.7-slim",
-        "ruby": "docker run -it --rm --name rb ruby:2.5"
+        "python": "docker exec -it pyenv /bin/bash"
     }
 }
