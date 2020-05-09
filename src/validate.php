@@ -41,8 +41,10 @@ foreach ($dirs as $dir) {
         $sep = "(.\R?)+";
         $doc = "^\/\*\*";
         $ref = " \* ref(s)?:"; //...
+        $todo = "\@todo";
         $assert = "assert";
-        if (preg_match("/{$doc}/",$file_content) && preg_match("/{$ref}/",$file_content) && preg_match("/{$assert}/",$file_content)) {
+        if (preg_match("/{$doc}/",$file_content) && preg_match("/{$ref}/",$file_content) && 
+            preg_match("/{$assert}/",$file_content) && !preg_match("/{$todo}/",$file_content)) {
             echo GREEN . $txt . $end;
             $valid++;
         } else {
@@ -58,9 +60,9 @@ foreach ($dirs as $dir) {
 //total
 $total = $alert + $warning + $valid;
 if ($alert>0) {
-    echo RED . "ERROR";     
+    echo RED . " * Must be a doc comment, a ref, an assert and no @todo\nERROR";     
 } else if ($warning>0) {
-    echo ORANGE . "WARNING";     
+    echo ORANGE . " * Must be a doc comment, a ref, an assert and no @todo\nWARNING";     
 } else {
     echo GREEN . "OK";     
 }

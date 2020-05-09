@@ -22,6 +22,9 @@
     },
     "extra": {
         "github:kumar91gopi":"Algorithms-and-Data-Structures-in-Ruby",
-        "github:TheAlgorithms":"Python"
+        "github:TheAlgorithms":"Python",
+
+        "py": "docker run -it --rm --name py python:3.7-slim",
+        "ruby": "docker run -it --rm --name rb ruby:2.5"
     }
 }
