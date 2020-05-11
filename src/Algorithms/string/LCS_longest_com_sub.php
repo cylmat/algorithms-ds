@@ -1,6 +1,9 @@
 <?php
 /**
  * Longest Common Subsequence
+ * 
+ * @todo
+ * ref: https://www.geeksforgeeks.org/longest-common-subsequence-dp-4/
  */
 
 if(!function_exists('d')) { function d($v){ return;var_dump($v); }}
