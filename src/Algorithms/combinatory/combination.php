@@ -5,7 +5,8 @@
  * 
  * ref: https://www.rosettacode.org/wiki/Combinations#PHP
  */
-function combinations_set($set = [], $size = 0) {
+function combinations_set(array $set = [], int $size = 0): array
+{
     if ($size == 0) {
         return [[]];
     }
@@ -28,7 +29,7 @@ function combinations_set($set = [], $size = 0) {
     return $result;
 }
 
-function combination_integer($n, $m) {
+function combination_integer(int $n, int $m): array {
     return combinations_set(range(0, $n-1), $m);
 }
 $r=combination_integer(5, 3);
@@ -42,14 +43,17 @@ $r=combination_integer(5, 3);
  * 10
  * 11
  */
-$out = '';
-$t =['0','1'];
+function binary_i()
+{
+    $out = '';
+    $t =['0','1'];
 
-for($y=0; $y<2; $y++) {
-    for($z=0; $z<2; $z++) {
-        for($j=0; $j<2; $j++) {
-            for($c=0; $c<2; $c++) {
-                $out .= $t[$y] . $t[$z] . $t[$j] . $t[$c] . "\n";
+    for($y=0; $y<2; $y++) {
+        for($z=0; $z<2; $z++) {
+            for($j=0; $j<2; $j++) {
+                for($c=0; $c<2; $c++) {
+                    $out .= $t[$y] . $t[$z] . $t[$j] . $t[$c] . "\n";
+                }
             }
         }
     }

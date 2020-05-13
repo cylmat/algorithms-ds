@@ -1,6 +1,8 @@
-1. http://www.informatix.fr/articles/php/le-lazy-load-en-php-143
-
+<?php
+/*
+http://www.informatix.fr/articles/php/le-lazy-load-en-php-143
 CLOSURE
+*/
 class Client
 {
         protected $commandes = null;
@@ -29,7 +31,9 @@ class Client
         }
 }
 
-BUILD
+/*
+With BUILD
+*/
 class Client
 {
         protected $commandes = null;
@@ -58,8 +62,9 @@ class Client
         }
 }
 
+/*
 2. https://verraes.net/2011/05/lazy-loading-with-closures/
-
+*/
 class CustomerRepository
 {
     public function find($id)
