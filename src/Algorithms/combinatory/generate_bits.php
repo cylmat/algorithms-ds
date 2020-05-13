@@ -67,3 +67,5 @@ function bits_array(int $max, int $c=1): array
     return $out;
 }
 $res1 = bits_array(3);
+
+echo (int)assert(true);

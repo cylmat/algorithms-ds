@@ -30,6 +30,7 @@ $res_ac = all_combinations($arr, count($arr), $length);
 
 /**
  * iteratives way
+ * - print aaa, aab ... bbb
  * 
  * ref: https://stackoverflow.com/questions/31175503/iteratively-find-all-combinations-of-size-k-of-an-array-of-characters-n-choose
  */
@@ -74,5 +75,36 @@ function buildStrings_i(array $root, int $length): void
     }
 }
 buildStrings_i(['a','b'], 3);
+
+/**
+ * Print all combination of numbers 
+ *  - print 12, 13, 14, 15, 23, 24, 25, 34, 35 ...
+ * 
+ * ref: https://www.rosettacode.org/wiki/Combinations#PHP
+ */
+function combinations_set(array $set = [], int $size = 0): array
+{
+    if ($size == 0) {
+        return [[]];
+    }
+ 
+    if ($set == []) {
+        return [];
+    }
+ 
+    $prefix = [array_shift($set)];
+    $result = [];
+ 
+    foreach (combinations_set($set, $size-1) as $suffix) {
+        $result[] = array_merge($prefix, $suffix);
+    }
+ 
+    foreach (combinations_set($set, $size) as $next) {
+        $result[] = $next;
+    }
+ 
+    return $result;
+}
+$res=combinations_set(range(0, 5), 3);
 
 echo (int)assert(true);

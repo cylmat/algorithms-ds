@@ -1,38 +1,13 @@
 <?php
 /**
  * Permutation
- * Print all sentences possible taking one word from a list
+ * - Print all sentences possible taking one word from a list
  * 
  * ref: http://villemin.gerard.free.fr/aNombre/MOTIF/PermutAl.htm
- *      https://www.topcoder.com/generating-permutations/
+ *      https://www.topcoder.com/generating-permutations
  *      https://docstore.mik.ua/orelly/webprog/pcook/ch04_26.htm#phpckbk-CHP-4-EX-6
- *      Steinhaus-Jonhson-Trotter
- *      https://www.geeksforgeeks.org/generate-all-the-permutation-of-a-list-in-python/
+ *      https://www.geeksforgeeks.org/generate-all-the-permutation-of-a-list-in-python
  */
-
-/**
- * Heap algo
- * ref: https://fr.wikipedia.org/wiki/Algorithme_de_Heap
- */
-function permut_heap(array $arr, int $n)
-{ 
-    if (1==$n) {
-        echo join(' ',$arr)."\n"; 
-        return; 
-    }
-    
-    permut_heap($arr, $n-1);
-    
-    // 
-    for ($i=0; $i<$n-1; $i++) {
-        if($n%2) {
-            [$arr[$i],$arr[$n-1]] = [$arr[$n-1],$arr[$i]];
-        } else {
-            [$arr[0],$arr[$n-1]] = [$arr[$n-1],$arr[0]];
-        }
-        permut_heap($arr, $n-1);
-    }
-} 
 
 /**
  * Permutation par iteration
@@ -60,9 +35,8 @@ function permut_heap(array $arr, int $n)
 
 /*
 * 
-*
 */
-function permutations_r(array $array, array $perms=[])
+function permutations(array $array, array $perms=[])
 { 
     // Base
     if (empty($array)) { 
@@ -76,12 +50,11 @@ function permutations_r(array $array, array $perms=[])
         $newperms = $perms; 
         $foo = array_splice($newitems, $i, 1)[0]; 
         array_unshift($newperms, $foo); //ajoute au debut
-        $out .= permutations_r($newitems, $newperms); 
+
+        $out .= permutations($newitems, $newperms); 
     } 
     return $out;
 } 
-
-
 
 /**
  * * https://www.techiedelight.com/combinations-phrases-formed-picking-words-lists/
@@ -158,48 +131,49 @@ void print(string arr[R][C])
 } */
 
 /*
-*
-*/
-function yypermute($arg) {
-    $array = is_string($arg) ? str_split($arg) : $arg;
-    if(1 === count($array))
+ * Permutation of array
+ *  Input: ['a','b','c']
+ *  Output:  [a,b,c], [a,c,b], [b,a,c] ...
+ */
+function permute_array(array $array): array 
+{
+    if(1 === count($array)) {
         return $array;
+    }
+        
     $result = array();
-    foreach($array as $key => $item)
-        foreach(yypermute(array_diff_key($array, array($key => $item))) as $p)
+    foreach($array as $key => $item) {
+        foreach (permute_array(array_diff_key($array, array($key => $item))) as $p) {
             $result[] = $item . $p;
+        }
+    }
     return $result;
 }
+$res_a = permute_array(['a','b','c']);
 
 /*
-*
+* Print all rotations of input string recursively
+* - abc -> abc, acb, cab, cba, bca, bac (in the opposite way)
 */
-function zzpermute($str,$index=0,$count=0)
+function permute_chars(string $str, int $index=0, int $count=0): void
 {
-    if($count == strlen($str)-$index)
+    if($count == strlen($str)-$index) {
         return;
-
-    $str = zz_rotate($str,$index);
-    if($index==strlen($str)-2)//reached to the end, print it
-    {
-        echo $str."<br> ";//or keep it in an array
     }
 
-    zzpermute($str,$index+1);//rotate its children
-    zzpermute($str,$index,$count+1);//rotate itself
-}
-
-function zz_rotate($str,$index)
-{
-    $tmp = $str[$index];
-    $i=$index;
-    for($i=$index+1;$i<strlen($str);$i++)
-    {
-        $str[$i-1] = $str[$i];
+    //transfert $index at the end of string 
+    //al(p)ha -> alha(p)
+    $str = substr($str, 0, $index) . substr($str, $index+1) . $str{$index};
+    if ($index==strlen($str)-2) { //reached to the end, print it
+        echo "$str\n";//or keep it in an array
     }
-    $str[$i-1] = $tmp;
-    return $str;
-}
 
-$arr = ["A", "B", "C"]; 
-permut_heap($arr, count($arr));
+    permute_chars($str, $index+1); //rotate its children
+    permute_chars($str, $index, $count+1); //rotate itself
+}
+permute_chars('abc'); //rotate its children
+
+
+
+//validate
+echo (int)assert(true);

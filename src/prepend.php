@@ -34,11 +34,11 @@ function _display_2d_matrix(array $arr)
 }
 
 if(!class_exists('node')) {
-class node 
-{ 
+class node { 
     public $val, $childs=[]; 
     function __construct($v=null) { $this->val=$v; } 
-    function add($v) { $n = new node($v); $this->childs[] = $n; return $n; }}
+    function add($v) { $n = new node($v); $this->childs[] = $n; return $n; }
+}
 }
 
 function display_tree(node $node, $d=0)
@@ -46,4 +46,3 @@ function display_tree(node $node, $d=0)
     echo str_pad('',$d*2,' .') . ' ' . $node->val."\n";
     foreach ($node->childs as $child) display_tree($child, $d+1);
 }
-

@@ -10,14 +10,14 @@
  * Heap algo
  * ref: https://fr.wikipedia.org/wiki/Algorithme_de_Heap
  */
-function heap_permut(array $arr, int $n): void
+function permut_heap(array $arr, int $n): void
 { 
     if (1==$n) {
         echo join(' ',$arr)."\n"; 
         return; 
     }
     
-    heap_permut($arr, $n-1);
+    permut_heap($arr, $n-1);
     
     // 
     for ($i=0; $i<$n-1; $i++) {
@@ -26,9 +26,12 @@ function heap_permut(array $arr, int $n): void
         } else {
             [$arr[0],$arr[$n-1]] = [$arr[$n-1],$arr[0]];
         }
-        heap_permut($arr, $n-1);
+        permut_heap($arr, $n-1);
     }
 } 
 
 $arr = ["A", "B", "C"]; 
-heap_permut($arr, count($arr));
+permut_heap($arr, count($arr));
+
+//validate
+echo (int)assert(true);
