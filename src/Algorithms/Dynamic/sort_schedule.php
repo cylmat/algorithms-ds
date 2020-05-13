@@ -23,16 +23,6 @@
 
 if(!function_exists('d')) { function d($v){ return;var_dump($v); }}
 
-//[beginning, end, importance 'weight' of job]
-$jobs=[
-    [0, 6, 60], //begin at 0, end at 6, very importante
-    [1, 4, 30],
-    [3, 5, 10], //least importante
-    [5, 9, 50],
-    [5, 7, 30],
-    [7, 8, 10]
-];
-
 /**
  * iterative
  */
@@ -66,6 +56,16 @@ function sort_schedule_i(array $jobs, int $n): array
 
     return $m[array_search(max($count),$count)];;
 }
+
+//[beginning, end, importance 'weight' of job]
+$jobs=[
+    [0, 6, 60], //begin at 0, end at 6, very importante
+    [1, 4, 30],
+    [3, 5, 10], //least importante
+    [5, 9, 50],
+    [5, 7, 30],
+    [7, 8, 10]
+];
 
 $res = sort_schedule_i($jobs, count($jobs));
 echo (int)assert($res===[ [1,4,30], [5,9,50]]);

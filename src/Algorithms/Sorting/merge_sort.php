@@ -1,13 +1,13 @@
 <?php
 /**
-* itération
+* Merge sort
+* Divides input array in two halves, calls itself for the two halves and then merges the two sorted halves.
 *
-*
-*
-*
-*
-*
+* - divide and conquer
+* 
+* ref: https://www.geeksforgeeks.org/merge-sort/
 */
+
 /*function bottomUpMergeSort(inputArray) {
     var length = inputArray.length,
         size = 1,

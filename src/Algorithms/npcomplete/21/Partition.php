@@ -3,10 +3,11 @@
  * Partition problem 
  * - Determine whether a given set can be partitioned into two subsets such that the sum of elements in both subsets is same
  * 
- * ref: https://www.geeksforgeeks.org/partition-problem-dp-18/
+ * Input:  arr[] = {1, 5, 11, 5}
+ * Output: true 
+ *  -> {1, 5, 5} and {11}
  * 
- * arr[] = {1, 5, 11, 5}
- * Output: true -> {1, 5, 5} and {11}
+ * ref: https://www.geeksforgeeks.org/partition-problem-dp-18/
  */
 
 
@@ -21,4 +22,3 @@
  * Subset2 = {11}, sum of Subset2 = 11   
  * Diff: 1  
  */
-

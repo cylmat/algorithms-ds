@@ -1,6 +1,8 @@
-[ref]
-https://www.geeksforgeeks.org/recursion-practice-problems-solutions/
-https://www.techiedelight.com/recursion-practice-problems-with-solutions/
+<?php
+/**
+ * https://www.geeksforgeeks.org/recursion-practice-problems-solutions/
+ * https://www.techiedelight.com/recursion-practice-problems-with-solutions/
+ */
 
 /**
 * double boucle iterative to recursive

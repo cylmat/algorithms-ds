@@ -1,12 +1,12 @@
 <?php
 /**
- * Longest increasing subsequence
- * ex:
- * Input  : arr[] = {3, 10, 2, 1, 20}
- * Output : Length of LIS = 3
- * The longest increasing subsequence is 3, 10, 20
+ * Longest Increasing Subsequence
  * 
- * - Overlapping Subproblems (subproblems which are solved again and again) and Optimal Substructure properties. 
+ * Input  : arr[] = {3, 10, 2, 1, 20}
+ * Output : 3
+ *  -> 3, 10, 20
+ * 
+ * - dynamic
  * 
  * ref: https://www.geeksforgeeks.org/longest-increasing-subsequence-dp-3/
  */

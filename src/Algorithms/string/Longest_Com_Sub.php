@@ -2,7 +2,12 @@
 /**
  * Longest Common Subsequence
  * 
+ * - np-complete
+ * - dynamic
+ * - string
+ * 
  * @todo
+ * 
  * ref: https://www.geeksforgeeks.org/longest-common-subsequence-dp-4/
  */
 

@@ -1,16 +1,16 @@
 <?php
 /**
  * Subset Sum
+ * - Determine if there is a subset of the given set with sum equal to given sum.
  * 
- * Determine if there is a subset of the given set with sum equal to given sum.
- * [2, 5, 3] = 10 
- * [4, 7] != 10
+ * Input: [2, 5, 3], sum: 10 - Output: true
+ * Input: [4, 7],    sum: 10 - Output: false
+ * 
+ * - Bitmasking
  * 
  * refs:
  * 	https://www.geeksforgeeks.org/subset-sum-problem-dp-25/
  * 	https://www.techiedelight.com/subset-sum-problem/
- * 
- * (see bitmask)
  */
 
 if(!function_exists('d')) { function d($v){ return;var_dump($v); }}

@@ -1,8 +1,7 @@
 <?php
 /**
- * Pattern Searching
- * 
- * prints all occurrences of pattern in txt
+ * Knuth–Morris–Pratt - Pattern Searching
+ * Prints all occurrences of pattern in a string
  * 
  * Input:  txt =  "AABAACAADAABAABA",   pattern =  "AABA"
  * Output: Pattern found at index [0, 9 and 12]

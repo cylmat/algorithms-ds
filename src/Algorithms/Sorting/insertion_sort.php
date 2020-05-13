@@ -1,8 +1,12 @@
 <?php
 /**
- * Tri insertion
+ * Insertion sort
+ * Works the way we sort playing cards in our hands.
+ * 
+ * ref: https://www.geeksforgeeks.org/insertion-sort/
  */
-$a = [56,12,42,8,57,93,2,16,17,49,85];
+
+if (!function_exists('d')) { function d($v){ return;var_dump($v); }}
 
 function triInsertionIter($a)
 {
@@ -11,19 +15,16 @@ function triInsertionIter($a)
     for ($i=1; $i<count($a); $i++) { //echo "i $i:{$a[$i]}\n";
     
         $key=$a[$i];
-    //if key < previous push previous forward
+        //if key < previous push previous forward
         for ($j=$i; $j>0 && $a[$j-1]>$key; $j--) { // echo "j $j:{$a[$j]}\n";
-                $a[$j]=$a[$j-1]; 
-             //echo "{$a[$j-1]} > {$a[$j]}\n";
-        //echo $j.' => '.implode('-',$a)." : \n";    
+                $a[$j]=$a[$j-1];    
         }
         $a[$j] = $key;
-        //echo implode('-',$a)."\n";
     }
-    //put key at this place 
-    
     return $a;
 }
+
+$a = [56,12,42,8,57,93,2,16,17,49,85];
 
 $r = triInsertionIter($a);
 echo($r);

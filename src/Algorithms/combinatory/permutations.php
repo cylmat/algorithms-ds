@@ -117,7 +117,6 @@ $str = "ABC";
 lpermute($str,0,strlen($str)); // call the function.
 */
 
-
 /**
  * https://www.geeksforgeeks.org/recursively-print-all-sentences-that-can-be-formed-from-list-of-word-lists/
  * (DFS approach)
@@ -158,9 +157,6 @@ void print(string arr[R][C])
         printUtil(arr, 0, i, output); 
 } */
 
-
-
-
 /*
 *
 */
@@ -174,8 +170,6 @@ function yypermute($arg) {
             $result[] = $item . $p;
     return $result;
 }
-
-
 
 /*
 *

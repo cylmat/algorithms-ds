@@ -1,7 +1,7 @@
 <?php
 /**
  * Knapsack problem
- * Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack
+ * - Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack
  * 
  * ref: https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
  * 

@@ -2,6 +2,7 @@
 /**
  * Find primes numbers of given factor
  * 
+ * algorithm:
  * - divide by current-1 until 2
  * - if divided, factor become current and diviser is stored
  * 
