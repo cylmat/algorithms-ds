@@ -24,6 +24,7 @@
     "extra": {
         "github:kumar91gopi":"Algorithms-and-Data-Structures-in-Ruby",
         "github:TheAlgorithms":"Python",
+        "github:jilljenn":"tryalgo",
         "python": "docker exec -it pyenv /bin/bash"
     }
 }
