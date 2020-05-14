@@ -39,11 +39,10 @@ function subsetsum(int $search, array $values, int $n): bool
 }
 $search = 10;
 $values = [8, 4, 6, 3];
-$res = subsetsum($search, $values, count($values));
-
+$res_subsum = subsetsum($search, $values, count($values)); //true
 
 /**
- * Iterative way
+ * Iterative way (bottom-up)
  * 
  * ref: https://www.geeksforgeeks.org/subset-sum-problem-dp-25
  */
@@ -88,108 +87,43 @@ $sum = 10;
 $arr = [8, 4, 6, 3];
 $res_i = subsetsum_i($sum, $arr, count($arr));
 
-/*  
- * cherche si il existe des éléments 
- dont la somme est égale à $sum
-RECURSIF arbre binaire enlève la somme au fur et a mesure
-*/
-$sub=[];
-function isSubsetSum($array, $i, $sub_array, $sum)
+
+/**
+ * Topdown
+ * 
+ * - recursive
+ * - binary tree
+ * 
+ * refs:
+ *  https://iq.opengenus.org/subset-sum-problem-recursive-approach
+ *  https://www.geeksforgeeks.org/subset-sum-backtracking-4
+ */
+function isSubsetSum(array $array, int $n, int $sum, array $sub_array=[], array &$results=[]): bool
 {
-    global $sub;
     // END si plus d'éléments ou somme dépassée
-    if($i<0) {d('tI ');return false;}
-    if($sum<0) {d('tS '.$sum);return false;}
- 
+    if ($n==0 || $sum<0) {return false;}
+    
     // YES si somme atteinte retourne true
-    if($array[$i]===$sum) {
-        {d(' YES'.$i.':'.$array[$i].'! ');array_push($sub,$array[$i]);return $array[$i];} 
+    if ($array[$n-1]===$sum) {
+        
+        array_push($results, $array[$n-1]);
+        return $array[$n-1]; 
     }
     
     // inclus l'élément suivant
-    $include = isSubsetSum($array, $i-1, $sub_array, $sum-$array[$i]);
-    if($include) {d(' .Inc'.($i).'. '); array_push($sub,$array[$i]);}
+    $include = isSubsetSum($array, $n-1, $sum-$array[$n-1], $sub_array, $results);
+    if ($include) {
+        array_push($results, $array[$n-1]);
+    }
     
     // exclus l'élément
-    $exclude = isSubsetSum($array, $i-1, $sub_array, $sum);
-    if($exclude) {d(' .Exc'.($i).'. ');}
-    
-    //array_push($sub_array, $exclude);
-    return $include?$include:$exclude;
+    $exclude = isSubsetSum($array, $n-1, $sum, $sub_array, $results);
+    return $include ?: $exclude;
 }
-  
-// Driver Code
-$set = array(9, 1, 2, 12, 3, 8); //34, 4, 12, 5, 2); 
-
-/*$r = isSubsetSum($set, count($set)-1, [], 10);
-print_r($sub);
-//print_r($r);
+$set = array(9, 1, 2, 12, 3, 8); 
+$sum = 11;
+$results = [];
+$res_is = isSubsetSum($set, count($set), $sum, $results); 
 
 
-if (isSubsetSum($set, count($set)-1, [], 12))
-    echo "Found a subset with given sum"; 
-else
-    echo "No subset with given sum"; */
-    
-    
-// SOURCES
-//
-//https://iq.opengenus.org/subset-sum-problem-recursive-approach/
-//https://www.geeksforgeeks.org/subset-sum-backtracking-4/
-
-function subset_sum($list, $index, $sum)
-{
-    //p( "i=$index : sum=$sum".PHP_EOL);
-    
-    //BUT trouvé!!!
-    if ($sum == 0) { //p( 'find!'.PHP_EOL);//fin du comptage
-        return true;
-    }
-        
-        //Finally, we return true if we get subset by including or excluding current item else we return false
-        //print count($list) . $index.PHP_EOL;
-    //if ($index == count($list)) {//print $index;
-    
-    //LAST element
-    /*if((count($list) - $index) == 1) { print "list[zero]=$list[0] : sum=$sum".PHP_EOL;
-         if($list[0] === $sum) //trouvé!!!
-             return true;
-         else
-             return false; //nop
-    }*/
-    if ($index > count($list)-1 || $sum < 0) {
-        return false; 
-    }
-    
-     // include current element in subset and recurse the remaining elements within remaining sum
-      $sum_moins_current = $sum - $list[$index];
-      $inc = subset_sum($list, $index + 1, $sum_moins_current); //enleve la sum au fur et a mesure
-      //p( "r1=$inc".PHP_EOL);
-      
-     //We exclude current element from subset and recurse for remaining elements.
-      $ex = subset_sum($list, $index + 1, $sum);
-      //p("r2=$ex".PHP_EOL);
-     
-     return $inc ? $inc : $ex;      
-}
-$list =  [2, 6, 11, 7, 18];
-//$r=subset_sum([2, 9, 10, 1, 99, 3], 0, 4);
-
-for($i=2; $i<15; $i++) {
-    //echo $i;
-    $r=subset_sum($list, 0, $i);
-}
-
-
-$values = [8, 4, 6, 3];
-$values_f = [8, 4, 5, 3]; //false
-$search = 10;
-
-//topdown
-$res = subsetsum($search, $values, count($values));
-$res_f = !subsetsum($search, $values_f, count($values_f));
-
-//iter
-$ires = subsetsum($search, $values, count($values));
-
-echo (int)assert($res && $res_f && $ires);
+echo (int)assert($res_subsum && $res_i && $res_is);
