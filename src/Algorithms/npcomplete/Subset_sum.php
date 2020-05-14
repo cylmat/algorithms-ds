@@ -9,19 +9,18 @@
  * - Bitmasking
  * 
  * refs:
- * 	https://www.geeksforgeeks.org/subset-sum-problem-dp-25/
- * 	https://www.techiedelight.com/subset-sum-problem/
+ * 	https://www.geeksforgeeks.org/subset-sum-problem-dp-25
+ * 	https://www.techiedelight.com/subset-sum-problem
  */
 
 if(!function_exists('d')) { function d($v){ return;var_dump($v); }}
 
 /**
- * Recherche si une valeur (ex: 10) existe dans la somme d'un tableau 
- * ex: [2, 5, 3]=10 
- * [4, 7]!=10
+ * Search if a value (ex: 10) exists in subset of array
  * 
- * @return trouvé ou non
+ * @return find or not
  */
+$memoization=[];
 function subsetsum(int $search, array $values, int $n): bool
 {
     d("- n:".($n)." s:".$search);
@@ -30,58 +29,71 @@ function subsetsum(int $search, array $values, int $n): bool
 
 	//if($memoization) {
 	//select if current element can be included or not
-    d("n:".($n-1)." s:".$search." v:".$values[$n-1]."");
     $with = subsetsum($search, $values, $n-1);
 	$out  = subsetsum($search-$values[$n-1], $values, $n-1);
 	//}
 
 	$res = $out || $with;
-	//$memoization = $res;
+	$memoization = $res;
     return $res;
 }
+$search = 10;
+$values = [8, 4, 6, 3];
+$res = subsetsum($search, $values, count($values));
+
 
 /**
- * iteratif
+ * Iterative way
+ * 
+ * ref: https://www.geeksforgeeks.org/subset-sum-problem-dp-25
+ */
+/*
+        |0   |1   |2   |3   |4   |5   |6   |7   |8   |9   |10  |
+    0   |1   |    |    |    |    |    |    |    |    |    |    |
+    1   |1   |    |    |    |    |    |    |    |1   |    |    |
+    2   |1   |    |    |    |1   |    |    |    |1   |    |    |
+    3   |1   |    |    |    |1   |    |1   |    |1   |    |1   |
+    4   |1   |    |    |1   |1   |    |1   |1   |1   |1   |1   |
  */
 function subsetsum_i(int $sum, array $arr, int $n): bool
 {
 	$T=[]; 
-	//$Test=[]; 
-
-	for ($j = 1; $j <= $sum; $j++) {
-		$T[0][$j] = false; 
-	}
-
+	
+	//init Tab values
 	for ($i = 0; $i <= $n; $i++) {
-		$T[$i][0] = true;
+		$T[$i][0] = true; //every (0) of each row
+	}
+	for ($j = 1; $j <= $sum; $j++) {
+		$T[0][$j] = false; //each col from 1st row
 	}
 
-	for ($i = 1; $i <= $n; $i++) 
-	{
-		for ($j = 1; $j <= $sum; $j++)
-		{
-			if ($arr[$i-1] > $j) {
-                $T[$i][$j] = $T[$i-1][$j];
-				//$Test[$i][$j] = $arr[$i-1].">".$j." : T[".($i-1)."][$j]=".(int)$T[$i-1][$j];
-			}
-			else {
-			// find subset with sum j by excluding or including the ith item
-                $T[$i][$j] = $T[$i-1][$j-$arr[$i-1]];
-                //$Test[$i][$j] = "T[".($i-1)."][$j] || T[".($i-1)."][$j-".$arr[$i-1]."]=".(int)$T[$i-1][$j-$arr[$i-1]];//$T[$i-1][$j] || $T[$i-1][$j - $arr[$i-1]];
+    //for each row value in array
+	for ($i = 1; $i <= $n; $i++) { 
+	    //fill each col until value-1
+		for ($j = 1; $j <= $sum; $j++) {
+		    // find subset with sum j by excluding or including the ith item
+			if ($arr[$i-1] > $j) { //if value if more than j
+                $T[$i][$j] = $T[$i-1][$j]; //copy value from prev row
+			} else { 
+			    //
+			    $diff_value = $j-$arr[$i-1]; //copy (col_num - previous_value)
+                $T[$i][$j] = $T[$i-1][$j] || $T[$i-1][$diff_value];
 			}
 		}
 	}
-	return $T[$n][$sum];
+	//display_2d_matrix($T);
+	return $T[$n][$sum]; //(4)(10)
 }
+$sum = 10;
+$arr = [8, 4, 6, 3];
+$res_i = subsetsum_i($sum, $arr, count($arr));
 
-
-/*  cherche si il existe des éléments 
+/*  
+ * cherche si il existe des éléments 
  dont la somme est égale à $sum
-RECURSIF arbre binaire
-enlève la somme au fur et a mesure
+RECURSIF arbre binaire enlève la somme au fur et a mesure
 */
 $sub=[];
-
 function isSubsetSum($array, $i, $sub_array, $sum)
 {
     global $sub;
@@ -160,19 +172,13 @@ function subset_sum($list, $index, $sum)
      
      return $inc ? $inc : $ex;      
 }
-
-
 $list =  [2, 6, 11, 7, 18];
 //$r=subset_sum([2, 9, 10, 1, 99, 3], 0, 4);
-    //var_dump($r);
 
 for($i=2; $i<15; $i++) {
     //echo $i;
     $r=subset_sum($list, 0, $i);
-    //var_dump($r);
 }
-
-
 
 
 $values = [8, 4, 6, 3];
@@ -186,4 +192,4 @@ $res_f = !subsetsum($search, $values_f, count($values_f));
 //iter
 $ires = subsetsum($search, $values, count($values));
 
-//echo (int)assert($res && $res_f && $ires);
+echo (int)assert($res && $res_f && $ires);

@@ -1,7 +1,7 @@
 <?php
 /**
  * Heap algorithm
- * Print all sentences possible taking one word from a list
+ *  - Print all sentences possible taking one word from a list
  * 
  * ref: https://en.wikipedia.org/wiki/Heap%27s_algorithm
  */

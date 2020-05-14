@@ -1,7 +1,7 @@
 <?php
 /**
  * Print all bits combinations 
- * with string "$out" inside parameters
+ *  with string "$out" inside parameters
  * 
  * - print 000,001,010,011,100 ... 111
  */
@@ -28,7 +28,7 @@ bits_str(3);
 
 /*
  * Version with string returned
- * with string "$out" inside parameters
+ *  with string "$out" inside parameters
  * 
  * - return 00 01 10 11.... until max
  */
@@ -68,4 +68,6 @@ function bits_array(int $max, int $c=1): array
 }
 $res1 = bits_array(3);
 
+
+//validate
 echo (int)assert(true);

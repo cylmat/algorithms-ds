@@ -107,4 +107,6 @@ function combinations_set(array $set = [], int $size = 0): array
 }
 $res=combinations_set(range(0, 5), 3);
 
+
+//valid
 echo (int)assert(true);

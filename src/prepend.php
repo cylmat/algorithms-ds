@@ -6,13 +6,13 @@ function dd($v){ d($v); die(); }
 /*
  2d or 3d matrix
  */
-function display_matrix(array $arr) {
+function display_3d_matrix(array $arr) {
     foreach($arr as $a) {
-        _display_2d_matrix($a);
+        display_2d_matrix($a);
     }
 }
 
-function _display_2d_matrix(array $arr)
+function display_2d_matrix(array $arr)
 {
     $SEP = '|'; $s=4;
     echo str_pad('',$s,' ').$SEP;

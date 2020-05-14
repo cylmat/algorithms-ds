@@ -13,8 +13,6 @@
 
 if(!function_exists('d')) { function d($v){ return;var_dump($v); }}
 
-$arr = [0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15];
-
 function lis(array $arr, int $i, int $prev): int
 {
     //base case
@@ -32,6 +30,8 @@ function lis(array $arr, int $i, int $prev): int
     $res = max($inc, $exc); 
     return $res;
 }
-
+$arr = [0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15];
 $res = lis($arr,0,-max($arr));
+
+//valid
 echo (int)assert($res===5);
