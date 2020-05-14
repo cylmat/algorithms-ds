@@ -17,7 +17,9 @@
         "mikecao/flight": "^1.3"
     },
     "scripts": {
+        "test":  "php -f src/test.php",
         "try":  "php -f",
+        "rand":  "php -f src/rand.php",
         "valid":  "php -f src/validate.php",
         "python": "docker run -d -it -v /WEBSERVER/algorithms-ds:/appli -w /appli/src/python --rm --name pyenv pythonbuild bash"
     },

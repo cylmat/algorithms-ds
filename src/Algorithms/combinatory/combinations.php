@@ -29,7 +29,7 @@ $length = 3;
 $res_ac = all_combinations($arr, count($arr), $length);
 
 /**
- * iteratives way
+ * Iteratives way
  * - print aaa, aab ... bbb
  * 
  * ref: https://stackoverflow.com/questions/31175503/iteratively-find-all-combinations-of-size-k-of-an-array-of-characters-n-choose

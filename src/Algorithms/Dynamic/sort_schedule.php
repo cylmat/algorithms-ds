@@ -1,19 +1,19 @@
 <?php
 /** 
  * Weighted Job Scheduling
- * Find the maximum profit subset of jobs such that no two jobs in the subset overlap. 
+ *  - Find the maximum profit subset of jobs such that no two jobs in the subset overlap. 
  * 
- * Input: 
- * $jobs=[
- *  [0, 6, 60], //begin at 0, end at 6, very importante
+ * Input: [
+ *  [0, 6, 60], //begin at 0, end at 6, 60 weight
  *  [1, 4, 30],
- *  [3, 5, 10], //least importante
+ *  [3, 5, 10], //10 weight
  *  [5, 9, 50],
  *  [5, 7, 30],
  *  [7, 8, 10]
  * ];
  * 
- * Output: [1, 4, 30], [5, 9, 50] (total: 80)
+ * Output: [1, 4, 30], [5, 9, 50] 
+ *  -> (total: 80)
  * 
  * refs:
  *  https://www.geeksforgeeks.org/weighted-job-scheduling/

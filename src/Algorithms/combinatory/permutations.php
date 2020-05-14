@@ -3,40 +3,18 @@
  * Permutation
  * - Print all sentences possible taking one word from a list
  * 
- * ref: http://villemin.gerard.free.fr/aNombre/MOTIF/PermutAl.htm
- *      https://www.topcoder.com/generating-permutations
- *      https://docstore.mik.ua/orelly/webprog/pcook/ch04_26.htm#phpckbk-CHP-4-EX-6
- *      https://www.geeksforgeeks.org/generate-all-the-permutation-of-a-list-in-python
+ * refs: 
+ *  https://www.topcoder.com/generating-permutations
+ *  https://www.geeksforgeeks.org/generate-all-the-permutation-of-a-list-in-python
  */
-
-/**
- * Permutation par iteration
- * ref: http://villemin.gerard.free.fr/aInforma/11Recurs.htm#pemute
- *      https://www.tutorialspoint.com/all-permutations-of-a-string-using-iteration
- */
-/*function permut_iter($arr, $n)  
-{
-   sort(str.begin(), str.end());
-   while (true){
-      cout << str << endl;
-      int i = str.length() - 1;
-      while (str[i-1] >= str[i]){
-         if (--i == 0)
-         return;
-      }
-      int j = str.length() - 1;
-      while (j > i && str[j] <= str[i - 1])
-      j--;
-      swap(str[i - 1], str[j]);
-      reverse (str.begin() + i, str.end());
-   }
-}
-}*/
 
 /*
-* 
-*/
-function permutations(array $array, array $perms=[])
+ * Input: [a,b,c]
+ * Output: abc, bac, acb, cab, bca, cba
+ * 
+ * ref: https://docstore.mik.ua/orelly/webprog/pcook/ch04_26.htm#phpckbk-CHP-4-EX-6
+ */
+function print_words_permutations(array $array, array $perms=[]): string
 { 
     // Base
     if (empty($array)) { 
@@ -51,84 +29,66 @@ function permutations(array $array, array $perms=[])
         $foo = array_splice($newitems, $i, 1)[0]; 
         array_unshift($newperms, $foo); //ajoute au debut
 
-        $out .= permutations($newitems, $newperms); 
+        $out .= print_words_permutations($newitems, $newperms); 
     } 
     return $out;
 } 
+$res = print_words_permutations(['alpha','beta','charlie']);
 
 /**
- * * https://www.techiedelight.com/combinations-phrases-formed-picking-words-lists/
+ * Print all combinations of -lists- of words
  * 
- * @todo
+ * https://www.techiedelight.com/combinations-phrases-formed-picking-words-lists/
+ * 
  */
+function printAllCombinations(array $list, int $n, string $res, int $list_num): void
+{
+	// if we have traversed each list
+	if ($list_num == $n) {
+		// print phrase after removing trailing space
+		echo substr($res,1) . "\n";
+		return;
+	}
 
+	// get size of current list
+	$m = count($list[$list_num]);
+
+	// do for each word in current list
+	for ($i = 0; $i < $m; $i++)
+	{
+		// append current word to output
+		$out = $res . " " . $list[$list_num]{$i};
+
+		// recur for next list
+		printAllCombinations($list, $n, $out, $list_num + 1);
+	}
+}
+$list = [
+	[ "alpha", "beta" ], [ "zoo", "yield", "xing" ], [ "000", "111", "222" ]
+];
+printAllCombinations($list, count($list), "", 0);
 
 /** 
-* https://stackoverflow.com/questions/2617055/how-to-generate-all-permutations-of-a-string-in-php
-*/
-/*
-function lpermute($str,$i,$n) {
-   if ($i == $n)
-       print "$str\n";
-   else {
+ * Backtracking approach
+ * 
+ * ref: https://stackoverflow.com/questions/2617055/how-to-generate-all-permutations-of-a-string-in-php
+ */
+function backtrack_string_permute(string $str, $i, $n): void
+{
+   if ($i == $n) {
+       echo "$str\n";
+   } else {
         for ($j = $i; $j < $n; $j++) {
-          swap($str,$i,$j);
-          lpermute($str, $i+1, $n);
-          swap($str,$i,$j); // backtrack.
+          //swap ($i) and ($j);
+          [$str{$i}, $str{$j}] = [$str{$j}, $str{$i}];
+
+          backtrack_string_permute($str, $i+1, $n);
+          [$str{$i}, $str{$j}] = [$str{$j}, $str{$i}]; // backtrack.
        }
    }
 }
-
-// function to swap the char at pos $i and $j of $str.
-function swap(&$str,$i,$j) {
-    $temp = $str[$i];
-    $str[$i] = $str[$j];
-    $str[$j] = $temp;
-}
-
 $str = "ABC";
-lpermute($str,0,strlen($str)); // call the function.
-*/
-
-/**
- * https://www.geeksforgeeks.org/recursively-print-all-sentences-that-can-be-formed-from-list-of-word-lists/
- * (DFS approach)
- */
-    // A recursive function to print all possible sentences that can be formed 
-// from a list of word list 
-/*void printUtil(string arr[R][C], int m, int n, string output[R]) 
-{ 
-    // Add current word to output array 
-    output[m] = arr[m][n]; 
-  
-    // If this is last word of current output sentence, then print 
-    // the output sentence 
-    if (m==R-1) 
-    { 
-        for (int i=0; i<R; i++) 
-           cout << output[i] << " "; 
-        cout << endl; 
-        return; 
-    } 
-  
-    // Recur for next row 
-    for (int i=0; i<C; i++) 
-       if (arr[m+1][i] != "") 
-          printUtil(arr, m+1, i, output); 
-} 
-  
-// A wrapper over printUtil() 
-void print(string arr[R][C]) 
-{ 
-   // Create an array to store sentence 
-   string output[R]; 
-  
-   // Consider all words for first row as starting points and 
-   // print all sentences 
-   for (int i=0; i<C; i++) 
-     if (arr[0][i] != "") 
-        printUtil(arr, 0, i, output); 
-} */
+backtrack_string_permute($str, 0, strlen($str)); // call the function.
 
 /*
  * Permutation of array
@@ -173,6 +133,43 @@ function permute_chars(string $str, int $index=0, int $count=0): void
 }
 permute_chars('abc'); //rotate its children
 
+/**
+ * Permutation iterative way
+ *  - Sort array and switch by values
+ * 
+ * Input : [1,2,3]
+ * Output: 123, 132, 213, 231, 312, 321
+ * 
+ * refs: 
+ *  http://villemin.gerard.free.fr/aInforma/11Recurs.htm#pemute
+ *  https://www.tutorialspoint.com/all-permutations-of-a-string-using-iteration
+ */
+function permut_iter(array $arr): void  
+{
+   sort($arr); //sort by value
+
+   while (true) {
+      echo implode(' ',$arr).PHP_EOL;
+
+      $i = sizeof($arr)-1;
+      //end when all keys are inverteds
+      while ($arr[$i-1] >= $arr[$i]) {
+         if (--$i == 0)
+            return;
+      }
+
+      $j = sizeof($arr)-1;
+      //while previous value is bigger then (j)
+      while ($i < $j && $arr[$i-1] >= $arr[$j]) {
+         $j--;
+      }
+
+      //switch previous and (j)
+      [$arr[$i-1], $arr[$j]] = [$arr[$j], $arr[$i-1]];
+      $arr = array_merge(array_slice($arr, 0, $i), array_reverse(array_slice($arr, $i)));
+   }
+}
+permut_iter([2,1,3]);
 
 
 //validate

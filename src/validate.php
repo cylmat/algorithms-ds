@@ -24,7 +24,7 @@ foreach ($dirs as $dir) {
         }
     }
 
-    // ne garde que les fichiers
+    // ne garde que les fichiers php
     if(!$dir->isFile() || 'php'!=$dir->getExtension() || basename(__FILE__)===$dir->getFilename()) continue;
     
     // echappe les commentaires

@@ -8,7 +8,6 @@
 
 /**
  * Heap algo
- * ref: https://fr.wikipedia.org/wiki/Algorithme_de_Heap
  */
 function permut_heap(array $arr, int $n): void
 { 

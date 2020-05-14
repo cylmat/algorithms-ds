@@ -1,6 +1,7 @@
 <?php
 
-function d($v){ return; var_dump($v); }
+function d($v){ var_dump($v); }
+function dd($v){ d($v); die(); }
 
 /*
  2d or 3d matrix
