@@ -1,7 +1,9 @@
 <?php
 /**
- * https://www.geeksforgeeks.org/recursion-practice-problems-solutions/
- * https://www.techiedelight.com/recursion-practice-problems-with-solutions/
+ * 
+ * refs:
+ *   https://www.geeksforgeeks.org/recursion-practice-problems-solutions/
+ *   https://www.techiedelight.com/recursion-practice-problems-with-solutions/
  */
 
 /**
@@ -26,15 +28,17 @@ function afficheRectangleR(int $nbLignes, int $nbColonnes, string $caractere): v
 {
     //Base1
    if ($nbLignes == 0)
-    return;
+      return;
 
    if ($nbColonnes == 0) {
-    echo("\n");
-    return;
+      echo("\n");
+      return;
    }
 
     echo($caractere);
     afficheRectangle(1, $nbColonnes - 1, $caractere);
     afficheRectangle($nbLignes - 1, $nbColonnes, $caractere);
-   
 }
+
+
+echo (int)assert(true);

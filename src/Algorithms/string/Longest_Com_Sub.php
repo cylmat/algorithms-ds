@@ -13,28 +13,25 @@
 
 if(!function_exists('d')) { function d($v){ return;var_dump($v); }}
 
-function LCSLength(string $X, string $Y, int $m, int $n, array &$lcs): int
+function LCSLength(string $X, string $Y, int $m, int $n): int
 {
 	// return if we have reached the end of either sequence
 	if ($m == 0 || $n == 0)
 		return 0;
-
-    $lcs[$m][$n] = 'x';
+    
 	// if last character of X and Y matches
-	if ($X[$m - 1] == $Y[$n - 1])
-		return 1 + LCSLength($X, $Y, $m-1, $n-1, $lcs);
+	if ($X[$m - 1] == $Y[$n - 1]) {
+		return 1 + LCSLength($X, $Y, $m-1, $n-1);
+	}
 
 	// else if last character of X and Y don't match
-	return max(LCSLength($X, $Y, $m, $n-1, $lcs), LCSLength($X, $Y, $m-1, $n, $lcs));
+	return max(LCSLength($X, $Y, $m, $n-1), LCSLength($X, $Y, $m-1, $n));
 }
+$x = 'RRYRYYR';
+$y = 'AYAAYYA';
+$res = LCSLength($x, $y, strlen($x), strlen($y));
 
-
-$x = 'AXB';
-$y = 'ABY';
-$lcs=[];
-$res = LCSLength($x,$y,strlen($x),strlen($y), $lcs);
-var_dump($lcs);
-var_dump($res);
+echo (int)assert($res===3);
 
 /*
 function LCSLength(X[1..m], Y[1..n])

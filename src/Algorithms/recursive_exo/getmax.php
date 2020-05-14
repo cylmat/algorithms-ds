@@ -22,4 +22,6 @@ function getMax(array $array, int $n): int
 
 $input = [52,85,23,98,71,34];
 $res = getMax($input, count($input));
+
+
 echo (int)assert($res === 98);

@@ -60,9 +60,9 @@ foreach ($dirs as $dir) {
 //total
 $total = $alert + $warning + $valid;
 if ($alert>0) {
-    echo RED . " * Must be a doc comment, a ref, an assert and no @todo\nERROR";     
+    echo " * Must be a doc comment, a ref, an assert and no @todo\n". RED ."ERROR";     
 } else if ($warning>0) {
-    echo ORANGE . " * Must be a doc comment, a ref, an assert and no @todo\nWARNING";     
+    echo " * Must be a doc comment, a ref, an assert and no @todo\n".ORANGE."WARNING";     
 } else {
     echo GREEN . "OK";     
 }

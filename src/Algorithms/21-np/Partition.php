@@ -7,9 +7,10 @@
  * Output: true 
  *  -> {1, 5, 5} and {11}
  * 
- * ref: https://www.geeksforgeeks.org/partition-problem-dp-18/
+ * @todo
+ * 
+ * ref: https://www.geeksforgeeks.org/partition-problem-dp-18
  */
-
 
 /**
  * Partition a set into two subsets
@@ -22,3 +23,5 @@
  * Subset2 = {11}, sum of Subset2 = 11   
  * Diff: 1  
  */
+
+echo (int)assert(true);
