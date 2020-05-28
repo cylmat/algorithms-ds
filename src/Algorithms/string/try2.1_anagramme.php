@@ -40,8 +40,55 @@ function anagramme_i(string $phrase): array
     }
     return $res;
 }
-
 $phrase = "Le chien marche vers sa niche, et trouve une limace de chine nue, pleine de malice, qui lui fait du charme.";
 $res = anagramme_i($phrase);
+
+
+
+/**
+ * Recursive
+ * 
+ */
+// 
+function anagramme(array $words, int $n, int $i=0, array $dico=[]): array
+{
+     //base case
+    if ($i==$n) {
+        return $dico;
+    }
+    
+    //get ordered letters from word
+    $order = str_split($words[$i]);
+    sort($order);
+    $order = implode($order);
+    
+   //insert into dico if len>2
+    if (strlen($order)>2) {
+        if (!isset($dico[$order])) {
+            $dico[$order] = [];
+        } 
+        $dico[$order][] = $words[$i];
+    }
+    
+    //continue with others words
+    $dico = anagramme($words, $n, $i+1, $dico);
+    
+    //main call
+    if(0==$i) {
+        $res = [];
+        foreach ($dico as $item) {
+            if (count($item)>1){
+                $res[] = $item;
+            }
+        } 
+        $dico = $res;
+    }
+    
+    return $dico;
+}
+
+$phrase = "Le chien marche vers sa niche, et trouve une limace de chine nue, pleine de malice, qui lui fait du charme.";
+$phrase = explode(' ', strtolower(str_replace([',','.'],'',$phrase)));
+$res = anagramme($phrase, count($phrase));
 
 echo (int)assert(true);
