@@ -15,22 +15,23 @@ function string_sort(string $str, int $i): string
         return $str;
     }
     
-    //switch
+    //switch @i
     if ($str{$i-1} > $str{$i}) {
-        if (!isset($str{$i+1})) {
+        if (!isset($str{$i+1})) { //last char
             $str = substr($str,0,$i-1) . $str{$i} . $str{$i-1};
         } else {
             $str = substr($str,0,$i-1) . $str{$i} . $str{$i-1} . substr($str, $i+1);
         }
+        //continue if switched
     }
+    $str = string_sort($str, $i-1);
+    $str = string_sort($str, $i-1);
     
     // 
-    return string_sort($str, $i-1);
+    return $str;
 }
 
-$str_sort = 'geeksforgeeks';
-for ($i=0; $i<strlen($str_sort); $i++) {
-    $str_sort = string_sort($str_sort, strlen($str_sort)-1);
-}
+$str = 'geeksforgeeks';
+$str_sort = string_sort($str, strlen($str)-1);
 
 echo (int)assert($str_sort === 'eeeefggkkorss');
