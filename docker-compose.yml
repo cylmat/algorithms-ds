@@ -15,7 +15,7 @@ services:
             - algo
           
     phpfpm: 
-        build: .docker/conf/fpm
+        build: .docker
         working_dir: /appli
         ports: 
             - 9008:9000
