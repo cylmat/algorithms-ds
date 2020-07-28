@@ -1,19 +1,6 @@
 version: '2.2'
 
 services: 
-    nginx:
-        image: nginx:1.17
-        restart: always
-        ports:
-            - 88:80
-        volumes:
-            - ${WEBSERVER}/${DIRECTORY}:/appli
-            - ${WEBSERVER}/${DIRECTORY}/.docker/conf/nginx:/etc/nginx/conf.d:ro
-        depends_on: 
-            - phpfpm
-        networks: 
-            - algo
-          
     phpfpm: 
         build: .docker
         working_dir: /appli
@@ -21,13 +8,7 @@ services:
             - 9008:9000
         volumes:
             - ${WEBSERVER}/${DIRECTORY}:/appli
-        networks: 
-            - algo
         command: /bin/bash -c 'sed -i "s/zend.assertions = -1/zend.assertions = 1/g" /etc/php/7.3/fpm/php.ini && 
                     echo "auto_prepend_file=/appli/src/prepend.php" >> /etc/php/7.3/fpm/php.ini && 
                     echo "auto_prepend_file=/appli/src/prepend.php" >> /etc/php/7.3/cli/php.ini && 
                     /usr/sbin/php-fpm7.3 -O'
-
-networks:
-    algo:
-        driver: bridge
