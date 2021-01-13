@@ -45,7 +45,7 @@ function matrix_multiply(array $arra, array $arrb)
             
             $resw[$a][$b] = "";
             $res[$a][$b] = 0;
-            for($k=0; $k<$colA; $k++) { //B each col
+            for($k=0; $k<$colA; $k++) { //A each col
                 $resw[$a][$b] .= $arra[$a][$k]."*".$arrb[$k][$b].' + ';
                 $res[$a][$b] += $arra[$a][$k]*$arrb[$k][$b];
             }
