@@ -57,7 +57,12 @@ function matrixMultiplication(
 
         $newSize= $size/2;
         
+        // $C11 = addMatrix(matrixMultiplication($A11, $B11), matrixMultiplication($A12, $B21));
+        // $C12 = addMatrix(matrixMultiplication($A11, $B12), matrixMultiplication($A12, $B22));
         
+        // C11 = C [0 -> half][0 -> half];
+        // C12 = C [0 -> half][half -> size];
+
         //C11
          sumMatrix($C, 
 
@@ -65,18 +70,21 @@ function matrixMultiplication(
             matrixMultiplication($A, $B, $rowA, $colA+$newSize, $rowB+ $newSize, $colB, $newSize),
         0, 0);
 
+        //C12
          sumMatrix($C, 
 
             matrixMultiplication($A, $B, $rowA, $colA, $rowB, $colB + $newSize, $newSize),
             matrixMultiplication($A, $B, $rowA, $colA+$newSize, $rowB+ $newSize, $colB+$newSize, $newSize),
         0, $newSize);
 
+        //C21
          sumMatrix($C, 
 
             matrixMultiplication($A, $B, $rowA+ $newSize, $colA, $rowB, $colB, $newSize),
             matrixMultiplication($A, $B, $rowA+ $newSize, $colA+$newSize, $rowB+ $newSize, $colB, $newSize),
         $newSize, 0);
 
+        //C22
          sumMatrix($C, 
 
             matrixMultiplication($A, $B, $rowA+ $newSize, $colA, $rowB, $colB+$newSize, $newSize),
