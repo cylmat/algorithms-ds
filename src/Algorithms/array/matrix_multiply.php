@@ -1,7 +1,10 @@
 <?php
-// D&C
 // https://www.geeksforgeeks.org/strassens-matrix-multiplication/
 // https://www.intmath.com/matrices-determinants/matrix-multiplication-examples.php
+
+/**
+ * Naive method
+ */
 /*
  Multiply if A cols = B rows
  2x3 * 3x4 => 2x4
