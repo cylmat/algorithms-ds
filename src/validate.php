@@ -12,7 +12,7 @@ define("GREEN", "\e[32m");
 define("ORANGE", "\e[33m");
 define("END", "\e[0m");
 
-$dirs = new RecursiveIteratorIterator(new RecursiveDirectoryIterator('src/algorithms'));
+$dirs = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(__DIR__.'/Algorithms'));
 
 /**
  * Validate all algorithms files
