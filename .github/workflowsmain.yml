@@ -1,0 +1,24 @@
+name: PHP Composer
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+     # Php, composer, ext, xdebug
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        coverage: xdebug
+        extensions: ds
+        php-version: "7.3"
+
+    - name: Run test suite
+    #   run: composer run-script test
