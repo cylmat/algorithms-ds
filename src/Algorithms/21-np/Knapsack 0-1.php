@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Knapsack problem
  * - Given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack
@@ -7,8 +8,6 @@
  * 
  * - optimisation combinatoire
  */
-
-if(!function_exists('d')) { function d($v){ return;var_dump($v); }}
 
 /**
  * Recursive (top down)
@@ -74,7 +73,7 @@ $weight = [10, 20, 40];
 $capacity = 50;
 //output 180
 $res_i = knapSack_i($capacity, $weight, $values, count($values));
-
+$expect = 180;
 
 //valid
-echo (int)assert($res===180 && $res_i===180);
+echo (int)assert($res===$expect && $res_i===$expect);

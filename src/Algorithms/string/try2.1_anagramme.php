@@ -8,7 +8,6 @@
  *
  * - ref: TRY ALGO 2.1 
  */
-function d($v) {var_dump($v);}
  
 function anagramme_i(string $phrase): array
 {
@@ -42,8 +41,6 @@ function anagramme_i(string $phrase): array
 }
 $phrase = "Le chien marche vers sa niche, et trouve une limace de chine nue, pleine de malice, qui lui fait du charme.";
 $res = anagramme_i($phrase);
-
-
 
 /**
  * Recursive
@@ -91,4 +88,4 @@ $phrase = "Le chien marche vers sa niche, et trouve une limace de chine nue, ple
 $phrase = explode(' ', strtolower(str_replace([',','.'],'',$phrase)));
 $res = anagramme($phrase, count($phrase));
 
-echo (int)assert(true);
+echos(true);

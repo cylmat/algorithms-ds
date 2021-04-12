@@ -37,4 +37,5 @@ function approx_pi_i(): float
 }
 
 $res = approx_pi_i();
-echo (int)assert($res>3 && $res<3,5);
+
+echos($res>3 && $res<3,5);

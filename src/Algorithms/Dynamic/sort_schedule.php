@@ -68,4 +68,4 @@ $jobs=[
 ];
 
 $res = sort_schedule_i($jobs, count($jobs));
-echo (int)assert($res===[ [1,4,30], [5,9,50]]);
+echos($res === [ [1,4,30], [5,9,50]]);

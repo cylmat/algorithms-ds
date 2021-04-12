@@ -70,4 +70,4 @@ $res1 = bits_array(3);
 
 
 //validate
-echo (int)assert(true);
+echos(true);

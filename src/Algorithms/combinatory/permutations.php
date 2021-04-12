@@ -173,4 +173,4 @@ permut_iter([2,1,3]);
 
 
 //validate
-echo (int)assert(true);
+echos(true);

@@ -8,8 +8,6 @@
  *
  * ref: https://www.geeksforgeeks.org/naive-algorithm-for-pattern-searching/
  */
- 
-if(!function_exists('d')) { function d($v){ return;var_dump($v); }}
 
 function pattern_search(string $pat, string $str, &$res=[], int $p=0, int $s=0): bool
 {
@@ -45,4 +43,4 @@ $res = []; //result
 pattern_search($pat, $txt, $res);
 ksort($res);
 
-echo (int)assert(array_keys($res)==[0,9,12]);
+echos(array_keys($res)==[0,9,12]);

@@ -9,7 +9,6 @@
  Multiply if A cols = B rows
  2x3 * 3x4 => 2x4
 */
-function d(...$v) {var_dump(...$v);}
 
 //3x4
 $a = [ //4 cols
@@ -60,4 +59,3 @@ function matrix_multiply(array $arra, array $arrb)
 }
 
 $mat = matrix_multiply($a, $b);
-d($mat);

@@ -6,8 +6,6 @@
  * ref: https://www.geeksforgeeks.org/insertion-sort
  */
 
-if (!function_exists('d')) { function d($v){ return;var_dump($v); }}
-
 /**
  * Iterative
  */
@@ -31,4 +29,4 @@ $r = triInsertionIter($a);
 
 
 //res
-echo (int)assert(true);
+echos(true);

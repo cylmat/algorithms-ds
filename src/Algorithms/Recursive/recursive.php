@@ -40,5 +40,4 @@ function afficheRectangleR(int $nbLignes, int $nbColonnes, string $caractere): v
     afficheRectangle($nbLignes - 1, $nbColonnes, $caractere);
 }
 
-
-echo (int)assert(true);
+echos(true);

@@ -1,4 +1,4 @@
-name: PHP Composer
+name: Algorithms-DS
 
 on:
   push:
@@ -17,8 +17,8 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         coverage: xdebug
-        extensions: ds
+        extensions: ds, psr, mbstring
         php-version: "7.3"
 
     - name: Run test suite
-    #   run: composer run-script test
+      run: php src/validate.php

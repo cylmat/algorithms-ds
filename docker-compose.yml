@@ -2,13 +2,9 @@ version: '2.2'
 
 services: 
     phpfpm: 
-        build: .
-        working_dir: /appli
-        ports: 
-            - 9008:9000
+        image: phpdockerio/php73-fpm
+        working_dir: /src
         volumes:
-            - ${WEBSERVER}/${DIRECTORY}:/appli
-        command: /bin/bash -c 'sed -i "s/zend.assertions = -1/zend.assertions = 1/g" /etc/php/7.3/fpm/php.ini && 
-                    echo "auto_prepend_file=/appli/src/prepend.php" >> /etc/php/7.3/fpm/php.ini && 
-                    echo "auto_prepend_file=/appli/src/prepend.php" >> /etc/php/7.3/cli/php.ini && 
-                    /usr/sbin/php-fpm7.3 -O'
+            - ${DIRECTORY}:/src
+        command: /bin/bash -c "apt-get update && apt-get install -y php-ds php-mbstring \
+                 && /usr/sbin/php-fpm7.3 -O"

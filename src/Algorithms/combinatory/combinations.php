@@ -109,4 +109,4 @@ $res=combinations_set(range(0, 5), 3);
 
 
 //valid
-echo (int)assert(true);
+echos(true);

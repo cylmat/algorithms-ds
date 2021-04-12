@@ -13,8 +13,6 @@
  * 	https://www.techiedelight.com/subset-sum-problem
  */
 
-if(!function_exists('d')) { function d($v){ return;var_dump($v); }}
-
 /**
  * Search if a value (ex: 10) exists in subset of array
  * 
@@ -125,5 +123,4 @@ $sum = 11;
 $results = [];
 $res_is = isSubsetSum($set, count($set), $sum, $results); 
 
-
-echo (int)assert($res_subsum && $res_i && $res_is);
+echos($res_subsum && $res_i && $res_is);

@@ -11,8 +11,6 @@
  * ref: https://www.geeksforgeeks.org/longest-common-subsequence-dp-4/
  */
 
-if(!function_exists('d')) { function d($v){ return;var_dump($v); }}
-
 function LCSLength(string $X, string $Y, int $m, int $n): int
 {
 	// return if we have reached the end of either sequence
@@ -31,7 +29,7 @@ $x = 'RRYRYYR';
 $y = 'AYAAYYA';
 $res = LCSLength($x, $y, strlen($x), strlen($y));
 
-echo (int)assert($res===3);
+echos($res===3);
 
 /*
 function LCSLength(X[1..m], Y[1..n])

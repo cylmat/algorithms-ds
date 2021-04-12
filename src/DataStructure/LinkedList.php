@@ -5,7 +5,6 @@
 * Chaque élément contient l'objet suivant
 */
 
-
 /**
  * $l = new LinkList;
  * $l->push(3);

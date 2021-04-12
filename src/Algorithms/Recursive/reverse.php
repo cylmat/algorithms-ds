@@ -18,4 +18,4 @@ $str = "alphabeta";
 $res = reverse($str);
 
 
-echo (int)assert($res==='atebahpla'); 
+echos ($res==='atebahpla'); 

@@ -6,7 +6,6 @@
  Multiply if A cols = B rows
  2x3 * 3x4 => 2x4
 */
-function d(...$v) {var_dump(...$v);}
 
 //3x4
 $a = [ //4 cols
@@ -34,7 +33,7 @@ $b = [ //4 rows
     [ 0,0, 0,0, 0,0,0,0],
 ];
 
-/**
+/*
  *  17,3,1,-14
    -14,10,4,17
    -37,61,21,47
@@ -106,8 +105,9 @@ function sumMatrix(array &$C, array $A, array $B, int $rowC, int $colC): void {
 }
 
 $mat = matrixMultiplication($a, $b, 0, 0, 0, 0, sizeof($a));
-//d($mat);
 
 foreach($mat as $r) {
-    echo implode(',',$r)."\n";
+    //echo implode(',',$r)."\n";
 }
+
+echos(true);

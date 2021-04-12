@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Bubble sort
  * 
@@ -34,4 +36,4 @@ function string_sort(string $str, int $i): string
 $str = 'geeksforgeeks';
 $str_sort = string_sort($str, strlen($str)-1);
 
-echo (int)assert($str_sort === 'eeeefggkkorss');
+echos($str_sort === 'eeeefggkkorss');

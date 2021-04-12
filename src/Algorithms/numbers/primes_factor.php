@@ -87,4 +87,4 @@ function find_all_primes_until_i(int $max)
 $res_div = find_all_primes_divisors(102) === "17 3 2 ";
 $res_max = find_all_primes_until_i(10) === "2 3 5 7 ";
 
-echo (int)assert($res_div && $res_max); 
+echos($res_div && $res_max);

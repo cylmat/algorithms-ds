@@ -12,8 +12,6 @@
  *  https://www.geeksforgeeks.org/bitmasking-and-dynamic-programming-set-1-count-ways-to-assign-unique-cap-to-every-person/
  */
 
-if(!function_exists('d')) { function d($v){ return;var_dump($v); }}
-
 /**
  * Check each bit and 
  */
@@ -43,4 +41,5 @@ $arr = [4, 1, 3];
 $value = 5;  
 
 $res = bitmask($arr, $value, count($arr));
-echo (int)assert(3 === $res);
+
+echos(3 === $res);

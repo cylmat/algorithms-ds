@@ -1,5 +1,7 @@
 <?php
 
+if (function_exists('d')) return;
+
 function d($v){ var_dump($v); }
 function dd($v){ d($v); die(); }
 
@@ -34,16 +36,30 @@ function display_2d_matrix(array $arr)
     echo "\n";
 }
 
+/**
+ * Nodes
+ */
 if(!class_exists('node')) {
-class node { 
-    public $val, $childs=[]; 
-    function __construct($v=null) { $this->val=$v; } 
-    function add($v) { $n = new node($v); $this->childs[] = $n; return $n; }
-}
+    class node { 
+        public $val, $childs=[]; 
+        function __construct($v=null) { $this->val=$v; } 
+        function add($v) { $n = new node($v); $this->childs[] = $n; return $n; }
+    }
 }
 
 function display_tree(node $node, $d=0)
 {
     echo str_pad('',$d*2,' .') . ' ' . $node->val."\n";
     foreach ($node->childs as $child) display_tree($child, $d+1);
+}
+
+/**
+ * Assertions
+ */
+function asserts($value, $expect): bool {
+    return $value === $expect;
+}
+
+function echos(bool $asserts): void {
+    echo (int) $asserts;
 }

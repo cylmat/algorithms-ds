@@ -33,4 +33,4 @@ $arr = ["A", "B", "C"];
 permut_heap($arr, count($arr));
 
 //validate
-echo (int)assert(true);
+echos(true);
