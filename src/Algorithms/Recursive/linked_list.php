@@ -16,3 +16,30 @@ function linked_list(?Node $head, $data) { //Node(->data)(->next)
 
     return $head;
 }
+
+
+
+
+function removeDuplicates($head) {
+      $point=$head;
+      while (null !== $point->next) {
+          if ($point->data == $point->next->data) {
+              $point->next = $point->next->next;
+          } else {
+              $point = $point->next;
+          }
+      }
+      return $head;
+}
+
+function removeDuplicates_rec($head) {
+      $n = $head->next;
+      if ($n === null) { //last
+          return $head;
+      }
+      if ($head->data === $n->data) {
+          $head->next = $n->next;
+      }
+      $this->removeDuplicates($head->next);
+      return $head;
+}
