@@ -37,3 +37,27 @@ $str = 'geeksforgeeks';
 $str_sort = string_sort($str, strlen($str)-1);
 
 echos($str_sort === 'eeeefggkkorss');
+
+
+
+
+
+function bubble($n, &$a)
+{
+    $swap=0;
+    for ($i=0; $i<$n-1; $i++) {
+        $swapped=false;
+        for ($j=1; $j<$n-$i; $j++) {
+            //echo "$i:$j - \n";
+            if ($a[$j-1] > $a[$j]) {
+                [$a[$j-1], $a[$j]] = [$a[$j], $a[$j-1]];
+                $swap++;
+                //echo "swapped\n";
+                $swapped=true;
+            }
+            //echo join('.',$a)."\n";
+        }
+        if (!$swapped) return $swap;
+    }
+    return $swap;
+}
