@@ -41,7 +41,10 @@ echos($str_sort === 'eeeefggkkorss');
 
 
 
-
+/*
+$j take always first element [1]
+then from $n-0 to $n-$i, and get smaller to smaller
+*/
 function bubble($n, &$a)
 {
     $swap=0;
