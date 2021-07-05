@@ -1,6 +1,5 @@
 <?php
 
-<?php
 //hanoi recursive
 //must be $a=[]; $c=[1,2];
 
@@ -40,18 +39,10 @@ function move_hanoi(&$a,&$b) //top a from top b
 hanoi($a,$c,$b,count($a)-1);
 
 
-
-
-
-
-
-
 //hanoi iterative
-
 $a=[
     [1,2,3,4,5,6,7,8],[],[]
 ];
-
 
 $cnt=0; $psmall=0; $is_small=true;
 while(($a[0]||$a[1]) && ++$cnt<1000) {
@@ -94,5 +85,5 @@ while(($a[0]||$a[1]) && ++$cnt<1000) {
         $psmall = ++$psmall%3;
     }
    
-    $dump($a);
+    //dump($a);
 }

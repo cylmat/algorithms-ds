@@ -1,42 +1,18 @@
-[REF]
+[Wikipedia]
 https://en.wikipedia.org/wiki/Algorithm
 https://en.wikipedia.org/wiki/List_of_algorithms
+
+[Category]
 https://en.wikipedia.org/wiki/Category:Algorithms
-
-[21 NP-complete]
-https://en.wikipedia.org/wiki/Karp%27s_21_NP-complete_problems
-
-[Combinatory]
 https://en.wikipedia.org/wiki/Category:Combinatorial_algorithms
-
-[Dynamic]
-https://en.wikipedia.org/wiki/Dynamic_programming
-
-[Numbers]
 https://en.wikipedia.org/wiki/Category:Number_theoretic_algorithms
 
-[Optimisation] (NP)
- * https://en.wikipedia.org/wiki/Branch_and_bound
-
-[String]
+https://en.wikipedia.org/wiki/Karp%27s_21_NP-complete_problems
+https://en.wikipedia.org/wiki/Dynamic_programming
 https://en.wikipedia.org/wiki/String-searching_algorithm
 
-[recursive exercices]
- * https://www.geeksforgeeks.org/recursion-practice-problems-solutions
- * https://www.techiedelight.com/recursion-practice-problems-with-solutions
-
-
-                                *   *   *   *   *
-
-[others refs]
+[Refs]
 https://cp-algorithms.com
-https://www.techiedelight.com
-https://jilljenn.github.io/tryalgo
-https://rubyalgo.github.io/algorithms
+https://github.com/TheAlgorithms/PHP
 https://blog.usejournal.com/top-50-dynamic-programming-practice-problems-4208fed71aa3
 https://www.geeksforgeeks.org/top-algorithms-and-data-structures-for-competitive-programming
-
-[Github]
-"github:kumar91gopi":"Algorithms-and-Data-Structures-in-Ruby",
-"github:TheAlgorithms":"Python",
-"github:jilljenn":"tryalgo",

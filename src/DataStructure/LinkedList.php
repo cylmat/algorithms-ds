@@ -1,9 +1,6 @@
 <?php
 
-/**
-* Implémentation d'une list chainée en Php
-* Chaque élément contient l'objet suivant
-*/
+class Li { public $data, $next; }
 
 /**
  * $l = new LinkList;
@@ -18,7 +15,7 @@ class LinkList
 
   function push($val)
   {
-    $li = new LI;
+    $li = new Li;
     $li->data = $val;
     $li->next = null; //last
 
@@ -32,7 +29,7 @@ class LinkList
       $nextObj->next = $li;
     }
     $this->count++;
-  }//push
+  } //push
 
   function pop()
   {
@@ -46,7 +43,7 @@ class LinkList
     }
     $this->count--;
     $last=null;
-  }//pop
+  } //pop
 
   function get($place=0)
   {
@@ -105,8 +102,6 @@ class LinkList
       $nextObj = $nextObj->next;
     }
     echo $nextObj->data;
-  }//out
+  } //out
 
-}//class
-
-class LI { public $data, $next; }
+} //class

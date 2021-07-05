@@ -1,12 +1,11 @@
 <?php
 
 /**
-https://github.com/BlueM/Tree
-https://github.com/algb12/GraphDS
-https://github.com/nicmart/Tree
+ * https://github.com/BlueM/Tree
+ * https://github.com/algb12/GraphDS
+ * https://github.com/nicmart/Tree
 */
 
-require __DIR__.'/../vendor/autoload.php';
 use Tree\Node\Node;
 use GraphDS\Graph\DirectedGraph as DG;
 

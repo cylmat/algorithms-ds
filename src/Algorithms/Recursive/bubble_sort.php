@@ -2,7 +2,7 @@
 
 function bubble_rec($n, &$a, &$swap, $i, $j): bool //return if a swap append or not
 {
-    if ($i>$n-2 || $j>$n-1) return; // $j from $i to last
+    if ($i>$n-2 || $j>$n-1) return false; // $j from $i to last
    
     $current_action=false;
     if ($a[$j-1] > $a[$j]) { //asc

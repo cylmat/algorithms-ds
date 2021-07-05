@@ -57,7 +57,7 @@ function printAllCombinations(array $list, int $n, string $res, int $list_num): 
 	for ($i = 0; $i < $m; $i++)
 	{
 		// append current word to output
-		$out = $res . " " . $list[$list_num]{$i};
+		$out = $res . " " . $list[$list_num][$i];
 
 		// recur for next list
 		printAllCombinations($list, $n, $out, $list_num + 1);
@@ -80,10 +80,10 @@ function backtrack_string_permute(string $str, $i, $n): void
    } else {
         for ($j = $i; $j < $n; $j++) {
           //swap ($i) and ($j);
-          [$str{$i}, $str{$j}] = [$str{$j}, $str{$i}];
+          [$str[$i], $str[$j]] = [$str[$j], $str[$i]];
 
           backtrack_string_permute($str, $i+1, $n);
-          [$str{$i}, $str{$j}] = [$str{$j}, $str{$i}]; // backtrack.
+          [$str[$i], $str[$j]] = [$str[$j], $str[$i]]; // backtrack.
        }
    }
 }
@@ -123,7 +123,7 @@ function permute_chars(string $str, int $index=0, int $count=0): void
 
     //transfert $index at the end of string 
     //al(p)ha -> alha(p)
-    $str = substr($str, 0, $index) . substr($str, $index+1) . $str{$index};
+    $str = substr($str, 0, $index) . substr($str, $index+1) . $str[$index];
     if ($index==strlen($str)-2) { //reached to the end, print it
         echo "$str\n";//or keep it in an array
     }

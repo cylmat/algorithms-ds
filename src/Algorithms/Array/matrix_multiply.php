@@ -59,3 +59,5 @@ function matrix_multiply(array $arra, array $arrb)
 }
 
 $mat = matrix_multiply($a, $b);
+
+validates (1, $mat);

@@ -2,7 +2,6 @@
 /**
  * Merge sort
  *  - Divides input array in two halves, calls itself for the two halves and then merges the two sorted halves.
- *
  * - divide and conquer
  * 
  * @todo: bottom-up
@@ -46,7 +45,7 @@ $arr = [90,32,-8,7,54,1,88,45,23,82,37,78,51,2];
 $res = implode(',',merge_sort($arr));
 
 //valid
-echos ($res === '-8,1,2,7,23,32,37,45,51,54,78,82,88,90'); 
+echo ($res === '-8,1,2,7,23,32,37,45,51,54,78,82,88,90'); 
 
 /**
  * Bottom up

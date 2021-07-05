@@ -28,7 +28,7 @@ function pattern_search(string $pat, string $str, &$res=[], int $p=0, int $s=0):
     pattern_search($pat, $str, $res, 0, $s+1); //each char of string
     
     //test if current string char is matching current pattern char
-    if ($str{$s} == $pat{$p}) {
+    if ($str[$s] == $pat[$p]) {
         //if matching, continue on next pattern char
         //return true only if end of pattern reached
         return pattern_search($pat, $str, $res, $p+1, $s+1); //test pattern

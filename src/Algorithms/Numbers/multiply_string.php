@@ -27,7 +27,7 @@ function int_multiply(string $inta, string $intb): string
         $ib=0;
         //$result=array_fill(0, $sizea+$sizeb, 0);
         for($b=$sizeb-1; $b>=0; $b--) {
-            $res = $inta{$a} * $intb{$b}; //pose resultat
+            $res = $inta[$a] * $intb[$b]; //pose resultat
             $pose = $res % 10 + $carry;
             $carry = floor($res / 10); //retenue
             
