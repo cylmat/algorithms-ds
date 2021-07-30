@@ -7,27 +7,27 @@
  * ref: https://www.geeksforgeeks.org/quick-sort/
  */
 
-function quicksort(&$a, $l, $r, $p)
+function quicksort(&$a, $l, $r, $p=0)
 {
-    $pleft=$l;
-    $pright=$r-1;
-    $pivalue=$a[$p];
+    $pleft = $l;
+    $pright = $r-1;
+    $pivalue = $a[$p];
 
     // swap pivot with far right
-    [$a[$p], $a[$r]] = [$a[$r], $a[$p]];
+    [$a[$p], $a[$r-1]] = [$a[$r-1], $a[$p]];
    
     while (true) {
-        while ($a[$pleft]<$pivalue) {
+        while ($a[$pleft] < $pivalue) {
             $pleft++;
         }
-        while ($a[$pright]>$pivalue && $pright>0) {
+        while ($a[$pright] > $pivalue && $pright > 0) {
             $pright--;
         }
        
-        if ($pleft>=$pright) {
+        if ($pleft >= $pright) {
             break;
         } else {
-            [$a[$pright],$a[$pleft]] = [$a[$pleft],$a[$pright]];
+            [$a[$pright], $a[$pleft]] = [$a[$pleft], $a[$pright]];
 
             $pleft++;
             $pright--;
@@ -35,10 +35,12 @@ function quicksort(&$a, $l, $r, $p)
         }
     }
 
-    [$a[$pleft], $a[$r]] = [$a[$r], $a[$pleft]]; //swap end
+    [$a[$pleft], $a[$r-1]] = [$a[$r-1], $a[$pleft]]; //swap end
 
     return $pleft;
 }
 
-$a = [7,4,9,2,8,5,1,3];
-quicksort($a, 0, count($a), $p);
+$a = $res = [7,4,9,2,8,5,1,3];
+quicksort($res, 0, count($res));
+
+validates($a, $res);

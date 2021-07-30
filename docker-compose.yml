@@ -2,7 +2,7 @@ version: '2.2'
 services: 
     phpfpm: 
         image: phpdockerio/php73-fpm
-        working_dir: /src
+        working_dir: /app
         volumes:
-            - ${DIRECTORY}:/src
-        command: /bin/bash -c "apt-get update && apt-get install -y php-ds php-mbstring /usr/sbin/php-fpm7.3 -O"
+            - ${DIRECTORY}:/app
+        command: /bin/bash -c "apt-get update && apt-get install -y php-ds php-mbstring && /usr/sbin/php-fpm7.3 -O"
