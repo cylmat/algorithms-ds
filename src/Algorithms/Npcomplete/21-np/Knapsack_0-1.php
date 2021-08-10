@@ -19,7 +19,6 @@ function knapSack(int $capacity, array $weight, array $values, int $n)
     
     //if current element is more than capacity, then not included
     if ($weight[$n-1] > $capacity) {
-        d("n:".($n-1)." current weight ".$weight[$n-1]." overweighted capacity of $capacity");
         return knapSack($capacity, $weight, $values, $n-1); 
     }
     
@@ -28,7 +27,6 @@ function knapSack(int $capacity, array $weight, array $values, int $n)
     $without = knapSack($capacity, $weight, $values, $n-1);
     
     $max = max($with, $without); 
-    d("n:".($n-1)." w:".$weight[$n-1]." v:".$values[$n-1]." c:$capacity with:$with out:$without max:$max");
     
     return $max;
 }
@@ -36,6 +34,8 @@ $values = [60, 100, 120];
 $weight = [10, 20, 40];
 $capacity = 50;
 $res = knapSack($capacity, $weight, $values, count($values));
+
+validates($res, 180);
 
 /**
  * bottom up (iterative)
@@ -76,4 +76,4 @@ $res_i = knapSack_i($capacity, $weight, $values, count($values));
 $expect = 180;
 
 //valid
-echo (int)assert($res===$expect && $res_i===$expect);
+validates($res_i, $expect);

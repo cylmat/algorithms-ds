@@ -15,10 +15,9 @@ function approx_pi_i(): float
 {
     $x=rand(0,100)/100;
     $y=rand(0,100)/100;
-    //echo ($x.'-'.$y).PHP_EOL;
+
     $r = sqrt(($x**2)+($y**2)); //V(x2+y2)
-    //echo $r.PHP_EOL;
-    
+
     $num = 100000;
     $inside = 0;
     
@@ -37,5 +36,4 @@ function approx_pi_i(): float
 }
 
 $res = approx_pi_i();
-
-validates(true, $res>3 && $res<3,5);
+validates(true, boolval($res>3 && $res<3.5));

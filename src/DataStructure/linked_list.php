@@ -17,9 +17,6 @@ function linked_list(?Node $head, $data) { //Node(->data)(->next)
     return $head;
 }
 
-
-
-
 function removeDuplicates($head) {
       $point=$head;
       while (null !== $point->next) {

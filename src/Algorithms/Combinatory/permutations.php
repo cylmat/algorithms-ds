@@ -33,7 +33,9 @@ function print_words_permutations(array $array, array $perms=[]): string
     } 
     return $out;
 } 
-$res = print_words_permutations(['alpha','beta','charlie']);
+$res = print_words_permutations(['a','b']);
+
+validates($res, "a b\nb a\n");
 
 /**
  * Print all combinations of -lists- of words
@@ -64,9 +66,21 @@ function printAllCombinations(array $list, int $n, string $res, int $list_num): 
 	}
 }
 $list = [
-	[ "alpha", "beta" ], [ "zoo", "yield", "xing" ], [ "000", "111", "222" ]
+	[ "alpha", "beta" ], [ "zoo", "yield" ], [ "000", "111" ]
 ];
+
+ob_start();
 printAllCombinations($list, count($list), "", 0);
+$res = trim(ob_get());
+
+validates($res, "alpha zoo 000
+alpha zoo 111
+alpha yield 000
+alpha yield 111
+beta zoo 000
+beta zoo 111
+beta yield 000
+beta yield 111");
 
 /** 
  * Backtracking approach
@@ -87,8 +101,18 @@ function backtrack_string_permute(string $str, $i, $n): void
        }
    }
 }
+
 $str = "ABC";
+ob_start();
 backtrack_string_permute($str, 0, strlen($str)); // call the function.
+$res = ob_get();
+
+validates($res, "ABC
+ACB
+BAC
+BCA
+CBA
+CAB");
 
 /*
  * Permutation of array
@@ -111,6 +135,8 @@ function permute_array(array $array): array
 }
 $res_a = permute_array(['a','b','c']);
 
+validates($res_a, ['abc','acb','bac','bca','cab','cba']);
+
 /*
 * Print all rotations of input string recursively
 * - abc -> abc, acb, cab, cba, bca, bac (in the opposite way)
@@ -131,7 +157,17 @@ function permute_chars(string $str, int $index=0, int $count=0): void
     permute_chars($str, $index+1); //rotate its children
     permute_chars($str, $index, $count+1); //rotate itself
 }
+
+ob_start();
 permute_chars('abc'); //rotate its children
+$res = ob_get();
+
+validates($res, "bac
+bca
+cba
+cab
+acb
+abc");
 
 /**
  * Permutation iterative way
@@ -169,4 +205,14 @@ function permut_iter(array $arr): void
       $arr = array_merge(array_slice($arr, 0, $i), array_reverse(array_slice($arr, $i)));
    }
 }
+
+ob_start();
 permut_iter([2,1,3]);
+$res = ob_get();
+
+validates($res, "1 2 3
+1 3 2
+2 1 3
+2 3 1
+3 1 2
+3 2 1");

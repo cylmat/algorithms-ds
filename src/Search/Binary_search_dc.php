@@ -1,16 +1,11 @@
 <?php
-// D&C
+
+/** 
+ * D&C method
+ */
 //https://www.geeksforgeeks.org/binary-search/
 
-
-// Driver Code 
-$arr = array(2, 3, 4, 10, 40); 
-
-$n = count($arr); 
-$x = 10; 
-$result = binarySearch($arr, 0, $n - 1, $x); 
-
-function binarySearch($arr, $l, $r, $x)
+function binarySearch(array $arr, int $l, int $r, int $x): int
 {
     if ($l<=$r) {
         $m = ceil($r- (($r-$l)/2));
@@ -25,3 +20,12 @@ function binarySearch($arr, $l, $r, $x)
     }
     return -1;
 }
+
+// Driver Code 
+$arr = [2, 3, 4, 10, 40]; 
+$n = count($arr); 
+$x = 10; // index 3
+
+$result = binarySearch($arr, 0, $n - 1, $x); 
+
+validates($result, 3);

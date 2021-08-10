@@ -12,7 +12,7 @@
 /**
 * iterative way
 */
-function afficheRectangle(int $nbLignes, int $nbColonnes, string $caractere): void
+function displayRectangle(int $nbLignes, int $nbColonnes, string $caractere): void
 {
    for ($ligne = 0; $ligne < $nbLignes; $ligne++) {
       for ($colonne = 0; $colonne < $nbColonnes; $colonne++)
@@ -24,10 +24,10 @@ function afficheRectangle(int $nbLignes, int $nbColonnes, string $caractere): vo
 /**
 * recursive way
 */
-function afficheRectangleR(int $nbLignes, int $nbColonnes, string $caractere): void
+function displayRectangleR(int $nbLignes, int $nbColonnes, string $caractere): void
 {
     //Base1
-   if ($nbLignes == 0)
+   if ($nbLignes == 1)
       return;
 
    if ($nbColonnes == 0) {
@@ -35,7 +35,14 @@ function afficheRectangleR(int $nbLignes, int $nbColonnes, string $caractere): v
       return;
    }
 
-    echo($caractere);
-    afficheRectangle(1, $nbColonnes - 1, $caractere);
-    afficheRectangle($nbLignes - 1, $nbColonnes, $caractere);
+   echo($caractere);
+   displayRectangle(1, $nbColonnes - 1, $caractere);
+   displayRectangle($nbLignes - 1, $nbColonnes, $caractere);
 }
+
+ob_start();
+displayRectangleR(2, 3, 't');
+
+$res = explode("\n", trim(ob_get()));
+
+validates($res, ['ttt', 'ttt']);

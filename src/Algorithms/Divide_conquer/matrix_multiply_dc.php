@@ -95,17 +95,16 @@ function matrixMultiplication(
 
 }
 
-function sumMatrix(array &$C, array $A, array $B, int $rowC, int $colC): void {
+function sumMatrix(array &$C, array $A, array $B, int $rowC, int $colC): void 
+{
     $n=sizeof($A);
-    for($i =0; $i<$n; $i++){
-        for($j=0; $j<$n; $j++)  
-            $C[$i+$rowC][$j+$colC]=$A[$i][$j]+$B[$i][$j];
-    }
 
+    for ($i =0; $i<$n; $i++){
+        for ($j=0; $j<$n; $j++)  
+            $C[$i+$rowC][$j+$colC] = $A[$i][$j] + $B[$i][$j];
+    }
 }
 
 $mat = matrixMultiplication($a, $b, 0, 0, 0, 0, sizeof($a));
 
-foreach($mat as $r) {
-    //echo implode(',',$r)."\n";
-}
+validates($mat[0], [17,3,1,-14,-23,-29,0,0]);
