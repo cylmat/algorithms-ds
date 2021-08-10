@@ -2,8 +2,8 @@
 
 if (function_exists('d')) return;
 
-function d($v){ var_dump($v); }
-function dd($v){ d($v); die(); }
+function d(...$v){ var_dump(...$v); }
+function dd(...$v){ d(...$v); die(); }
 
 /****************
  * 2d or 3d matrix

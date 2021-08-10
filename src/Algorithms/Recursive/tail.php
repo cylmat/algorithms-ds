@@ -11,9 +11,6 @@ function factorial_not_tail($n) {
     return $n * factorial_not_tail($n-1);
 }
 
-
-
-
 function fibonacci_iter($n)
 {
     [$prev, $curr] = [0, 1];
@@ -38,4 +35,4 @@ function fibonacci_tail($n, $k=1, $prev=0, $curr=1)
     return fibonacci_tail($n, $k + 1, $curr, $prev + $curr);
 }
 
-( fibonacci_rec(9) ); //f(9): 34
+validates(34, fibonacci_rec(9) ); //f(9): 34

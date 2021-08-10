@@ -32,4 +32,4 @@ $supply = [1, 2, 5, 10, 20, 50, 100, 500, 1000];
 $res_mnc = min_number_coin($input, $supply);
 $expect_mnc = [50, 20, 20, 2, 1];
 
-//echo assert($res_mnc === $expect_mnc);
+validates($res_mnc, $expect_mnc);

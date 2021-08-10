@@ -30,4 +30,9 @@ function permut_heap(array $arr, int $n): void
 } 
 
 $arr = ["A", "B", "C"]; 
+
+ob_start();
 permut_heap($arr, count($arr));
+$res = explode("\n", ob_get());
+
+validates($res, ['A B C', 'B A C', 'C B A', 'B C A', 'C A B', 'A C B']);
