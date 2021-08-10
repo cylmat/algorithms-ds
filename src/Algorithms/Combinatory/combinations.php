@@ -1,4 +1,5 @@
 <?php
+
 /**
  * COMBINATIONS problems
  */
@@ -26,7 +27,13 @@ function all_combinations(array $arr, int $size_arr, int $length_total, string $
 }
 $arr = ['a','b'];
 $length = 3;
-$res_ac = all_combinations($arr, count($arr), $length);
+
+ob_start();
+all_combinations($arr, count($arr), $length);
+$result = explode("\n", ob_get());
+
+$exp = ['aaa','aab','aba','abb','baa','bab','bba','bbb'];
+validates ($result, $exp); // ok to display
 
 /**
  * Iteratives way
@@ -54,9 +61,9 @@ function buildStrings_i(array $root, int $length): void
 
         // move on to the next combination:
         $place = $length - 1;
-        while($place >= 0)
+        while ($place >= 0)
         {
-            if(++$pos[$place] == count($root))
+            if (++$pos[$place] == count($root))
             {
                 // overflow, reset to zero
                 $pos[$place] = 0;
@@ -70,11 +77,18 @@ function buildStrings_i(array $root, int $length): void
                 break;
             }
         }
-        if($place < 0)
+        if ($place < 0)
             break;  // overflowed the last position, no more combinations
     }
 }
+
+ob_start();
 buildStrings_i(['a','b'], 3);
+$res = explode("\n", ob_get());
+
+$exp = ['aaa','aab','aba','abb','baa','bab','bba','bbb'];
+validates($res, $exp);
+
 
 /**
  * Print all combination of numbers 
@@ -105,8 +119,6 @@ function combinations_set(array $set = [], int $size = 0): array
  
     return $result;
 }
-$res=combinations_set(range(0, 5), 3);
 
-
-//valid
-echos(true);
+$res=combinations_set(range(0, 2), 3);
+validates($res, [[0,1,2]]);

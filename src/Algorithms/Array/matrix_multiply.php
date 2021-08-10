@@ -59,5 +59,10 @@ function matrix_multiply(array $arra, array $arrb)
 }
 
 $mat = matrix_multiply($a, $b);
+$expect = [
+    [17,3,1,-14,-23,-29],
+    [-14,10,4,17,-16,-7],
+    [-37,61,21,47,-7,16]
+];
 
-validates (1, $mat);
+validates ($expect, $mat);

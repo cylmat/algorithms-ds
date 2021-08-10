@@ -39,5 +39,3 @@ function afficheRectangleR(int $nbLignes, int $nbColonnes, string $caractere): v
     afficheRectangle(1, $nbColonnes - 1, $caractere);
     afficheRectangle($nbLignes - 1, $nbColonnes, $caractere);
 }
-
-echos(true);

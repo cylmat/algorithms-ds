@@ -18,4 +18,4 @@ $str = "alphabeta";
 $res = reverse($str);
 
 
-echos ($res==='atebahpla'); 
+validates ($res, 'atebahpla'); 

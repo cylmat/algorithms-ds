@@ -68,4 +68,5 @@ $jobs=[
 ];
 
 $res = sort_schedule_i($jobs, count($jobs));
-echos($res === [ [1,4,30], [5,9,50]]);
+$expect = [ [1,4,30], [5,9,50]];
+validates($res, $expect);

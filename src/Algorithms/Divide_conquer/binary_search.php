@@ -25,5 +25,3 @@ function binarySearch($arr, $l, $r, $x)
     }
     return -1;
 }
- 
-echos($result !== -1);

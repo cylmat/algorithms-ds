@@ -5,4 +5,4 @@ services:
         working_dir: /app
         volumes:
             - ${DIRECTORY}:/app
-        command: /bin/bash -c "apt-get update && apt-get install -y php-ds php-mbstring && /usr/sbin/php-fpm7.3 -O"
+        command: /bin/bash -c "apt-get update && apt-get install -y php-ds php-mbstring git && /usr/sbin/php-fpm7.3 -O"

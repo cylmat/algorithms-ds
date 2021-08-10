@@ -123,4 +123,4 @@ $sum = 11;
 $results = [];
 $res_is = isSubsetSum($set, count($set), $sum, $results); 
 
-echos($res_subsum && $res_i && $res_is);
+validates(true, $res_subsum && $res_i && $res_is);

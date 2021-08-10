@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ ! -z $1 ]; then
+    php -r "include 'src/debug.php'; include '$1'; echo \"\n\";"
+else
+    php -f ./src/validate.php
+fi

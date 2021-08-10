@@ -57,4 +57,4 @@ function int_multiply(string $inta, string $intb): string
 
 $res = (int)int_multiply($int1, $int2);
 
-echos ($res == $must_be);
+validates ($res, $must_be);

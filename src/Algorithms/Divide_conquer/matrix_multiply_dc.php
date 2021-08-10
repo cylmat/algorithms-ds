@@ -109,5 +109,3 @@ $mat = matrixMultiplication($a, $b, 0, 0, 0, 0, sizeof($a));
 foreach($mat as $r) {
     //echo implode(',',$r)."\n";
 }
-
-echos(true);

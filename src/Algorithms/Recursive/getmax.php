@@ -24,4 +24,4 @@ $input = [52,85,23,98,71,34];
 $res = getMax($input, count($input));
 $expect = 98;
 
-echos ($res === $expect);
+validates ($res, $expect);

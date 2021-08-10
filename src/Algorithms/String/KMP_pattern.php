@@ -43,4 +43,4 @@ $res = []; //result
 pattern_search($pat, $txt, $res);
 ksort($res);
 
-echos(array_keys($res)==[0,9,12]);
+validates(array_keys($res), [0,9,12]);

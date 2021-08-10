@@ -25,7 +25,7 @@ foreach ($dirs as $dir) {
     if (0 == strpos($dir->getFilename(), '.') && !preg_match('/src|lgorithms/', basename($dir->getRealpath()))) {
         if ($current_dir != basename($dir->getRealpath())) {
             $current_dir = basename($dir->getRealpath());
-            echo ' * ' . ucfirst($current_dir) . ' * ' . PHP_EOL;
+            echo "\n * " . ucfirst($current_dir) . ' * ' . PHP_EOL;
         }
     }
 
@@ -40,30 +40,20 @@ foreach ($dirs as $dir) {
     $printed = ob_get_clean();
     
     $txt = $dir->getFilename();
-    $end = END . PHP_EOL;
+    $end = END . "\t";
 
     // file must output "1" to be valid
     if (preg_match('/1$/', $printed)) {
         // verify doccomment in the file, a reference and 1 as output
-        /*$sep = "(.\R?)+";
-        $doc = "^\/\*\*";
-        $ref = " \* ref(s)?:"; //...
-        $todo = "\@todo";*/
-        /*if (preg_match("/{$doc}/", $file_content) &&
-            preg_match("/{$ref}/", $file_content) &&
-            !preg_match("/{$todo}/", $file_content)) {*/
-            if (ctype_upper($txt[0])) {
-                echo GREEN . strtoupper($txt) . $end;
-            } else {
-                echo GREEN . $txt . $end;
-            }
-            $valid++;
-        /*} else {
-            echo ORANGE . $txt . $end;
-            $warning++;
-        }*/
+        
+        if (ctype_upper($txt[0])) {
+            echo GREEN . strtoupper($txt) . $end;
+        } else {
+            echo GREEN . $txt . $end;
+        }
+        $valid++;
     } else {
-        echo RED . $txt . ': '.$printed . "\t (Don't return 1)" . $end;
+        echo RED . $txt . ' ' . "\t" . $end;
         $alert++;
     }
 }
@@ -71,13 +61,10 @@ foreach ($dirs as $dir) {
 //total
 $total = $alert + $warning + $valid;
 if ($alert > 0) {
-    echo RED."ERROR"." * Must return 1: ". END."";
+    echo RED."\n\nERROR: ".END." "."";
     $exit = 2;
-/*} else if ($warning > 0) {
-    echo " * Must be a doc comment, a ref and no @todo\n".ORANGE."WARNING". END."\n";
-    exit(1);*/
 } else {
-    echo GREEN . "OK: ". END;
+    echo GREEN . "\n\nOK: ".END;
     $exit = 0;
 }
 echo " (" . $valid . ") valides and (" . $alert . ") erreurs on a total of (" . $total . ")" . END . "\n";

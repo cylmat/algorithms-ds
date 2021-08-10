@@ -31,6 +31,3 @@ function permut_heap(array $arr, int $n): void
 
 $arr = ["A", "B", "C"]; 
 permut_heap($arr, count($arr));
-
-//validate
-echos(true);

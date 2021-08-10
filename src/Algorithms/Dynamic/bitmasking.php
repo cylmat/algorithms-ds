@@ -42,4 +42,4 @@ $value = 5;
 
 $res = bitmask($arr, $value, count($arr));
 
-echos(3 === $res);
+validates(3, $res);

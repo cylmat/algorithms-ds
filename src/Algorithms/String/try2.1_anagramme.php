@@ -39,15 +39,17 @@ function anagramme_i(string $phrase): array
     }
     return $res;
 }
-$phrase = "Le chien marche vers sa niche, et trouve une limace de chine nue, pleine de malice, qui lui fait du charme.";
+$phrase = "Le chien marche vers sa niche, et trouve une limace de chine.";
 $res = anagramme_i($phrase);
+
+validates($res, [['chien', 'niche', 'chine']]);
 
 /**
  * Recursive
  * 
  */
 // 
-function anagramme(array $words, int $n, int $i=0, array $dico=[]): array
+function anagramme_r(array $words, int $n, int $i=0, array $dico=[]): array
 {
      //base case
     if ($i==$n) {
@@ -68,7 +70,7 @@ function anagramme(array $words, int $n, int $i=0, array $dico=[]): array
     }
     
     //continue with others words
-    $dico = anagramme($words, $n, $i+1, $dico);
+    $dico = anagramme_r($words, $n, $i+1, $dico);
     
     //main call
     if(0==$i) {
@@ -84,8 +86,8 @@ function anagramme(array $words, int $n, int $i=0, array $dico=[]): array
     return $dico;
 }
 
-$phrase = "Le chien marche vers sa niche, et trouve une limace de chine nue, pleine de malice, qui lui fait du charme.";
+$phrase = "Le chien marche vers sa niche, et trouve une limace de chine.";
 $phrase = explode(' ', strtolower(str_replace([',','.'],'',$phrase)));
-$res = anagramme($phrase, count($phrase));
 
-echos(true);
+$res = anagramme_r($phrase, count($phrase));
+validates($res, [['chien', 'niche', 'chine']]);

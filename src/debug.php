@@ -56,17 +56,17 @@ function display_tree(node $node, $d=0)
 /*************
  * Assertions
  */
+function ob_get()
+{
+    return trim(ob_get_clean());
+}
+
 function validates($expect, $value): void
 {
-    echos(asserts($expect, $value));
+    echo (int)asserts($expect, $value);
 }
 
 function asserts($value, $expect): bool
 {
     return $value === $expect;
-}
-
-function echos(bool $assert): void
-{
-    echo (int) $assert;
 }

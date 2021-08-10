@@ -29,7 +29,7 @@ $x = 'RRYRYYR';
 $y = 'AYAAYYA';
 $res = LCSLength($x, $y, strlen($x), strlen($y));
 
-echos($res===3);
+validates($res, 3);
 
 /*
 function LCSLength(X[1..m], Y[1..n])
