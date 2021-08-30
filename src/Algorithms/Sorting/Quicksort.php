@@ -38,3 +38,27 @@ $array = [50, 23, 9, 18, 61, 32];
 quickSort($array, 0, count($array)-1);
 
 validates($array, [9, 18, 23, 32, 50, 61]);
+
+
+// info
+/*
+tailRecursiveQuicksort($arr, int $start, int $end): void
+{
+    while ($start < $end)
+    {
+        $pivot = partition($arr, $start, $end);
+ 
+        // recur on the smaller subarray
+        if ($pivot - $start < $end - $pivot)
+        {
+            tailRecursiveQuicksort($arr, $start, $pivot - 1);
+            $start = $pivot + 1;
+        }
+        else
+        {
+            tailRecursiveQuicksort($arr, $pivot + 1, $end);
+            $end = $pivot - 1;
+        }
+    }
+}
+*/
