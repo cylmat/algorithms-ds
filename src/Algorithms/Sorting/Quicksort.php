@@ -2,6 +2,7 @@
 
 /**
  * @ref: https://www.interviewbit.com/tutorial/quicksort-algorithm/
+ * https://www.w3resource.com/php-exercises/searching-and-sorting-algorithm/searching-and-sorting-algorithm-exercise-1.php
  */
 
 function quickSort(&$array, int $low, int $high): void
