@@ -2,7 +2,6 @@
 
 /**
  * @ref: https://www.interviewbit.com/tutorial/quicksort-algorithm/
- * https://www.w3resource.com/php-exercises/searching-and-sorting-algorithm/searching-and-sorting-algorithm-exercise-1.php
  */
 
 function quickSort(&$array, int $low, int $high): void
@@ -63,3 +62,9 @@ tailRecursiveQuicksort($arr, int $start, int $end): void
     }
 }
 */
+
+
+/**
+ * Solution 2
+ * @ref: https://www.w3resource.com/php-exercises/searching-and-sorting-algorithm/searching-and-sorting-algorithm-exercise-1.php
+ */
