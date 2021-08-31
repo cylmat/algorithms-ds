@@ -16,7 +16,9 @@ function quickSort(&$array, int $low, int $high): void
     }
 }
 
-// put every elements smaller than pivot on the left
+/*
+ * Method: Put every elements smaller than pivot on the left
+ */
 function qs_partition (array &$array, int $low, int $high): int
 {
     // pivot - Element at right most position
