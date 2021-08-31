@@ -69,3 +69,9 @@ tailRecursiveQuicksort($arr, int $start, int $end): void
  * Solution 2
  * @ref: https://www.w3resource.com/php-exercises/searching-and-sorting-algorithm/searching-and-sorting-algorithm-exercise-1.php
  */
+
+/**
+ * Solution 3
+ * @ref: https://en.wikipedia.org/wiki/Quicksort
+ * @ref: https://fr.wikipedia.org/wiki/Tri_rapide
+ */
