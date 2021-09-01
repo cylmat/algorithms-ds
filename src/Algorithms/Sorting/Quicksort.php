@@ -80,3 +80,9 @@ tailRecursiveQuicksort($arr, int $start, int $end): void
  * @ref: https://en.wikipedia.org/wiki/Quicksort
  * @ref: https://fr.wikipedia.org/wiki/Tri_rapide
  */
+
+
+/***********
+ * iterative solution
+ * @ref https://javarevisited.blogspot.com/2016/09/iterative-quicksort-example-in-java-without-recursion.html
+***********/
