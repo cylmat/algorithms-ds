@@ -23,7 +23,10 @@ function qs_partition (array &$array, int $low, int $high): int
 {
     // pivot - Element at right most position
     $pivot = $array[$high];  
+    
+    // must be in the array range!
     $i = ($low - 1);  // Index of smaller element
+    
     for ($j = $low; $j <= $high-1; $j++)
     {
         // If current element is smaller than the pivot, swap the element with ($i)
