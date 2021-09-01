@@ -90,28 +90,25 @@ function iter_quicksort(array &$arr)
 {
     $startIndex = 0;
 	$endIndex = count($arr) - 1;
-	$top = -1;
-
 	$stack = [];
-	$stack[$top++] = $startIndex;
-	$stack[$top++] = $endIndex;
 
-	while ($top >= 0) {
-		$top--;
-		$endIndex = $stack[$top];
-		$top--;
-		$startIndex = $stack[$top];
+	array_push($stack, $startIndex);
+	array_push($stack, $endIndex);
 
-		$p = qs_partition($arr, $startIndex, $endIndex);
+	while (!empty($stack)) {
+		$endIndex = array_pop($stack);
+		$startIndex = array_pop($stack);
+
+		$p = part($arr, $startIndex, $endIndex);
 
 		if ($p - 1 > $startIndex) {
-			$stack[$top++] = $startIndex;
-			$stack[$top++] = $p - 1;
+			array_push($stack, $startIndex);
+			array_push($stack, $p - 1);
 		}
 
 		if ($p + 1 < $endIndex) {
-			$stack[$top++] = $p + 1;
-			$stack[$top++] = $endIndex;
+			array_push($stack, $p + 1);
+			array_push($stack, $endIndex);
 		}
 	}
 }
