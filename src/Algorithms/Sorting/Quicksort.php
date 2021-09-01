@@ -84,5 +84,5 @@ tailRecursiveQuicksort($arr, int $start, int $end): void
 
 /***********
  * iterative solution
- * @ref https://javarevisited.blogspot.com/2016/09/iterative-quicksort-example-in-java-without-recursion.html
+ * @ref https://www.programmingalgorithms.com/algorithm/quick-sort-iterative/php/
 ***********/
