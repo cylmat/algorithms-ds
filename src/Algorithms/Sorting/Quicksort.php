@@ -86,3 +86,37 @@ tailRecursiveQuicksort($arr, int $start, int $end): void
  * iterative solution
  * @ref https://www.programmingalgorithms.com/algorithm/quick-sort-iterative/php/
 ***********/
+function iter_quicksort(array &$arr)
+{
+    $startIndex = 0;
+	$endIndex = count($arr) - 1;
+	$top = -1;
+
+	$stack = [];
+	$stack[$top++] = $startIndex;
+	$stack[$top++] = $endIndex;
+
+	while ($top >= 0) {
+		$top--;
+		$endIndex = $stack[$top];
+		$top--;
+		$startIndex = $stack[$top];
+
+		$p = qs_partition($arr, $startIndex, $endIndex);
+
+		if ($p - 1 > $startIndex) {
+			$stack[$top++] = $startIndex;
+			$stack[$top++] = $p - 1;
+		}
+
+		if ($p + 1 < $endIndex) {
+			$stack[$top++] = $p + 1;
+			$stack[$top++] = $endIndex;
+		}
+	}
+}
+
+$array = [50, 23, 9, 18, 61, 32];
+iter_quickSort($array, 0, count($array)-1);
+
+validates($array, [9, 18, 23, 32, 50, 61]);
