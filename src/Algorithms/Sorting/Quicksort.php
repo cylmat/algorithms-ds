@@ -99,7 +99,7 @@ function iter_quicksort(array &$arr)
 		$endIndex = array_pop($stack);
 		$startIndex = array_pop($stack);
 
-		$p = part($arr, $startIndex, $endIndex);
+		$p = qs_partition($arr, $startIndex, $endIndex);
 
 		if ($p - 1 > $startIndex) {
 			array_push($stack, $startIndex);
