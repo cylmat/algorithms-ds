@@ -12,7 +12,7 @@ define("END", "\e[0m");
 
 include 'debug.php';
 
-$dirs = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(__DIR__.'/Algorithms'));
+$dirs = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(__DIR__.'/src'));
 
 /**
  * Validate all algorithms files
