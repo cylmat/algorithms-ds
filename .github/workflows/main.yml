@@ -13,4 +13,4 @@ jobs:
         extensions: ds, psr, mbstring
         php-version: "7.3"
     - name: Run test suite
-      run: php src/validate.php
+      run: php validate.php
