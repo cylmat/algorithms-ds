@@ -22,21 +22,20 @@ function int_multiply(string $inta, string $intb): string
     $result=array_fill(0, $sizea+$sizeb, 0);
     $ia=0;
     
-    for($a=$sizea-1; $a>=0; $a--) {
+    for ($a=$sizea-1; $a>=0; $a--) {
         $carry=0; 
         $ib=0;
-        //$result=array_fill(0, $sizea+$sizeb, 0);
-        for($b=$sizeb-1; $b>=0; $b--) {
+       
+        for ($b=$sizeb-1; $b>=0; $b--) {
             $res = $inta[$a] * $intb[$b]; //pose resultat
             $pose = $res % 10 + $carry;
             $carry = floor($res / 10); //retenue
             
             $sum = $result[$ia+$ib] + $pose;
-            //$sum = $res + $result[$ia+$ib] + $carry;
-            //var_dump($inta{$a}.'*'.$intb{$b}.'='."$res: $pose, $carry - $sum");
+            
             $result[$ia+$ib] = $sum ; //$sum % 10
             $ib++;
-            //var_dump(join(',',array_reverse($result)));
+            
         }
         $result[$ia+$ib] += $carry;
         var_dump(join(',',array_reverse($result)));
