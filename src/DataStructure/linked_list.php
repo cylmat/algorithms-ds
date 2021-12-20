@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__.'/Node.class.php';
+use DataStructure\Node;
 
 function linked_list(?Node $head, $data) { //Node(->data)(->next)
     if(null === $head) {
