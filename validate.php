@@ -41,7 +41,7 @@ foreach ($src as $dir) {
 
     // file must output "1..." to be valid
     if (preg_match('/1+$/', $printed)) {
-        echo GREEN . $txt . $end;
+        echo GREEN . $txt . $end . "\t ... [OK]";
     } else {
         echo $printed.PHP_EOL;
         echo RED . $txt . ' ' . "\t" . $end;
