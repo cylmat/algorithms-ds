@@ -1,6 +1,6 @@
 <?php
 
-include 'Node.class.php';
+include __DIR__.'/Node.class.php';
 
 function linked_list(?Node $head, $data) { //Node(->data)(->next)
     if(null === $head) {
