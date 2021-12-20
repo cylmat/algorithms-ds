@@ -1,12 +1,13 @@
 <?php
 
-if (!class_exists('Node')):
-class Node 
+// GraphNode
+
+class GNode 
 {
     /** @var string */
-    private $value; 
-    /** @var ?Node[] */
-    private $childs = null;
+    public $value; 
+    /** @var ?self[] */
+    public $childs = null;
   
     function __construct(?string $value = null)
     { 
@@ -26,4 +27,3 @@ class Node
         return $this; 
     }
 }
-endif;
