@@ -43,6 +43,7 @@ foreach ($src as $dir) {
     if (preg_match('/1+$/', $printed)) {
         echo GREEN . $txt . $end;
     } else {
+        echo $printed.PHP_EOL;
         echo RED . $txt . ' ' . "\t" . $end;
         exit(1);
     }
