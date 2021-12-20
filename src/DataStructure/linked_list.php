@@ -1,5 +1,7 @@
 <?php
 
+include 'Node.class.php';
+
 function linked_list(?Node $head, $data) { //Node(->data)(->next)
     if(null === $head) {
         $head = new Node($data);
