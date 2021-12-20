@@ -7,6 +7,10 @@ define("RED", "\e[31m");
 define("GREEN", "\e[32m");
 define("END", "\e[0m");
 
+spl_autoload_register(function(string $className) {
+    include __DIR__."/classes/$className.php";
+});
+
 $src = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(__DIR__.'/src'));
 
 function validates($expect, $value) { echo (int)asserts($expect, $value); }
