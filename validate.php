@@ -7,10 +7,16 @@ define("RED", "\e[31m");
 define("GREEN", "\e[32m");
 define("END", "\e[0m");
 
+/**
+ * Autoload nodes and data structures classes
+ */
 spl_autoload_register(function(string $className) {
     include __DIR__."/classes/$className.php";
 });
 
+/**
+ * Include src files
+ */
 $src = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(__DIR__.'/src'));
 
 function validates($expect, $value) { echo (int)asserts($expect, $value); }
