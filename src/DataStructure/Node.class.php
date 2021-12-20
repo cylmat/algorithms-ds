@@ -1,6 +1,8 @@
 <?php
 
-if (!class_exists('Node')):
+namespace DataStructure;
+
+if (!class_exists('\DataStructure\Node')):
 class Node 
 {
     /** @var string */
