@@ -9,6 +9,9 @@ define("END", "\e[0m");
 
 $src = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(__DIR__.'/src'));
 
+function validates($expect, $value) { echo (int)asserts($expect, $value); }
+function asserts($value, $expect): bool { return $value === $expect; }
+
 /**
  * Validate all algorithms files
  */
