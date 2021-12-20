@@ -6,7 +6,7 @@
  * $list->push('six');
  * $list->ins(1,'ert');
  */
-class LinkList
+class LinkedList
 {
     private $head;
     private $count = 0;
