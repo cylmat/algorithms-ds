@@ -11,7 +11,7 @@ define("END", "\e[0m");
  * Autoload nodes and data structures classes
  */
 spl_autoload_register(function(string $className) {
-    include __DIR__."/classes/$className.php";
+    include_once __DIR__."/classes/$className.php";
 });
 
 /**
