@@ -28,7 +28,7 @@ foreach ($src as $dir) {
     }
 
     // only php files
-    if ('php' != $dir->getExtension()) {
+    if ('php' !== $dir->getExtension() && 'class.php' !== $dir->getExtension()) {
         continue;
     }
     
