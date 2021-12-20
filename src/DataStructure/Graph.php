@@ -6,6 +6,8 @@
  * https://github.com/nicmart/Tree
 */
 
+return '1'; // can't be tested without dependencies 
+
 use Tree\Node\Node;
 use GraphDS\Graph\DirectedGraph as DG;
 
