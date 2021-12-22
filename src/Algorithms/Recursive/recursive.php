@@ -43,6 +43,6 @@ function displayRectangleR(int $nbLignes, int $nbColonnes, string $caractere): v
 ob_start();
 displayRectangleR(2, 3, 't');
 
-$res = explode("\n", trim(ob_get()));
+$res = explode("\n", trim(ob_get_clean()));
 
 validates($res, ['ttt', 'ttt']);
