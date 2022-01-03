@@ -47,21 +47,18 @@ foreach ($files as $file) {
     }
 
     ob_start();
-    try {
-        include $file;
-    } catch (\Error $e) {
-    }
-    $printed = ob_get_clean();
+    include $file;
+    $printed = ob_get();
 
     $txt = $file->getFilename();
     $end = END . "\t";
 
     // file must output "1..." to be valid
-    if (preg_match('/1+$/', $printed)) {
+    if (preg_match('/^1+$/', $printed)) {
         echo GREEN . $txt . $end . "\t ... [OK]".PHP_EOL;
     } else {
         echo $printed.PHP_EOL;
         echo RED . $txt . ' ' . "\t" . $end;
-        //exit(1);
+        exit(1);
     }
 }
