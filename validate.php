@@ -21,6 +21,7 @@ $src = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(__DIR__.'/sr
 
 function validates($expect, $value) { echo (int)asserts($expect, $value); }
 function asserts($value, $expect): bool { return $value === $expect; }
+function ob_get() { return trim(ob_get_clean()); }
 
 /**
  * Validate all algorithms files
