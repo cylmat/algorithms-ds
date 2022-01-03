@@ -52,21 +52,3 @@ function display_tree(node $node, $d=0)
     echo str_pad('',$d*2,' .') . ' ' . $node->val."\n";
     foreach ($node->childs as $child) display_tree($child, $d+1);
 }
-
-/*************
- * Assertions
- */
-function ob_get()
-{
-    return trim(ob_get_clean());
-}
-
-function validates($expect, $value): void
-{
-    echo (int)asserts($expect, $value);
-}
-
-function asserts($value, $expect): bool
-{
-    return $value === $expect;
-}
