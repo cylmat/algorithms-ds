@@ -14,40 +14,46 @@ spl_autoload_register(function(string $className) {
     include_once __DIR__."/classes/$className.php";
 });
 
+function validates($expect, $value) { echo (int)asserts($expect, $value); }
+function asserts($value, $expect): bool { return $value === $expect; }
+function ob_get() { return trim(ob_get_clean()); }
+
+$valid = $warning = $alert = 0;
+
 /**
  * Include src files
  */
 $src = new RecursiveIteratorIterator(new RecursiveDirectoryIterator(__DIR__.'/src'));
 
-function validates($expect, $value) { echo (int)asserts($expect, $value); }
-function asserts($value, $expect): bool { return $value === $expect; }
-function ob_get() { return trim(ob_get_clean()); }
-
 /**
  * Validate all algorithms files
  */
-$current_dir=null;
-$valid = $warning = $alert = 0;
+$files = [];
+foreach ($src as $file) {
+    if ('php' === $file->getExtension()) {
+        $files[] = $file;
+    }
+}
+usort($files, function($current, $next) {
+    return $current->getRealpath() <=> $next->getRealpath(); 
+});
 
-foreach ($src as $dir) {
-    // display directories
-    if (0 == strpos($dir->getFilename(), '.') && !preg_match('/src/', basename($dir->getRealpath()))) {
-        if ($current_dir != basename($dir->getRealpath())) {
-            $current_dir = basename($dir->getRealpath());
-            echo "\n * " . ucfirst($current_dir) . ' * ' . PHP_EOL;
-        }
+$current = null;
+foreach ($files as $file) {
+    $base = pathinfo($file->getRealpath(), PATHINFO_DIRNAME);
+    if ($base !== $current) {
+        echo ' * '.pathinfo($base, PATHINFO_BASENAME).' * '.PHP_EOL;
+        $current = $base;
     }
 
-    // only php files
-    if ('php' !== $dir->getExtension() && 'class.php' !== $dir->getExtension()) {
-        continue;
-    }
-    
     ob_start();
-    include $dir->getRealpath();
+    try {
+        include $file;
+    } catch (\Error $e) {
+    }
     $printed = ob_get_clean();
 
-    $txt = $dir->getFilename();
+    $txt = $file->getFilename();
     $end = END . "\t";
 
     // file must output "1..." to be valid
@@ -56,6 +62,6 @@ foreach ($src as $dir) {
     } else {
         echo $printed.PHP_EOL;
         echo RED . $txt . ' ' . "\t" . $end;
-        exit(1);
+        //exit(1);
     }
 }
