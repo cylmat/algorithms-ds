@@ -1,22 +1,21 @@
 <?php
-
-/**
- * COMBINATIONS problems
- */
-
+function validates($a,$b) { echo $a===$b ? 'y' : 'n';}
 /**
  * - Print all possible strings of length k
  * 
  * Input: ['a', 'b'], length = 3
  * print: aaa,aab,aba,abb,baa,bab,bba,bbb
  * 
- * ref: https://www.geeksforgeeks.org/print-all-combinations-of-given-length/
+ * @see https://www.geeksforgeeks.org/print-all-combinations-of-given-length/
  */
+$all_combination = '';
 function all_combinations(array $arr, int $size_arr, int $length_total, string $out=''): void
 {
+    global $all_combination;
+    
     // base
-    if($length_total==0) {
-        echo $out."\n";
+    if ($length_total==0) {
+        $all_combination .= $out."\n";
         return;
     }
     
@@ -28,73 +27,70 @@ function all_combinations(array $arr, int $size_arr, int $length_total, string $
 $arr = ['a','b'];
 $length = 3;
 
-ob_start();
 all_combinations($arr, count($arr), $length);
-$result = explode("\n", ob_get());
 
 $exp = ['aaa','aab','aba','abb','baa','bab','bba','bbb'];
-validates ($result, $exp); // ok to display
+
+validates (explode("\n", trim($all_combination)), $exp); // ok to display
 
 /**
  * Iteratives way
  * - print aaa, aab ... bbb
  * 
- * ref: https://stackoverflow.com/questions/31175503/iteratively-find-all-combinations-of-size-k-of-an-array-of-characters-n-choose
+ * @see https://stackoverflow.com/questions/31175503/iteratively-find-all-combinations-of-size-k-of-an-array-of-characters-n-choose
  */
-function buildStrings_i(array $root, int $length): void
+$all_combination_i = '';
+function buildStrings_iter(array $root, int $length): void
 {
+    global $all_combination_i;
+    
     // allocate an int array to hold the counts:
     $pos = [0,0,0,0,0];
 
-    // allocate a char array to hold the current combination:
+    // allocate a char array to hold the current combination
     $combo = [];
 
     // initialize to the first value:
-    for($i = 0; $i < $length; $i++) {
+    for ($i = 0; $i < $length; $i++) {
         $combo[$i] = $root[0];
     }
 
-    while(true)
-    {
+    while (true) {
         // output the current combination:
-        echo implode($combo)."\n";
+        $all_combination_i .= implode($combo)."\n";
 
         // move on to the next combination:
         $place = $length - 1;
-        while ($place >= 0)
-        {
-            if (++$pos[$place] == count($root))
-            {
+        while ($place >= 0) {
+            if (++$pos[$place] == count($root)) {
                 // overflow, reset to zero
                 $pos[$place] = 0;
                 $combo[$place] = $root[0];
                 $place--; // and carry across to the next value
             }
-            else
-            {
+            else {
                 // no overflow, just set the char value and we're done
                 $combo[$place] = $root[$pos[$place]];
                 break;
             }
         }
+        
         if ($place < 0)
             break;  // overflowed the last position, no more combinations
     }
 }
 
-ob_start();
-buildStrings_i(['a','b'], 3);
-$res = explode("\n", ob_get());
+buildStrings_iter(['a','b'], 3);
 
 $exp = ['aaa','aab','aba','abb','baa','bab','bba','bbb'];
-validates($res, $exp);
+validates($exp, explode("\n", trim($all_combination_i)));
 
 
 /**
  * Print all combination of numbers 
  *  - print 12, 13, 14, 15, 23, 24, 25, 34, 35 ...
  * 
- * ref: https://www.rosettacode.org/wiki/Combinations#PHP
+ * @see https://www.rosettacode.org/wiki/Combinations#PHP
  */
 function combinations_set(array $set = [], int $size = 0): array
 {
@@ -120,5 +116,6 @@ function combinations_set(array $set = [], int $size = 0): array
     return $result;
 }
 
-$res=combinations_set(range(0, 2), 3);
-validates($res, [[0,1,2]]);
+$res_set=combinations_set(range(0, 2), 3);
+
+validates($res_set, [[0,1,2]]);
