@@ -33,4 +33,4 @@ function Heap_permutation(array $arr, int $n): void
 $arr = ["A", "B", "C"]; 
 Heap_permutation($arr, count($arr));
 
-validates($heap_result, ['A B C', 'B A C', 'C B A', 'B C A', 'C A B', 'A C B']);
+validates(explode("\n", $heap_result), ['A B C', 'B A C', 'C B A', 'B C A', 'C A B', 'A C B']);
