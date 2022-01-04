@@ -1,14 +1,18 @@
 <?php
+
 /**
  * Print all bits combinations 
  *  with string "$out" inside parameters
  * 
  * - print 000,001,010,011,100 ... 111
  */
+$bits_results = '';
 function bits_str(int $n, string $str='', int $to=0): void
 {
-    if($n==$to) {
-        echo $str."\n";
+    global $bits_results;
+
+    if ($n==$to) {
+        $bits_results .= "$str ";
         return;
     }
     
@@ -18,13 +22,9 @@ function bits_str(int $n, string $str='', int $to=0): void
     $set2 = $str . '1';
     bits_str($n, $set2, $to+1);
 
-    /**
-     * or...
-     * bits_string($max, $out.'0', $c+1);
-     * bits_string($max, $out.'1', $c+1);
-     */
 }
 bits_str(3);
+validates ($bits_results, "000 001 010 011 100 101 110 111 ");
 
 /*
  * Version with string returned
@@ -32,24 +32,26 @@ bits_str(3);
  * 
  * - return 00 01 10 11.... until max
  */
-function bits_string(int $max, string $out='', int $c=0): string
+function bits_string(int $max, int $c=0, string $out=''): string
 {
-    if($max==$c) {
-        return $out."\n";
+    if ($max==$c) {
+        return "$out ";
     }
 
-    $s1 = bits_string($max, $out.'0', $c+1);
-    $s1 .= bits_string($max, $out.'1', $c+1);
+    $s1 = bits_string($max, $c+1, $out.'0');
+    $s1 .= bits_string($max, $c+1, $out.'1');
+    
     return $s1;
 }
-bits_string(3);
+$res = bits_string(3);
+validates($res, "000 001 010 011 100 101 110 111 ");
 
 /**
  * return array of bits [[00],[01],[10],[11]...] until max length
  */
 function bits_array(int $max, int $c=1): array
 {
-    if($c==$max) {
+    if ($c==$max) {
         return ["0","1"];
     }
     
@@ -67,4 +69,4 @@ function bits_array(int $max, int $c=1): array
     return $out;
 }
 $res1 = bits_array(3);
-
+validates($res1, ["000", "001", "010", "011", "100", "101", "110", "111"]);
