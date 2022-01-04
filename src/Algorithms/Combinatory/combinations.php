@@ -1,5 +1,5 @@
 <?php
-function validates($a,$b) { echo $a===$b ? 'y' : 'n';}
+
 /**
  * - Print all possible strings of length k
  * 
@@ -28,9 +28,7 @@ $arr = ['a','b'];
 $length = 3;
 
 all_combinations($arr, count($arr), $length);
-
 $exp = ['aaa','aab','aba','abb','baa','bab','bba','bbb'];
-
 validates (explode("\n", trim($all_combination)), $exp); // ok to display
 
 /**
@@ -116,6 +114,5 @@ function combinations_set(array $set = [], int $size = 0): array
     return $result;
 }
 
-$res_set=combinations_set(range(0, 2), 3);
-
+$res_set = combinations_set(range(0, 2), 3);
 validates($res_set, [[0,1,2]]);
