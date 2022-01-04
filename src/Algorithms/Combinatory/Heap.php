@@ -13,7 +13,7 @@ function Heap_permutation(array $arr, int $n): void
     global $heap_result;
     
     if (1==$n) {
-        $heap_res .= join(' ', $arr)."\n"; 
+        $heap_result .= join(' ', $arr)."\n"; 
         return; 
     }
     
