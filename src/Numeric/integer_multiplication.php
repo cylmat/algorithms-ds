@@ -1,18 +1,20 @@
 <?php
-// integer multiplication NAIVE
-//use it with karatsuba in D&C algorithm
 
-// https://www.geeksforgeeks.org/multiply-large-numbers-represented-as-strings/?ref=lbp
-
+/**
+ * integer multiplication NAIVE
+ * @todo use it with karatsuba in D&C algorithm
+ *
+ * @see https://www.geeksforgeeks.org/multiply-large-numbers-represented-as-strings/?ref=lbp
+ */
 
 $int1 = '1254';
 $int2 = '0652'; // 1254 * 652 = 817 608
 $must_be = 817608;
 
 /*
-   123
+ * 123
  *  25
-*/
+ */
 function int_multiply(string $inta, string $intb): string
 {
     $sizea = strlen($inta);
@@ -38,7 +40,6 @@ function int_multiply(string $inta, string $intb): string
             
         }
         $result[$ia+$ib] += $carry;
-        var_dump(join(',',array_reverse($result)));
         $ia++;
     }
     
@@ -56,4 +57,4 @@ function int_multiply(string $inta, string $intb): string
 
 $res = (int)int_multiply($int1, $int2);
 
-validates ($res, $must_be);
+validates($res, $must_be);
