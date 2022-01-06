@@ -29,7 +29,7 @@ function find_all_primes_divisors_rec(int $factor, int $current=null): string
         if(_isprime($current)) $out.="$current ";
     }
     
-    $out .= find_all_primes_divisors($factor, $current-1);
+    $out .= find_all_primes_divisors_rec($factor, $current-1);
     return $out;
 }
 
