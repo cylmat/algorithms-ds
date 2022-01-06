@@ -84,4 +84,4 @@ $check_prime = function (int $int, int $current=null) use (&$check_prime): bool
     
     return $check_prime($int, $current-1); 
 };
-validates(true, $check_prime(51) && !$check_prime(53));
+validates(true, !$check_prime(51) && $check_prime(53));
