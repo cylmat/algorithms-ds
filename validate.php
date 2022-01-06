@@ -51,7 +51,7 @@ foreach ($files as $file) {
     $printed = ob_get();
 
     $real = $file->getRealpath();
-    $end = END . "\t";
+    $end = END;
 
     // file must output "1..." to be valid
     if (preg_match('/^1+$/', $printed)) {
