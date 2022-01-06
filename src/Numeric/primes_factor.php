@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Find primes numbers of given factor
  * 
@@ -6,10 +7,9 @@
  * - divide by current-1 until 2
  * - if divided, factor become current and diviser is stored
  * 
- * ref: https://www.geeksforgeeks.org/print-all-prime-factors-of-a-given-number/
+ * @see https://www.geeksforgeeks.org/print-all-prime-factors-of-a-given-number/
  */
-
-function find_all_primes_divisors(int $factor, int $current=null): string
+function find_all_primes_divisors_rec(int $factor, int $current=null): string
 {
     if (null===$current) {
         $current=$factor-1;
@@ -42,32 +42,13 @@ function _isprime(int $number, int $c=null): bool
     
     return (__FUNCTION__)($number, $c-1);
 }
-
-
-/******************************
- * 
- ***********************/
-// try Closure recursive
-$check_prime = function (int $int, int $current=null) use (&$check_prime): bool
-{
-    if(null===$current) $current = $int;
-    
-    // check de 2 à $int
-    if ($current == 1) return true;
-    
-    // if is divisible: not prime
-    if ($int !== $current && is_int($int / $current)) {
-        return false; 
-    }
-    
-    return $check_prime($int, $current-1); 
-};
+validates("17 3 2 ", find_all_primes_divisors_rec(102));
 
 /**
  * ITERATIVE
  * find all primes numbers until max
  */
-function find_all_primes_until_i(int $max)
+function find_all_primes_until_iter(int $max): string
 {
     $out='';
     for ($f=2; $f<$max; $f++) {
@@ -83,8 +64,24 @@ function find_all_primes_until_i(int $max)
     }
     return $out;
 }
+validates("2 3 5 7 ", find_all_primes_until_iter(10));
 
-$res_div = find_all_primes_divisors(102) === "17 3 2 ";
-$res_max = find_all_primes_until_i(10) === "2 3 5 7 ";
 
-validates(true, $res_div && $res_max);
+/******************************
+ * try Closure recursive
+ ***********************/
+$check_prime = function (int $int, int $current=null) use (&$check_prime): bool
+{
+    if(null===$current) $current = $int;
+    
+    // check de 2 à $int
+    if ($current == 1) return true;
+    
+    // if is divisible: not prime
+    if ($int !== $current && is_int($int / $current)) {
+        return false; 
+    }
+    
+    return $check_prime($int, $current-1); 
+};
+validates(true, $check_prime(51) && !$check_prime(53));
