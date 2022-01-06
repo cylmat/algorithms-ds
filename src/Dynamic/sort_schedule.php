@@ -21,8 +21,6 @@
  *  https://riptutorial.com/dynamic-programming/example/25784/weighted-job-scheduling-algorithm
  */
 
-if(!function_exists('d')) { function d($v){ var_dump($v); }}
-
 /**
  * iterative
  */
