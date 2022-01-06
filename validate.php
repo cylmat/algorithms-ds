@@ -50,7 +50,7 @@ foreach ($files as $file) {
     include $file;
     $printed = ob_get();
 
-    $txt = $file->getFilename();
+    $txt = $file->getRealpath();
     $end = END . "\t";
 
     // file must output "1..." to be valid
