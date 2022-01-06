@@ -1,11 +1,70 @@
 <?php
-// D&C
-// https://www.geeksforgeeks.org/strassens-matrix-multiplication/
-// https://stackoverflow.com/questions/21496538/square-matrix-multiply-recursive-in-java-using-divide-and-conquer
+
+/*
+ * D&C
+ * https://www.geeksforgeeks.org/strassens-matrix-multiplication/
+ * https://stackoverflow.com/questions/21496538/square-matrix-multiply-recursive-in-java-using-divide-and-conquer
+ */
 /*
  Multiply if A cols = B rows
  2x3 * 3x4 => 2x4
 */
+/*
+ * res[A rows][B cols]
+ */
+function matrixMultiplication(
+        array $A, array $B, int $rowA, int $colA, 
+        int $rowB, int $colB, int $size
+): array {
+    $C=[];
+    if($size==1)
+        $C[0][0]= $A[$rowA][$colA]*$B[$rowB][$colB];
+    else{
+        $newSize= $size/2;
+        
+        // $C11 = addMatrix(matrixMultiplication($A11, $B11), matrixMultiplication($A12, $B21));
+        // $C12 = addMatrix(matrixMultiplication($A11, $B12), matrixMultiplication($A12, $B22));
+        
+        // C11 = C [0 -> half][0 -> half];
+        // C12 = C [0 -> half][half -> size];
+
+        //C11
+         _sumMatrix($C, 
+            matrixMultiplication($A, $B, $rowA, $colA, $rowB, $colB, $newSize),
+            matrixMultiplication($A, $B, $rowA, $colA+$newSize, $rowB+ $newSize, $colB, $newSize),
+        0, 0);
+
+        //C12
+         _sumMatrix($C, 
+            matrixMultiplication($A, $B, $rowA, $colA, $rowB, $colB + $newSize, $newSize),
+            matrixMultiplication($A, $B, $rowA, $colA+$newSize, $rowB+ $newSize, $colB+$newSize, $newSize),
+        0, $newSize);
+
+        //C21
+         _sumMatrix($C, 
+            matrixMultiplication($A, $B, $rowA+ $newSize, $colA, $rowB, $colB, $newSize),
+            matrixMultiplication($A, $B, $rowA+ $newSize, $colA+$newSize, $rowB+ $newSize, $colB, $newSize),
+        $newSize, 0);
+
+        //C22
+         _sumMatrix($C, 
+            matrixMultiplication($A, $B, $rowA+ $newSize, $colA, $rowB, $colB+$newSize, $newSize),
+            matrixMultiplication($A, $B, $rowA+ $newSize, $colA+$newSize, $rowB+ $newSize, $colB+$newSize, $newSize),
+        $newSize, $newSize);
+    }
+
+    return $C;
+}
+
+function _sumMatrix(array &$C, array $A, array $B, int $rowC, int $colC): void 
+{
+    $n=sizeof($A);
+    for ($i =0; $i<$n; $i++) {
+        for ($j=0; $j<$n; $j++) { 
+            $C[$i+$rowC][$j+$colC] = $A[$i][$j] + $B[$i][$j];
+        }
+    }
+}
 
 //3x4
 $a = [ //4 cols
@@ -33,78 +92,9 @@ $b = [ //4 rows
     [ 0,0, 0,0, 0,0,0,0],
 ];
 
-/*
- *  17,3,1,-14
-   -14,10,4,17
-   -37,61,21,47
-*/
-
-
-/*
- res[A rows][B cols]
-*/
-function matrixMultiplication(
-        array $A, array $B, int $rowA, int $colA, 
-        int $rowB, int $colB, int $size): array {
-
-    $C=[];
-
-    if($size==1)
-        $C[0][0]= $A[$rowA][$colA]*$B[$rowB][$colB];
-
-    else{
-
-        $newSize= $size/2;
-        
-        // $C11 = addMatrix(matrixMultiplication($A11, $B11), matrixMultiplication($A12, $B21));
-        // $C12 = addMatrix(matrixMultiplication($A11, $B12), matrixMultiplication($A12, $B22));
-        
-        // C11 = C [0 -> half][0 -> half];
-        // C12 = C [0 -> half][half -> size];
-
-        //C11
-         sumMatrix($C, 
-
-            matrixMultiplication($A, $B, $rowA, $colA, $rowB, $colB, $newSize),
-            matrixMultiplication($A, $B, $rowA, $colA+$newSize, $rowB+ $newSize, $colB, $newSize),
-        0, 0);
-
-        //C12
-         sumMatrix($C, 
-
-            matrixMultiplication($A, $B, $rowA, $colA, $rowB, $colB + $newSize, $newSize),
-            matrixMultiplication($A, $B, $rowA, $colA+$newSize, $rowB+ $newSize, $colB+$newSize, $newSize),
-        0, $newSize);
-
-        //C21
-         sumMatrix($C, 
-
-            matrixMultiplication($A, $B, $rowA+ $newSize, $colA, $rowB, $colB, $newSize),
-            matrixMultiplication($A, $B, $rowA+ $newSize, $colA+$newSize, $rowB+ $newSize, $colB, $newSize),
-        $newSize, 0);
-
-        //C22
-         sumMatrix($C, 
-
-            matrixMultiplication($A, $B, $rowA+ $newSize, $colA, $rowB, $colB+$newSize, $newSize),
-            matrixMultiplication($A, $B, $rowA+ $newSize, $colA+$newSize, $rowB+ $newSize, $colB+$newSize, $newSize),
-        $newSize, $newSize);
-    }
-
-    return $C;
-
-}
-
-function sumMatrix(array &$C, array $A, array $B, int $rowC, int $colC): void 
-{
-    $n=sizeof($A);
-
-    for ($i =0; $i<$n; $i++){
-        for ($j=0; $j<$n; $j++)  
-            $C[$i+$rowC][$j+$colC] = $A[$i][$j] + $B[$i][$j];
-    }
-}
-
 $mat = matrixMultiplication($a, $b, 0, 0, 0, 0, sizeof($a));
-
-validates($mat[0], [17,3,1,-14,-23,-29,0,0]);
+$res = [
+  17, 3 ,1,-14,
+ -23,-29,0, 0
+];
+validates($mat[0], $res);
