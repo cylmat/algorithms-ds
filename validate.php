@@ -42,7 +42,7 @@ $current = null;
 foreach ($files as $file) {
     $base = pathinfo($file->getRealpath(), PATHINFO_DIRNAME);
     if ($base !== $current) {
-        echo ' * '.pathinfo($base, PATHINFO_BASENAME).' * '.PHP_EOL;
+        echo "\n * ".pathinfo($base, PATHINFO_BASENAME).' : ';
         $current = $base;
     }
 
@@ -58,7 +58,7 @@ foreach ($files as $file) {
         echo GREEN . '1' . $end;
     } else {
         echo $printed.PHP_EOL;
-        echo RED . $real . ' ' . "\t" . $end;
+        echo RED . $real . ' ' . "\t" . $end . "\n";
         exit(1);
     }
 }
