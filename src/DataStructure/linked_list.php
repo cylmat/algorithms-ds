@@ -69,19 +69,3 @@ $node1 = createNodeList(new Node('head'), 'my-val1');
 $node2 = createNodeList($node1, 'my-val2');
 
 validates('my-val2', $node2->value);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
