@@ -8,7 +8,7 @@
  * compare percentage of inside and outside circle
  * inside circle is PI/4
  *
- * - ref: https://fr.wikipedia.org/wiki/Approximation_de_%CF%80
+ * @see https://fr.wikipedia.org/wiki/Approximation_de_%CF%80
  */
 
 function approx_pi_i(): float
