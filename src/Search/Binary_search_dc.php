@@ -2,8 +2,8 @@
 
 /** 
  * D&C method
+ * @see https://www.geeksforgeeks.org/binary-search/
  */
-//https://www.geeksforgeeks.org/binary-search/
 
 function binarySearch(array $arr, int $l, int $r, int $x): int
 {
