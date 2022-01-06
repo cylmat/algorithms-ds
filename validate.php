@@ -50,15 +50,16 @@ foreach ($files as $file) {
     include $file;
     $printed = ob_get();
 
-    $txt = $file->getRealpath();
+    $fname = $file->getFilename();
+    $real = $file->getRealpath();
     $end = END . "\t";
 
     // file must output "1..." to be valid
     if (preg_match('/^1+$/', $printed)) {
-        echo GREEN . $txt . $end . "\t ... [OK]".PHP_EOL;
+        echo GREEN . $fname . $end . "\t ... [OK]".PHP_EOL;
     } else {
         echo $printed.PHP_EOL;
-        echo RED . $txt . ' ' . "\t" . $end;
+        echo RED . $real . ' ' . "\t" . $end;
         exit(1);
     }
 }
