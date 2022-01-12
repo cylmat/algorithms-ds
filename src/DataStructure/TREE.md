@@ -17,10 +17,10 @@
 - PostOrder: Follows the left subtree to the deepest child, follows the left and right subtrees before processing the root. (_\)
 - LevelOrder (Breadth First Search): Algorithm that processes the root, followed by the children (from left to right, /_)
 
-Sample:
-   4
- 2   6
-1 3 5 7
+Sample:  
+   4  
+ 2 _ 6  
+1 3 5 7  
 
 ---
 **@ref**: 
