@@ -12,10 +12,10 @@
   + BK-tree, Doubly chained tree, iDistance, Fenwick tree, Tas binomial, Tas de Fibonacci
 
 ## Traversal
-- PreOrder (Deep First Search): Process the root and traversals of the left and right subtrees (as deeply to the LEFT as possible).  4 2 1 3 6 5 7
-- InOrder: Follows the left subtree to the deepest child, then root and right subtree (^) 1 2 3 4 5 6 7
-- PostOrder: Follows the left subtree to the deepest child, follows the left and right subtrees before processing the root. (_\) 1 3 2 5 7 6 4
-- LevelOrder (Breadth First Search): Algorithm that processes the root, followed by the children (from left to right, /_) 4 2 6 1 3 5 7
+- PreOrder TLR (Deep First Search): Process the root and traversals of the left and right subtrees (as deeply to the LEFT as possible). 4 2 1 3 6 5 7
+- InOrder LTR: Follows the left subtree to the deepest child, then root and right subtree 1 2 3 4 5 6 7
+- PostOrder LRT: Follows the left subtree to the deepest child, follows the left and right subtrees before processing the root. 1 3 2 5 7 6 4
+- LevelOrder TLR (Breadth First Search): Algorithm that processes the root, followed by the children (from left to right) 4 2 6 1 3 5 7
 
 Sample:  
 | | | | | | | |
