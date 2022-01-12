@@ -21,7 +21,7 @@
 - Équations différentielles: Méthode d'Euler, Runge-Kutta, Leapfrog
 - Interpolation numérique: Interpolation d'Hermite  
 
-*@ref*:  
+**@ref**:  
 * [https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Algorithme_d%27optimisation]
 * [https://fr.wikipedia.org/wiki/Analyse_num%C3%A9rique]
 
@@ -34,7 +34,8 @@
 
 ## Randomized algorithm
 - Fisher-Yates shuffle, Karloff–Zwick algorithm, Random_permutation   
-*@ref*: [https://en.wikipedia.org/wiki/Category:Randomized_algorithms]
+
+**@ref**: [https://en.wikipedia.org/wiki/Category:Randomized_algorithms]
 
 ---
-*@ref*: [https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Algorithme_num%C3%A9rique]
+**@ref**: [https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Algorithme_num%C3%A9rique]
