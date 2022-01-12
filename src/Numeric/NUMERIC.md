@@ -22,20 +22,20 @@
 - Interpolation numérique: Interpolation d'Hermite  
 
 **@ref**:  
-* [https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Algorithme_d%27optimisation]
-* [https://fr.wikipedia.org/wiki/Analyse_num%C3%A9rique]
+* https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Algorithme_d%27optimisation
+* https://fr.wikipedia.org/wiki/Analyse_num%C3%A9rique
 
 ## Hash algorithm
-- Sha1, md5, Whirlpool, Tiger, Bcrypt, Rsa
+- Sha1, md5, Whirlpool, Tiger, Bcrypt, Rsa ...
 
 ## Cryptographic
-- Prime generation, Bach's, Montgomery, random password, modular exponentiation, symmetric key
-- Algorithm LLL, Key exchange Diffie-Hellman, Merkle tree
+- Prime generation, Bach's, Montgomery, random password, modular exponentiation, symmetric key .
+- Algorithm LLL, Key exchange Diffie-Hellman, Merkle tree ...
 
 ## Randomized algorithm
-- Fisher-Yates shuffle, Karloff–Zwick algorithm, Random_permutation   
+- Fisher-Yates shuffle, Karloff–Zwick algorithm, Random_permutation ...
 
-**@ref**: [https://en.wikipedia.org/wiki/Category:Randomized_algorithms]
+**@ref**: https://en.wikipedia.org/wiki/Category:Randomized_algorithms
 
 ---
-**@ref**: [https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Algorithme_num%C3%A9rique]
+**@ref**: https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Algorithme_num%C3%A9rique
