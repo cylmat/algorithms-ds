@@ -1,11 +1,5 @@
 # Numeric
-- Algorithme Toom-Cook
-- Algorithme d'Euclide
-- Algorithme du simplexe
-- Algorithme de Strassen
-- Algorithme de Cooley-Tukey [D&C]
-- Crible d'Atkin
-...
+- Algorithme Toom-Cook, Euclide, simplexe, Strassen, Cooley-Tukey [D&C]  
 
 ## Number theory
 - Primality tests: Fermat, Lucas–Lehmer–Riesel, Solovay–Strassen, Miller–Rabin ...
@@ -17,18 +11,25 @@
 - Discrete logarithm: Pollard rho ...  
 
 - Greatest common divisor: Binary, Euclidean, Euclidean Lehmer ...
-- Modular square root: Berlekamp Kunerth  
+- Modular square root: Berlekamp Kunerth
 
+- Signal: Discrete Fourier transform
 - Others: Chakravala, Lenstra–Lenstra–Lovász ...
 
-## Signal
-- Discrete Fourier transform
+## Analyse & Optimization
+- Recherche de zéro: Méthode de Josephy-Newton Méthode de la sécante Méthode de Newton Point fixe
+- Transformations de matrice: Matrice de Hessenberg Décomposition LU Factorisation de Cholesky
+- Résolutions de systèmes: Méthode de Gauss-Seidel, Jacobi décomposition, LU décomposition
+- Intégration numérique: Méthode du point médian, Méthode des trapèzes, Simpson, Monte-Carlo
+- Équations différentielles: Méthode d'Euler, Runge-Kutta, Leapfrog
+- Interpolation numérique: Interpolation d'Hermite 
+@ref: 
+[https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Algorithme_d%27optimisation]
 
 ## Randomized algorithm
-- Fisher-Yates shuffle
-- Karloff–Zwick algorithm
-- Random_permutation
-@ref: [https://en.wikipedia.org/wiki/Category:Randomized_algorithms]
+- Fisher-Yates shuffle, Karloff–Zwick algorithm, Random_permutation  
+@ref: 
+[https://en.wikipedia.org/wiki/Category:Randomized_algorithms]
 
 ---
 @ref  
