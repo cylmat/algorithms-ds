@@ -14,7 +14,7 @@
 - Divide and conquer, Dynamic programming, Recursion, Greedy, Fold (higher-order)
 - Tree: Binary Search, Backtracking, Heap
 - Graph: Depth First Traversal, Breadth First Traversal
-- Sorting, Minimax, Streaming, Sweep line
+- Sorting, Minimax, Streaming, Sweep line, Primality test
 
 ---
 **@ref**
