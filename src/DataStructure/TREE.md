@@ -18,7 +18,7 @@
 - LevelOrder (Breadth First Search): Algorithm that processes the root, followed by the children (from left to right, /_)
 
 Sample:  
-|||||||
+| | | | | | | |
 |-|-|-|-|-|-|-|
 ||||4||||  
 ||2||||6||
