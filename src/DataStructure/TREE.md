@@ -11,6 +11,12 @@
   + Merkle, Arbre couvrant, Arbre syntaxique, Finger tree, arbre métrique, Cover tree
   + BK-tree, Doubly chained tree, iDistance, Fenwick tree, Tas binomial, Tas de Fibonacci
 
+## Traversal
+- PreOrder (Deep First Search): Process the root and traversals of the left and right subtrees, as deeply to the left as possible.
+- InOrder: Follows the left subtree, then root and right subtree
+- PostOrder: Follows the left and right subtrees before processing the root.
+- LevelOrder (Breadth First Search): Algorithm that processes the root, followed by the children (from left to right).
+
 ---
 **@ref**: 
 - https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Arbre_(structure_de_donn%C3%A9es)
