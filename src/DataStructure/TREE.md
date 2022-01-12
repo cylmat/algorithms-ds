@@ -13,5 +13,7 @@
 
 ---
 **@ref**: 
-- https://fr.wikipedia.org/wiki/Arbre_enracin%C3%A9 (fr)
-- https://en.wikipedia.org/wiki/Tree_(data_structure) (en)
+- https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Arbre_(structure_de_donn%C3%A9es)
+
++ https://fr.wikipedia.org/wiki/Arbre_enracin%C3%A9 (fr)
++ https://en.wikipedia.org/wiki/Tree_(data_structure) (en)
