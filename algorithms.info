@@ -1,11 +1,33 @@
-[Refs]
+# Infos
+Refs
+---
 - https://cp-algorithms.com
 - https://www.geeksforgeeks.org
 - https://en.wikipedia.org/wiki/Algorithm
 - https://en.wikipedia.org/wiki/List_of_algorithms
 - https://en.wikipedia.org/wiki/Category:Algorithms  
 
-Graphs  
+Graphs
+---
 - https://github.com/BlueM/Tree
 - https://github.com/algb12/GraphDS
 - https://github.com/nicmart/Tree
+
+Algorithmic paradigms
+---
+### General
+- Algorithme glouton (Greedy)
+- Diviser pour régner
+- Programmation dynamique
+- Récursivité
+- Retour sur trace (Backtracking)
+- Séparation_et_évaluation (Branch & bound)
+
+### Specifics
+- Algorithme de Las Vegas (choix aléatoires)
+- Algorithme évolutionniste (stochastiques)
+- Algorithme mémétique
+- Algorithm online (incrémental)
+- Méthode hill-climbing (iterative)
+
+**@ref**: https://en.wikipedia.org/wiki/Algorithmic_paradigm
