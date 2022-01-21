@@ -1,11 +1,12 @@
 # Algorithmic problems
 
-- Change-making problem
+- Change-making
+- Dutch national flag
 - Job-shop scheduling
-- Knapsack problem
+- Knapsack
 - Problème SAT (Boolean satisfiability)
-- Subset sum problem
-- Vehicle routing problem
+- Subset sum
+- Vehicle routing
 
 ---
 **@ref**  
