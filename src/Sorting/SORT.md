@@ -12,14 +12,17 @@ Efficient
 - Quick : [unstable, inplace with Sedgewick, D&C]. Choose a pivot, then split lower and higher than pivot.
 - Shell (+insert)
 
+Hybrid
+---
+- Intro : [instable, inplace]. Begin as quicksort and switch to heapsort. Fast average performance and optimal worst-case.
+- Tim (merge + insert)
+
 Others
 ---
 - Bubble : ...(see cocktail)
 - Comb (+bubble)
 - Exchange
-- Intro : [instable, inplace]. Begin as quicksort and switch to heapsort. Fast average performance and optimal worst-case.
 - Smooth : [instable, inplace] by Dijkstra. Comparison-based like heapsort, O(n) with pre-sorted input
-- Tim (merge + insert)
 - Tree (arborescent) : [unstable, not inplace] (slow one). Build a binary tree then traverse it.
 
 Distribution
