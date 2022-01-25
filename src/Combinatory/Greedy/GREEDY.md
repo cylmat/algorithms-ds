@@ -1,0 +1,35 @@
+# Greedy
+
+Approximately optimal solution
+---
+- Activity Selection problem
+- Egyptian fraction
+- Job Sequencing Problem
+- Job selection Problem & loss min
+- Minimum product subset of an array
+- Page replacement
+- Huffman Coding & decoding
+- Assign mice to holes
+
+DYNAMIC
+---
+- Fractional Knapsack problem
+- Minimum number of Coins
+
+GRAPH
+---
+- Dijkstra’s Shortest Path
+- Dial's (Optimized Dijkstra)
+- Kruskal’s Minimum Spanning Tree (MST)
+- Prim’s Minimum Spanning Tree
+- Boruvka's (Sollin1)
+
+NP-COMPLET
+---
+- K center problem
+- Traveling Salesman Problem
+
+---
+@ref: 
+- https://fr.wikipedia.org/wiki/Algorithme_glouton
+- https://www.geeksforgeeks.org/greedy-algorithms
