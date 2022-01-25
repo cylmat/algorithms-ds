@@ -15,3 +15,7 @@ Linear
 ---
 + Karmarkar
 + Simplex
+
+---
+**@ref**:
+- https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Optimisation_combinatoire
