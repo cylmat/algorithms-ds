@@ -8,6 +8,7 @@ Sample
 - Bellman–Ford–Moore (shortest path)
 - Damerau–Levenshtein distance
 - Floyd–Warshall (shortest path)
+- Frank-Wolfe (neural network)
 - Held–Karp (Traveling salesman problem)
 - Hirschberg (sequence alignment between two strings)
 - Needleman–Wunsch (bio sequences)
@@ -17,23 +18,12 @@ Sample
 Problems
 ---
 - Knapsack problem
+- Longest increasing subsequence
 - Matrix chain ordering
 - Maximum subarray (Kadane)
 - Newsvendor problem
 - Shortest common supersequence
 - Subset sum
-
-Optimization
----
-* Branch & bound (For NP-Complete, A* like)
-* Greedy algorithm
-  + Method hill-climbing 
-
-- Gradient stochastique
-- Ford-Fulkerson (greedy, maximum network flow)
-- Linear
-  + Karmarkar
-  + Simplex
 
 ---
 **@ref**: 
