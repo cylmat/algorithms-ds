@@ -1,10 +1,11 @@
 # Data Structure
 
-* Abstract
+* Abstract Data Type (ADT)
   + Collection, Associative array
   + Queue, Dequeue, PriorityQueue
-  + Stack, PairStack
+  + List, Stack, PairStack
   + Ensemble, Set, Union-set
+  + Binary tree, graph
 * Linked chain
   + Linked list, Fofo, Lifo, Xor chain
 * Array
@@ -30,4 +31,5 @@
 
 ---
 **@ref**
+- https://en.wikipedia.org/wiki/Category:Data_structures 
 - https://fr.wikipedia.org/wiki/Structure_de_donn%C3%A9es
