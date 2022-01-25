@@ -29,7 +29,23 @@ NP-COMPLET
 - K center problem
 - Traveling Salesman Problem
 
+Methods
+---	
+**Greedy**  
+- Activity selection problem - A* search - Huffman coding
+- Malfatti's problem - Steiner tree problem
+- MST : Borůvka - Prim - Kruskal
+- Shortest path : Bellman–Ford - Dijkstra - Floyd–Warshall
+	 
+**Methods**  
++ Branch_and_cut
++ Séparation_et_évaluation (Branch & bound)
++ Programmation dynamique
+	 
+**Dynamic**  
+- Bitmask : HE: DP/bit-masking +
+- Longest_increasing_subsequence
+
 ---
 @ref: 
 - https://fr.wikipedia.org/wiki/Algorithme_glouton
-- https://www.geeksforgeeks.org/greedy-algorithms
