@@ -1,12 +1,24 @@
 # Data Structure
 
-* DS
-  - Associative array, Collection, Hashable, Sequence
-  - Vector, Map, Set, Hash table, Heap, Linked list
-  - Stack, PairStack
-  - Queue, Dequeue, PriorityQueue
+* Abstract
+  + Collection, Associative array
+  + Queue, Dequeue, PriorityQueue
+  + Stack, PairStack
+  + Ensemble, Set, Union-set
+* Linked chain
+  + Linked list, Fofo, Lifo, Xor chain
+* Array
+  + Circular buffer
+  + Bit array, Hash table
+  + Sparse matrix
+  + Hashable, Sequence
+  + Vector, Map
+* Tree, graph
   - Binary search tree, Fenwick tree, Graph, Segment tree
-  - String Tree, Trie, Cartesian tree
+  - String Tree, Trie, Cartesian tree, Heap
+* String
+  + Radix tree, Suffix tree, Rope  
+
 * SPL (Php)
   - Stack, (Priority)Queue, (MinMax)Heap, DoubleLinkedList, FixedArray, ObjectStorage
 
