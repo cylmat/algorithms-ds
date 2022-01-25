@@ -17,5 +17,6 @@ Linear
 + Simplex
 
 ---
-**@ref**:
+**@ref**:  
 - https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Optimisation_combinatoire
+- https://fr.wikipedia.org/wiki/Optimisation_combinatoire
