@@ -16,11 +16,26 @@ Sample
 
 Problems
 ---
-- Knapsack
+- Knapsack problem
 - Matrix chain ordering
 - Maximum subarray (Kadane)
+- Newsvendor problem
 - Shortest common supersequence
 - Subset sum
 
+Optimization
 ---
-**@ref**: https://en.wikipedia.org/wiki/Category:Dynamic_programming
+* Branch & bound (For NP-Complete, A* like)
+* Greedy algorithm
+  + Method hill-climbing 
+
+- Gradient stochastique
+- Ford-Fulkerson (greedy, maximum network flow)
+- Linear
+  + Karmarkar
+  + Simplex
+
+---
+**@ref**: 
+- https://en.wikipedia.org/wiki/Category:Dynamic_programming
+- https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Algorithme_d%27optimisation
