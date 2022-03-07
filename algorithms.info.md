@@ -8,7 +8,11 @@ Refs
 - https://en.wikipedia.org/wiki/Algorithm
 - https://en.wikipedia.org/wiki/List_of_algorithms
 - https://en.wikipedia.org/wiki/Category:Algorithms
-- https://www.codechef.com/certification/data-structures-and-algorithms/prepare
+- http://villemin.gerard.free.fr/LogForm/LogFoTdM.htm
+- https://www3.risc.jku.at/people/ckoutsch/stuff/e_algorithms.html
+
++ https://www.codechef.com/certification/data-structures-and-algorithms/prepare
++ https://www.geeksforgeeks.org/top-algorithms-and-data-structures-for-competitive-programming
 
 Graphs
 ---
