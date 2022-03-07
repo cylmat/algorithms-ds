@@ -1,11 +1,14 @@
 # Infos
+
 Refs
 ---
+- http://rosettacode.org
 - https://cp-algorithms.com
 - https://www.geeksforgeeks.org
 - https://en.wikipedia.org/wiki/Algorithm
 - https://en.wikipedia.org/wiki/List_of_algorithms
-- https://en.wikipedia.org/wiki/Category:Algorithms  
+- https://en.wikipedia.org/wiki/Category:Algorithms
+- https://www.codechef.com/certification/data-structures-and-algorithms/prepare
 
 Graphs
 ---
@@ -15,19 +18,18 @@ Graphs
 
 Algorithmic paradigms
 ---
-### General
 - Algorithme glouton (Greedy)
-- Diviser pour régner
+- Diviser pour régner (Divide conquer)
 - Programmation dynamique
 - Récursivité
 - Retour sur trace (Backtracking)
-- Séparation_et_évaluation (Branch & bound)
+- Séparation et évaluation (Branch & bound)
 
-### Specifics
 - Algorithme de Las Vegas (choix aléatoires)
 - Algorithme évolutionniste (stochastiques)
 - Algorithme mémétique
 - Algorithm online (incrémental)
 - Méthode hill-climbing (iterative)
 
-**@ref**: https://en.wikipedia.org/wiki/Algorithmic_paradigm
+**@ref**: 
+- https://en.wikipedia.org/wiki/Algorithmic_paradigm
