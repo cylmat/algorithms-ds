@@ -7,6 +7,7 @@ Refs
 + https://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview
 + https://www3.risc.jku.at/people/ckoutsch/stuff/e_algorithms.html
 
+- https://tryalgo.org
 - http://rosettacode.org
 - https://cp-algorithms.com
 - https://www.geeksforgeeks.org
