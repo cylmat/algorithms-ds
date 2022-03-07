@@ -22,18 +22,18 @@ Graphs
 
 Algorithmic paradigms
 ---
-- Algorithme glouton (Greedy)
-- Diviser pour régner (Divide conquer)
-- Programmation dynamique
-- Récursivité
-- Retour sur trace (Backtracking)
-- Séparation et évaluation (Branch & bound)
++ Algorithme glouton (Greedy)
++ Diviser pour régner (Divide conquer)
++ Programmation dynamique
++ Récursivité
++ Retour sur trace (Backtracking)
++ Séparation et évaluation (Branch & bound)
 
-- Algorithme de Las Vegas (choix aléatoires)
-- Algorithme évolutionniste (stochastiques)
-- Algorithme mémétique
-- Algorithm online (incrémental)
-- Méthode hill-climbing (iterative)
+* Algorithme de Las Vegas (choix aléatoires)
+* Algorithme évolutionniste (stochastiques)
+* Algorithme mémétique
+* Algorithm online (incrémental)
+* Méthode hill-climbing (iterative)
 
 **@ref**: 
 - https://en.wikipedia.org/wiki/Algorithmic_paradigm
