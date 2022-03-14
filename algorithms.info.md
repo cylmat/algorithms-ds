@@ -1,12 +1,16 @@
 # Infos
 
-Refs
+Summary
 ---
++ https://www.geeksforgeeks.org/fundamentals-of-algorithms
++ https://www3.risc.jku.at/people/ckoutsch/stuff/e_algorithms.html
++ https://www.hackerearth.com/fr/getstarted-competitive-programming
++ https://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview
 + https://www.codechef.com/certification/data-structures-and-algorithms/prepare
 + https://www.geeksforgeeks.org/top-algorithms-and-data-structures-for-competitive-programming
-+ https://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview
-+ https://www3.risc.jku.at/people/ckoutsch/stuff/e_algorithms.html
 
+Refs
+---
 - https://tryalgo.org
 - http://rosettacode.org
 - https://cp-algorithms.com
