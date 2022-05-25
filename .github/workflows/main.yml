@@ -11,6 +11,6 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         extensions: ds, psr, mbstring
-        php-version: "7.3"
+        php-version: "7.4"
     - name: Run test suite
       run: php validate.php
