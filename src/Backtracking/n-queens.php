@@ -55,4 +55,4 @@ $expect = [
 [0,0,1,0,0,0,0,0]
 ];
 
-validates ($expect === $board); 
+validates ($expect, $board); 
