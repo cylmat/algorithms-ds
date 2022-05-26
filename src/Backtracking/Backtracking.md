@@ -3,6 +3,7 @@
 Algorithm for finding solutions to some computational problems, for exemple solving constraint satisfaction problems.
 
 ## Implementation
+General implementation
 ```
 # return true when founded a valid solution
 function isValide (checked_position): bool
