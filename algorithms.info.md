@@ -42,5 +42,8 @@ Algorithmic paradigms
 * Algorithm online (incrémental)
 * Méthode hill-climbing (iterative)
 
+---
+Samples: Carre magique
+
 **@ref**: 
 - https://en.wikipedia.org/wiki/Algorithmic_paradigm
