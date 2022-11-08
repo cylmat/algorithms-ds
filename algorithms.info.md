@@ -43,7 +43,7 @@ Algorithmic paradigms
 * Méthode hill-climbing (iterative)
 
 ---
-Samples: Carre magique
+Samples: Carre magique, function curry (Currying)
 
 **@ref**: 
 - https://en.wikipedia.org/wiki/Algorithmic_paradigm
