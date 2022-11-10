@@ -16,6 +16,9 @@ Practice & DSA
 * https://www.javatpoint.com/data-structure-algorithm
 * https://www.programiz.com/dsa
 
+* Sort: https://www.geeksforgeeks.org/sorting-algorithms
+* Search: https://www.geeksforgeeks.org/searching-algorithms
+
 Refs
 ---
 - https://tryalgo.org
