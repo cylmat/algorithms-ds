@@ -43,7 +43,10 @@ Algorithmic paradigms
 * Méthode hill-climbing (iterative)
 
 ---
-Samples: Carre magique, function curry (Currying)
+Samples: Carre magique, function curry (Currying)  
+  
+Practice: HackerRank, LEETCODE, Codingame, Coderbyte, Codewars, Codefights  
+Tryalgo.org, Topcoder, Codechef, Geeksforgeeks, Codeforces, Interviewbit.com   
 
 **@ref**: 
 - https://en.wikipedia.org/wiki/Algorithmic_paradigm
