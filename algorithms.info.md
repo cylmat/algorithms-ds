@@ -9,6 +9,12 @@ Summary
 + https://www.codechef.com/certification/data-structures-and-algorithms/prepare
 + https://www.geeksforgeeks.org/top-algorithms-and-data-structures-for-competitive-programming
 
+Practice & DSA
+---
+* https://www.geeksforgeeks.org/100-days-of-code-a-complete-guide-for-beginners-and-experienced
+* https://www.javatpoint.com/data-structure-algorithm
+* https://www.programiz.com/dsa
+
 Refs
 ---
 - https://tryalgo.org
