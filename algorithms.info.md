@@ -53,6 +53,15 @@ Algorithmic paradigms
 * Méthode hill-climbing (iterative)
 
 ---
+* LIVRE  (Thomas H. Cormen)
+Tri et recherche : Dichotomique, sélection, insertion, fusion, rapide, tri par comparaison, tri dénombrement  
+Graphe : Tri topologique, diagramme de Pert, plus court chemin orienté acyclique, Dijkstra, Bellman-Ford, Floyd-Marchal  
+Chaines : Plus logue sous-seq commune, levenshtein, recherche sous-chaine  
+Cryptographie : Substitution, clé symétrique, clé publique, RSA, générer aléatoire  
+Compression : Codage Huffman, LZW  
+Complexité : NP-complets  
+
+---
 Samples: Carre magique, function curry (Currying)  
   
 Practice: HackerRank, LEETCODE, Codingame, Coderbyte, Codewars, Codefights  
