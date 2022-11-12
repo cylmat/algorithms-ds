@@ -15,6 +15,7 @@ Practice & DSA
 * https://www.geeksforgeeks.org/data-structures
 * https://www.javatpoint.com/data-structure-algorithm
 * https://www.programiz.com/dsa
+* https://github.com/Algorithm-archive/Learn-Data_Structure-Algorithm-by-PHP
 
 * Sort: https://www.geeksforgeeks.org/sorting-algorithms
 * Search: https://www.geeksforgeeks.org/searching-algorithms
