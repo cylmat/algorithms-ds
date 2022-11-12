@@ -81,6 +81,7 @@ Samples: Carre magique, function curry (Currying)
 
 - https://www.isograd-testingservices.com/FR/solutions-challenges-de-code
 - https://prologin.org/archives
+- https://codingcompetitions.withgoogle.com
   
 Practice: HackerRank, LEETCODE, Codingame, Coderbyte, Codewars, Codefights  
 Tryalgo.org, Topcoder, Codechef, Geeksforgeeks, Codeforces, Interviewbit.com   
