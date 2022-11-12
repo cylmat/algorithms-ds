@@ -66,6 +66,11 @@ Complexité : NP-complets
 
 ---
 Samples: Carre magique, function curry (Currying)  
+
+Algorithms
+* https://www.codingame.com
+* https://www.hackerrank.com
+* https://github.com/trekhleb/javascript-algorithms
   
 Practice: HackerRank, LEETCODE, Codingame, Coderbyte, Codewars, Codefights  
 Tryalgo.org, Topcoder, Codechef, Geeksforgeeks, Codeforces, Interviewbit.com   
