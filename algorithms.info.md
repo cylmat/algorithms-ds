@@ -22,9 +22,13 @@ Practice & DSA
 Refs
 ---
 - https://tryalgo.org
+- https://leetcode.com
 - http://rosettacode.org
 - https://cp-algorithms.com
+- https://www.hackerrank.com
+- https://www.hackerearth.com
 - https://www.geeksforgeeks.org
+- https://www.techiedelight.com
 - https://en.wikipedia.org/wiki/Algorithm
 - https://en.wikipedia.org/wiki/List_of_algorithms
 - https://en.wikipedia.org/wiki/Category:Algorithms
@@ -67,10 +71,12 @@ Complexité : NP-complets
 ---
 Samples: Carre magique, function curry (Currying)  
 
-Algorithms
+**CHALLENGES**
 * https://www.codingame.com
 * https://www.hackerrank.com
 * https://github.com/trekhleb/javascript-algorithms
+
+- https://www.isograd-testingservices.com/FR/solutions-challenges-de-code
   
 Practice: HackerRank, LEETCODE, Codingame, Coderbyte, Codewars, Codefights  
 Tryalgo.org, Topcoder, Codechef, Geeksforgeeks, Codeforces, Interviewbit.com   
