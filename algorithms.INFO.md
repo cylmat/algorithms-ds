@@ -85,7 +85,8 @@ Samples: Carre magique, function curry (Currying)
 - https://codingcompetitions.withgoogle.com
 - http://www.france-ioi.org/algo/concours.php
   
-Practice: HackerRank, LEETCODE, Codingame, Coderbyte, Codewars, Codefights  
+* https://www.codewars.com
+Practice: LEETCODE, Coderbyte, Codefights  
 Tryalgo.org, Topcoder, Codechef, Geeksforgeeks, Codeforces, Interviewbit.com   
 
 **@ref**: 
