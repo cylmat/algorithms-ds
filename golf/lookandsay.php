@@ -1,4 +1,5 @@
 <?php 
+# https://code.golf/look-and-say#php
 
 $s=1;
 foreach(range(0,6)as$r){
